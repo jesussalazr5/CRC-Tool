@@ -1,0 +1,114 @@
+{
+  "sections": [
+    {
+      "level": "Básico",
+      "levelDesc": "Fundamentos que sustentam todo o resto — comece por aqui.",
+      "topics": [
+        {
+          "title": "Língua Portuguesa aplicada",
+          "summary": "A prova sempre abre com 1–2 questões de interpretação de texto e precisão de linguagem (números exatos x aproximados, uso de conectivos como “não apenas... mas também”, coesão e coerência). Não exige gramática avançada, mas leitura atenta: releia a frase e observe se o número/afirmação é exato ou uma estimativa, e se a segunda parte da frase confirma ou contradiz a primeira."
+        },
+        {
+          "title": "Patrimônio e equação contábil",
+          "summary": "Ativo = Passivo + Patrimônio Líquido. Ativo é um recurso controlado pela entidade com potencial de gerar benefícios econômicos futuros; Passivo é uma obrigação presente de transferir recursos; Patrimônio Líquido é a diferença entre os dois (o que “sobra” para os sócios). Todo lançamento contábil precisa manter essa equação em equilíbrio."
+        },
+        {
+          "title": "Partida dobrada (débito e crédito)",
+          "summary": "Todo lançamento contábil tem uma contrapartida: para cada débito existe um crédito de igual valor. Contas de Ativo e Despesa aumentam a débito; contas de Passivo, Patrimônio Líquido e Receita aumentam a crédito. Contas “retificadoras” (como Depreciação Acumulada, Provisão para Créditos de Liquidação Duvidosa, Ações em Tesouraria) têm natureza oposta à conta que reduzem."
+        },
+        {
+          "title": "Estrutura Conceitual (NBC TG Estrutura Conceitual R2)",
+          "summary": "Define os conceitos-base usados em todas as normas: Ativo, Passivo, Patrimônio Líquido, Receita e Despesa, além das características qualitativas da informação contábil — relevância e representação fidedigna (que exige ser completa, neutra e livre de erro), reforçadas por comparabilidade, verificabilidade, tempestividade e compreensibilidade. Muitas questões testam se uma informação “pode ser considerada representação fidedigna”, mesmo sem citar números."
+        },
+        {
+          "title": "Matemática financeira básica",
+          "summary": "Juros simples (J = C×i×t) x juros compostos (M = C×(1+i)^t). Nas provas, o mais cobrado é a Tabela SAC (amortização constante = valor financiado ÷ nº de parcelas; cada parcela = amortização + juros sobre o saldo devedor, que diminui a cada mês) e a Tabela Price (parcelas fixas, calculadas pela fórmula de anuidade)."
+        },
+        {
+          "title": "Estatística e probabilidade básica",
+          "summary": "O tema mais recorrente é a distribuição normal: ela é simétrica em torno da média, então se você sabe a probabilidade de um intervalo simétrico ao redor da média, a probabilidade que sobra se divide igualmente nas duas “caudas” (acima e abaixo do intervalo)."
+        }
+      ]
+    },
+    {
+      "level": "Intermediário",
+      "levelDesc": "Como registrar e apresentar as informações contábeis no dia a dia.",
+      "topics": [
+        {
+          "title": "As principais Demonstrações Contábeis",
+          "summary": "Balanço Patrimonial (posição em uma data: Ativo, Passivo, PL); DRE (resultado de um período: Receita – Custos – Despesas = Lucro/Prejuízo); DFC (movimentação de caixa, dividida em Operacional, Investimento e Financiamento — métodos direto e indireto só mudam a forma de apresentar a parte operacional, o total é sempre igual); DMPL (variações do Patrimônio Líquido); e DVA (como a riqueza gerada foi distribuída entre Pessoal, Governo, Capitais de Terceiros e Capital Próprio)."
+        },
+        {
+          "title": "Estoques, Imobilizado e Intangível (NBC TG 16, 27, 04)",
+          "summary": "Estoques: o custo inclui tudo até deixar o bem pronto para venda/uso (compra, frete, seguro, impostos não recuperáveis), menos descontos comerciais e impostos recuperáveis (ex.: ICMS quando a empresa pode se creditar). Imobilizado: reconhecido quando o bem está disponível para uso, não apenas quando começa a ser efetivamente usado. Intangível: gastos de pesquisa são sempre despesa; só os gastos da fase de desenvolvimento (com viabilidade técnica comprovada) podem ser capitalizados e amortizados."
+        },
+        {
+          "title": "Arrendamento Mercantil (NBC TG 06)",
+          "summary": "A arrendatária reconhece um Ativo de Direito de Uso e um Passivo de Arrendamento. Se não há expectativa de ficar com o bem ao final do contrato, a depreciação usa o menor prazo entre a duração do contrato e a vida útil do bem."
+        },
+        {
+          "title": "Provisões, Passivos e Ativos Contingentes (NBC TG 25)",
+          "summary": "Só se registra Provisão (impacta o Balanço) quando a perda é PROVÁVEL e o valor pode ser estimado com confiança. Se a perda é apenas POSSÍVEL, divulga-se em nota explicativa (Passivo Contingente), sem lançamento contábil. Se é remota, nem precisa divulgar."
+        },
+        {
+          "title": "Ajuste a Valor Presente (NBC TG 12)",
+          "summary": "Quando uma venda a prazo tem efeito relevante de juros embutidos, registra-se o Cliente pelo valor nominal (de face), a Receita pelo valor presente, e a diferença numa conta redutora do ativo (“Juros/Receita Financeira a Apropriar”), que vira receita financeira ao longo do tempo."
+        },
+        {
+          "title": "Contabilidade de Custos: absorção, variável e rateio",
+          "summary": "Custeio por absorção inclui TODOS os custos de fabricação (fixos e variáveis) no custo do produto; custos administrativos/comerciais são sempre despesa do período, nunca custo. Rateio de custos indiretos (ex.: aluguel, energia) geralmente é feito proporcionalmente a um critério (área ocupada, horas-máquina etc). “Investimento”, em custos, é todo gasto que vira ativo (inclusive compra de matéria-prima em estoque, antes de ser consumida)."
+        },
+        {
+          "title": "Ponto de Equilíbrio e Margem de Contribuição",
+          "summary": "Margem de contribuição = Preço de venda – Custo variável unitário. Ponto de equilíbrio (em unidades) = Custos fixos ÷ Margem de contribuição unitária. Se o preço ou o custo variável mudam, o ponto de equilíbrio muda junto."
+        },
+        {
+          "title": "Análise das Demonstrações e Indicadores",
+          "summary": "Liquidez seca = (Ativo Circulante – Estoques) ÷ Passivo Circulante (mede a capacidade de pagar dívidas de curto prazo sem depender de vender estoque). Ciclo operacional = tempo de produção/estocagem + prazo médio de recebimento. Necessidade de Capital de Giro (NCG) = Ativo Circulante Operacional – Passivo Circulante Operacional (contas a receber e estoques, menos contas a pagar operacionais)."
+        },
+        {
+          "title": "Ética Profissional (NBC PG 01 e NBC PG 100)",
+          "summary": "Princípios fundamentais: integridade, objetividade, competência técnica e zelo profissional, confidencialidade e comportamento profissional. As “ameaças” mais cobradas são autorrevisão (revisar o próprio trabalho ou acumular execução com gestão) e interesse próprio. A regra de ouro: o contador deve manter a escrituração correta mesmo sob pressão da administração."
+        }
+      ]
+    },
+    {
+      "level": "Avançado",
+      "levelDesc": "Temas mais técnicos e específicos, geralmente cobrados em cenários elaborados.",
+      "topics": [
+        {
+          "title": "Equivalência Patrimonial e Consolidação (NBC TG 18, 36)",
+          "summary": "Equivalência patrimonial: aplica-se quando há influência significativa (presunção com 20%+ do capital votante, mas pode existir com menos, por evidências como assento no conselho). O ganho reconhecido é sempre o percentual sobre o LUCRO LÍQUIDO total da investida, não importa a destinação (reservas ou dividendos). Consolidação: quando há controle, somam-se 100% dos ativos/passivos da controlada (mesmo se a participação for, por exemplo, 80% ou 90%), com ajuste de participação de não controladores no PL."
+        },
+        {
+          "title": "Redução ao Valor Recuperável — Impairment (NBC TG 01)",
+          "summary": "Valor recuperável = o MAIOR entre (a) valor justo líquido de despesas de venda e (b) valor em uso. Se o valor contábil do ativo for maior que o valor recuperável, reconhece-se uma perda pela diferença. Atenção: perdas por impairment já reconhecidas em períodos anteriores reduzem o valor contábil atual — não esqueça de descontá-las antes de comparar com o valor recuperável."
+        },
+        {
+          "title": "Ativo Não Circulante Mantido para Venda (NBC TG 31)",
+          "summary": "Ao reclassificar um ativo de volta para o imobilizado (caso a venda seja desistida), ele volta pelo MENOR valor entre: (i) o valor contábil que teria se nunca tivesse saído do imobilizado (considerando a depreciação que “teria” ocorrido) e (ii) o valor recuperável na data da reclassificação."
+        },
+        {
+          "title": "Tributos sobre o Lucro / Ativos Fiscais Diferidos (NBC TG 32)",
+          "summary": "Só se reconhece ativo fiscal diferido sobre prejuízo fiscal quando for PROVÁVEL que haverá lucro tributável futuro suficiente para compensá-lo — simples projeção otimista da administração não basta, e o valor deve ser revisto (e reduzido) a cada balanço se essa probabilidade diminuir."
+        },
+        {
+          "title": "Auditoria: risco e evidência (NBC TA)",
+          "summary": "Risco de auditoria = possibilidade de o auditor emitir opinião inadequada quando as demonstrações têm distorção relevante não detectada. Distingue-se de risco inerente (chance de erro existir, independente de controles) e risco de controle (chance de o controle interno não pegar o erro). Diante de indícios de fraude, o auditor deve investigar e comunicar aos responsáveis pela governança (ex.: Conselho de Administração) — nunca guardar segredo nem denunciar anonimamente sem antes seguir o procedimento normativo."
+        },
+        {
+          "title": "Perícia Contábil e Direito Processual (CPC/2015)",
+          "summary": "O prazo do laudo pericial pode ser prorrogado uma única vez, por até metade do prazo originalmente fixado, mediante justificativa (é uma faculdade do juiz, não uma obrigação). Constatado impedimento/suspeição, o perito deve se escusar e comunicar o juiz — nunca continuar o trabalho."
+        },
+        {
+          "title": "Direito Administrativo aplicado (Lei nº 14.133/2021 e Lei nº 8.987/1995)",
+          "summary": "Lei de Licitações: contratos administrativos podem ser alterados unilateralmente pela Administração por interesse público, respeitados os direitos do contratado (recomposição do equilíbrio econômico-financeiro); adesão a atas de registro de preços entre entes de esferas federativas diferentes é vedada. Lei de Concessões: interrupção do serviço por emergência ou por inadimplência do usuário (após aviso prévio) NÃO configura descontinuidade indevida."
+        },
+        {
+          "title": "Contabilidade Aplicada ao Setor Público (MCASP e Orçamento)",
+          "summary": "Ciclo da despesa pública: Empenho (reserva o valor) → Liquidação (confirma que o credor cumpriu a obrigação) → Pagamento. Princípios orçamentários mais cobrados: legalidade (só se orça receita de tributo já aprovado em lei) e equilíbrio (despesas compatíveis com receitas). Ativos de concessão só são reconhecidos pelo concedente se ele controla ou regula os serviços prestados por meio deles."
+        }
+      ]
+    }
+  ]
+}

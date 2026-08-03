@@ -3,6 +3,7 @@
 
   const state = {
     data: null,
+    guide: null,
     level: null, // "level1" | "level2"
     questions: [], // shuffled, with shuffled option order baked in
     index: 0,
@@ -37,9 +38,17 @@
     return state.data;
   }
 
+  async function loadGuide() {
+    if (state.guide) return state.guide;
+    const res = await fetch("data/guide.json");
+    state.guide = await res.json();
+    return state.guide;
+  }
+
   function el(tag, attrs = {}, children = []) {
     const node = document.createElement(tag);
     for (const [k, v] of Object.entries(attrs)) {
+      if (v == null) continue;
       if (k === "class") node.className = v;
       else if (k === "html") node.innerHTML = v;
       else if (k.startsWith("on") && typeof v === "function") node.addEventListener(k.slice(2), v);
@@ -89,6 +98,17 @@
           [
             el("div", { class: "level-name" }, "Nível 2 — Questões Extras"),
             el("div", { class: "level-desc" }, `${data.level2.length} questões inéditas, no mesmo estilo da prova, para praticar mais.`),
+          ]
+        ),
+        el(
+          "button",
+          {
+            class: "level-btn",
+            onclick: renderGuide,
+          },
+          [
+            el("div", { class: "level-name" }, "Módulo 3 — Guia de Estudos"),
+            el("div", { class: "level-desc" }, "Os temas que caem na prova, organizados do básico ao avançado, para estudar antes (ou entre) os simulados."),
           ]
         ),
       ]),
@@ -231,6 +251,40 @@
           "Repetir nível"
         ),
       ]),
+    ]);
+
+    root.appendChild(brand());
+    root.appendChild(card);
+  }
+
+  // ---------------- Study guide screen ----------------
+
+  const GUIDE_LEVEL_SLUGS = { "Básico": "basico", "Intermediário": "intermediario", "Avançado": "avancado" };
+
+  async function renderGuide() {
+    root.innerHTML = "";
+    const guide = await loadGuide();
+
+    const sections = guide.sections.map((section) => {
+      const topics = section.topics.map((topic) =>
+        el("details", { class: "guide-topic" }, [
+          el("summary", {}, topic.title),
+          el("p", { class: "guide-summary" }, topic.summary),
+        ])
+      );
+      const slug = GUIDE_LEVEL_SLUGS[section.level] || "";
+      return el("div", { class: "guide-section" }, [
+        el("div", { class: `level-tag level-tag-${slug}` }, section.level),
+        el("p", { class: "guide-level-desc" }, section.levelDesc),
+        el("div", { class: "guide-topics" }, topics),
+      ]);
+    });
+
+    const card = el("div", { class: "card" }, [
+      el("a", { class: "exit-link", onclick: renderStart }, "← Voltar ao início"),
+      el("h1", {}, "Guia de Estudos"),
+      el("p", { class: "subtitle" }, "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem."),
+      el("div", { class: "guide-sections" }, sections),
     ]);
 
     root.appendChild(brand());

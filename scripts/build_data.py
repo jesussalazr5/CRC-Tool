@@ -744,15 +744,151 @@ LEVEL2 = [
 assert len(LEVEL2) == 50, len(LEVEL2)
 
 # ============================================================
+# Topic labels — human-readable Portuguese names for each topic
+# slug, used to tell the student which area of the Módulo 3
+# study guide to review when they need a tip.
+# ============================================================
+
+TOPIC_LABELS = {
+    "lingua_portuguesa": "Língua Portuguesa",
+    "estatistica_probabilidade": "Estatística e Probabilidade",
+    "matematica_financeira": "Matemática Financeira",
+    "licitacoes_concessoes": "Licitações e Concessões (Lei 14.133 / Lei 8.987)",
+    "etica_profissional": "Ética Profissional (NBC PG)",
+    "estrutura_conceitual": "Estrutura Conceitual",
+    "normas_contabeis": "Normas Contábeis (NBC TG)",
+    "lancamentos_contabeis": "Lançamentos Contábeis",
+    "custos": "Contabilidade de Custos",
+    "indicadores_financeiros": "Análise das Demonstrações / Indicadores",
+    "setor_publico": "Contabilidade Pública (MCASP / Orçamento)",
+    "auditoria": "Auditoria",
+    "direito_pericia": "Perícia Contábil e Direito Processual",
+}
+
+# ============================================================
+# Hints — short nudges (formula/approach) shown on request,
+# before the student answers. They point toward the reasoning
+# without revealing the correct letter.
+# ============================================================
+
+HINTS_L1 = {
+    1: "Releia cada opção e pergunte-se: esse número é um valor exato ou uma estimativa (“mais de”, “cerca de”, “perto de”)?",
+    2: "Preste atenção à estrutura “não apenas X, mas também Y” — ela soma um segundo elemento, não contradiz o primeiro.",
+    3: "Numa distribuição normal simétrica, a probabilidade que sobra fora de um intervalo centrado na média se divide igualmente nas duas caudas.",
+    4: "Tabela SAC: a amortização é sempre igual (valor financiado ÷ nº de parcelas); o juro de cada parcela incide sobre o saldo devedor, que vai diminuindo.",
+    5: "Lei 14.133/2021: pense se os entes envolvidos pertencem à mesma esfera federativa (municipal, estadual, federal) ou a esferas diferentes.",
+    6: "Lembre das cláusulas exorbitantes: a Administração pode alterar contratos unilateralmente por interesse público, mas os direitos do contratado são preservados.",
+    7: "Lei 8.987/1995: emergência e razões técnicas/segurança dispensam aviso prévio para interrupção do serviço.",
+    8: "Pense em “ameaça de autorrevisão”: quem executa e quem decide/gerencia não deveria ser a mesma pessoa/firma.",
+    9: "O princípio da integridade e objetividade prevalece mesmo sob pressão da administração — não há exceção por valor ou prazo.",
+    10: "Neutralidade significa não manter deliberadamente uma estimativa que já se sabe desatualizada só para beneficiar o resultado.",
+    11: "O reconhecimento de um ativo ocorre quando ele está “disponível para uso”, não quando o uso efetivamente começa.",
+    13: "A Estrutura Conceitual (R2) define recurso econômico pelo seu potencial de gerar benefícios — não pela posse jurídica do bem.",
+    14: "Se a arrendatária não pretende ficar com o bem, a depreciação usa o MENOR prazo entre a duração do contrato e a vida útil do ativo.",
+    15: "Um segmento é reportável se atingir 10% em UM dos critérios (receita, resultado OU ativos) — não precisa atingir todos.",
+    16: "Ativo fiscal diferido só se mantém enquanto for PROVÁVEL a existência de lucro tributável futuro suficiente.",
+    17: "A receita só é reconhecida quando o CONTROLE do bem passa ao cliente — normalmente na entrega, não no pagamento ou na nota fiscal.",
+    18: "Separe pesquisa (sempre despesa) de desenvolvimento (pode ser capitalizado): construção/teste de protótipos é desenvolvimento; buscar/selecionar alternativas é pesquisa.",
+    19: "Reclassificação para o imobilizado: compare o valor contábil “como se nunca tivesse saído” (com a depreciação que teria ocorrido) com o valor recuperável, e use o MENOR dos dois.",
+    20: "Perdas anormais de estoque (sinistro) não vão para o custo do produto — são despesa direta, com baixa do estoque.",
+    21: "No Ajuste a Valor Presente, o cliente entra pelo valor de face, a receita pelo valor presente, e a diferença fica numa conta retificadora a apropriar.",
+    22: "Separe as contas por natureza: ativo e despesa são devedoras; passivo, PL e receita são credoras — mas contas retificadoras invertem essa lógica.",
+    23: "A equivalência patrimonial incide sobre o LUCRO LÍQUIDO total do período, não importa quanto foi para reservas ou dividendos.",
+    24: "Na DVA, “Remuneração de Capitais de Terceiros” reúne juros, aluguéis e royalties — não inclui despesas com pessoal.",
+    25: "Distribua o valor total da venda proporcionalmente entre Caixa, Banco e Duplicatas a Receber, conforme os percentuais informados.",
+    26: "Monte a DRE em cascata: Receita bruta → (–) deduções → Receita líquida → (–) CMV/CSP → Lucro bruto → (–) despesas → (–) tributos sobre lucro → Lucro líquido.",
+    27: "No custo do estoque: some tudo que faz parte de colocar o bem pronto para uso (frete, seguro, impostos não recuperáveis) e subtraia descontos comerciais e impostos recuperáveis.",
+    28: "Só existe provisão quando a perda é PROVÁVEL; se for apenas possível, não há lançamento, só nota explicativa.",
+    29: "Método direto e indireto só mudam a FORMA de apresentar o fluxo operacional — o valor total de cada atividade é sempre igual.",
+    30: "A presunção de 20% para influência significativa não é absoluta — outras evidências (como assento no conselho) também contam.",
+    31: "Não esqueça de descontar a perda por impairment JÁ reconhecida antes de calcular o valor contábil atual do ativo.",
+    32: "No custo médio ponderado móvel, recalcule a média a cada COMPRA (dividindo valor total pelo total de unidades) — vendas não alteram a média.",
+    33: "Na consolidação, somam-se 100% dos ativos da controlada, mesmo que a participação adquirida seja menor que 100%.",
+    34: "Juros pagos têm classificação flexível na DFC: podem ir para operacional OU para financiamento.",
+    35: "No custeio por absorção, todo custo fixo E variável de FÁBRICA entra no custo do produto; despesas administrativas/comerciais ficam de fora.",
+    36: "Rateio por área ocupada: calcule a proporção de cada setor sobre a área TOTAL e aplique sobre o custo a ratear.",
+    37: "Separe: Custo = ligado à produção; Despesa = administrativo/comercial; Investimento = todo gasto que vira ativo (inclusive compra de matéria-prima ainda em estoque).",
+    38: "Variação favorável = quando o custo REAL é menor que o custo PADRÃO.",
+    39: "Ciclo operacional = tempo de produção/armazenagem + prazo de recebimento. O prazo de pagamento a fornecedores não entra aqui.",
+    40: "Ponto de equilíbrio = Custos fixos ÷ Margem de contribuição unitária. Descubra primeiro o custo fixo usando os dados originais.",
+    41: "NCG = Ativo Circulante Operacional (recebíveis + estoques) – Passivo Circulante Operacional (fornecedores + outras contas a pagar operacionais), usando prazos médios sobre o valor diário.",
+    43: "Atente-se aos detalhes: a mensuração inicial dos ativos de concessão é pelo VALOR JUSTO, e eles precisam ser segregados em classes, como o imobilizado.",
+    44: "O princípio da legalidade exige que só se orce receita de tributo já aprovado e regulamentado em lei.",
+    45: "Anulação PARCIAL de empenho ocorre quando o valor reservado é MAIOR do que o necessário (o excedente é liberado).",
+    46: "Associe pela abrangência: estratégico = diretrizes gerais de longo prazo; tático = metas setoriais; operacional = rotinas do dia a dia.",
+    47: "Risco de auditoria é sempre sobre a OPINIÃO do auditor ficar inadequada por distorções não detectadas — não é sobre erro contábil em si.",
+    48: "Diante de fraude, o caminho correto é comunicar aos responsáveis pela governança (ex.: Conselho de Administração), não agir unilateralmente.",
+    49: "CPC/2015: a prorrogação do prazo pericial é uma FACULDADE do juiz (“poderá”), por metade do prazo original.",
+    50: "Calcule o total de dias de férias a que tem direito (30 dias por período completo + proporcional do período incompleto), subtraia os dias já gozados, e aplique o valor do dia com o adicional de 1/3.",
+}
+
+HINTS_L2 = [
+    "Procure a expressão que soa como aproximação (“cerca de”, “perto de”) — as demais trazem números exatos.",
+    "“Não apenas X, mas também Y” tem valor de soma, não de oposição nem de hierarquia entre X e Y.",
+    "Mesma lógica de sempre: em uma normal simétrica, o que sobra fora do intervalo central se reparte igualmente nas duas caudas.",
+    "SAC: amortização constante = valor financiado ÷ nº parcelas; o juro de cada parcela incide sobre o saldo devedor remanescente.",
+    "Sistema Price tem parcela FIXA — use a fórmula de anuidade (o valor que, aplicado repetidamente com juros compostos, quita o financiamento).",
+    "Pense nos “procedimentos auxiliares” da Lei 14.133/2021 além do registro de preços — um deles serve para pré-selecionar fornecedores aptos.",
+    "Extinção unilateral por interesse público é prerrogativa da Administração, mas o contratado sem culpa não fica sem nada.",
+    "Lei 8.987/1995: inadimplência do usuário, após aviso prévio, é uma das hipóteses que NÃO configuram descontinuidade indevida.",
+    "Acumular execução (escrituração) com decisão de gestão sobre as mesmas informações é o cenário clássico de ameaça de autorrevisão.",
+    "O Código de Ética não pede silêncio nem exposição pública — pede esclarecimento e, se necessário, acionar o CRC.",
+    "Aceitar um trabalho sem capacitação técnica adequada fere um princípio bem específico do Código de Ética — pense em qual.",
+    "Tempestividade é sobre a informação chegar A TEMPO de influenciar decisões, mesmo que completa e neutra.",
+    "Para ser passivo, a entidade precisa não ter como evitar “na prática” a saída do recurso — não basta existir um contrato.",
+    "Sem intenção de ficar com o bem, a depreciação usa o menor prazo entre a duração do contrato e a vida útil do ativo.",
+    "Basta UM segmento atingir UM critério de 10% (receita, resultado ou ativos) para ser reportável — cada segmento pode usar um critério diferente.",
+    "O valor do ativo fiscal diferido deve ser revisto (e reduzido) sempre que deixar de ser provável a geração de lucro tributável suficiente.",
+    "Quando há mais de uma obrigação de desempenho no mesmo contrato, o preço se ALOCA entre elas, reconhecendo a receita conforme cada uma é cumprida.",
+    "De novo: estudo de viabilidade é pesquisa (sempre despesa); só a fase de desenvolvimento, com os requisitos atendidos, pode virar ativo amortizável.",
+    "Reclassificação de volta ao imobilizado: compare o valor contábil “como se nunca tivesse saído” com o valor recuperável e fique com o MENOR.",
+    "Perda de estoque por sinistro (sem chance de recuperação) é despesa direta, com baixa do estoque — não é custo de produção.",
+    "AVP: Clientes pelo valor nominal, Receita pelo valor presente, e a diferença numa conta retificadora do ativo a apropriar depois.",
+    "Cuidado com contas retificadoras: PECLD reduz um ativo, então tem natureza oposta à do ativo que ela reduz.",
+    "A equivalência patrimonial usa o lucro líquido TOTAL do período da investida — perdas de impairment já estão dentro desse lucro, não se subtraem de novo.",
+    "“Remuneração de Capitais de Terceiros” na DVA junta juros, aluguéis e royalties pagos — não junta salários.",
+    "Distribua o valor da venda proporcionalmente entre as formas de recebimento informadas (Caixa, Banco, a prazo).",
+    "Monte a DRE em cascata, uma linha de cada vez, até chegar no lucro líquido — não pule direto para o resultado.",
+    "No custo do estoque, ICMS recuperável NÃO entra no custo (é excluído); impostos não recuperáveis, sim.",
+    "Perda avaliada como PROVÁVEL vira provisão pela MELHOR ESTIMATIVA do desembolso — não pelo valor total pedido na ação.",
+    "O valor total gerado por cada atividade (operacional, investimento, financiamento) não muda entre os métodos direto e indireto — só a apresentação da parte operacional muda.",
+    "A presunção de 20% não é a única forma de influência significativa — evidências qualitativas (como assento no conselho) também contam.",
+    "Perda por impairment = valor contábil – valor recuperável (o MAIOR entre valor justo líquido de venda e valor em uso), só se o contábil for maior.",
+    "Recalcule a média ponderada a cada nova COMPRA; vendas apenas reduzem a quantidade, sem mudar o custo médio.",
+    "Na consolidação, somam-se 100% das disponibilidades da controlada, mesmo com participação menor que 100%; ajuste separadamente o caixa da controladora pelo valor pago.",
+    "Mesma lógica do custeio por absorção: separe o que é custo de fábrica (fixo + variável) do que é despesa administrativa/comercial.",
+    "Rateio por área: proporção do setor sobre a área TOTAL, aplicada ao custo a ratear.",
+    "Separe Custo (produção) / Despesa (admin/comercial) / Investimento (vira ativo — inclusive matéria-prima comprada e ainda não consumida).",
+    "Variação favorável = custo real MENOR que o padrão; desfavorável = custo real MAIOR que o padrão.",
+    "Ciclo operacional = tempo de produção/armazenagem + prazo de recebimento; o prazo de pagamento a fornecedores fica de fora.",
+    "Primeiro descubra o custo fixo com os dados originais (Margem de contribuição × Ponto de equilíbrio), depois recalcule com a nova margem.",
+    "NCG = (contas a receber + estoques) – contas a pagar operacionais, cada um calculado com base no prazo médio sobre o valor diário.",
+    "Liquidez seca = (Ativo Circulante – Estoques) ÷ Passivo Circulante — tire os estoques de cima antes de dividir.",
+    "O concedente só reconhece o ativo de concessão se ele efetivamente controla ou regula os serviços prestados por meio dele.",
+    "Despesa maior que receita, sem indicar de onde virá o dinheiro para cobrir a diferença, aponta para um princípio orçamentário sobre equilíbrio entre receita e despesa.",
+    "No ciclo da despesa pública, a fase que confirma que o credor cumpriu sua parte (antes do pagamento) tem nome próprio — não é o empenho.",
+    "Quando o valor empenhado é MENOR que a despesa realizada, é preciso reforçar o empenho, não anulá-lo.",
+    "Risco de que os CONTROLES INTERNOS não peguem uma distorção — diferente do risco inerente (chance do erro existir) e do risco de detecção (o auditor não achar).",
+    "Sem conseguir evidência suficiente sobre uma área relevante, o auditor não pode simplesmente ficar em silêncio — isso afeta o tipo de opinião emitida.",
+    "Sem intenção de manipular, uma classificação incorreta é erro — fraude sempre pressupõe intenção.",
+    "Diante de impedimento/suspeição, o caminho é se afastar e avisar o juiz — nunca continuar “discretamente”.",
+    "Calcule o valor de 1 mês de férias vencidas (1 salário) e depois acrescente o adicional de 1/3 sobre esse valor.",
+]
+
+assert len(HINTS_L2) == 50, len(HINTS_L2)
+assert set(HINTS_L1.keys()) == {q["number"] for q in LEVEL1}, "HINTS_L1 keys must match LEVEL1 numbers"
+
+# ============================================================
 # Assemble and write data/questions.json
 # ============================================================
 
-def build_entries(items, prefix):
+def build_entries(items, prefix, hints):
     entries = []
     for i, item in enumerate(items, start=1):
         entry = {
             "id": f"{prefix}-q{i:02d}",
             "topic": item["topic"],
+            "topicLabel": TOPIC_LABELS[item["topic"]],
             "question": item["question"],
             "options": item["options"],
             "correct": item["correct"],
@@ -760,13 +896,16 @@ def build_entries(items, prefix):
         }
         if "number" in item:
             entry["number"] = item["number"]
+            entry["hint"] = hints[item["number"]]
+        else:
+            entry["hint"] = hints[i - 1]
         entries.append(entry)
     return entries
 
 
 data = {
-    "level1": build_entries(LEVEL1, "l1"),
-    "level2": build_entries(LEVEL2, "l2"),
+    "level1": build_entries(LEVEL1, "l1", HINTS_L1),
+    "level2": build_entries(LEVEL2, "l2", HINTS_L2),
 }
 
 out_path = Path(__file__).resolve().parent.parent / "data" / "questions.json"

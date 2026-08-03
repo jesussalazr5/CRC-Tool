@@ -9,6 +9,7 @@
     index: 0,
     answers: [], // { question, chosenLetter, isCorrect }
     answered: false,
+    hintShown: false,
   };
 
   function shuffle(array) {
@@ -124,6 +125,12 @@
     state.index = 0;
     state.answers = [];
     state.answered = false;
+    state.hintShown = false;
+    renderQuiz();
+  }
+
+  function toggleHint() {
+    state.hintShown = !state.hintShown;
     renderQuiz();
   }
 
@@ -158,8 +165,35 @@
       ]),
       el("div", { class: "progress-bar" }, [el("div", { class: "progress-fill", style: `width:${progressPct}%` })]),
       el("p", { class: "question-text" }, q.question),
-      el("div", { class: "options" }, optionButtons.map((o) => o.btn)),
     ]);
+
+    if (!state.answered) {
+      card.appendChild(
+        el(
+          "button",
+          { class: "hint-toggle", onclick: toggleHint },
+          state.hintShown ? "💡 Ocultar dica" : "💡 Não sabe por onde começar? Peça uma dica"
+        )
+      );
+
+      if (state.hintShown) {
+        card.appendChild(
+          el("div", { class: "hint-box" }, [
+            el("div", { class: "hint-title" }, "💡 Dica"),
+            el("div", { class: "hint-text" }, q.hint),
+            el("div", { class: "hint-topic" }, [
+              "📚 Tema para revisar: ",
+              el("strong", {}, q.topicLabel),
+              " — veja no ",
+              el("a", { class: "hint-guide-link", onclick: renderGuide }, "Módulo 3 — Guia de Estudos"),
+              ".",
+            ]),
+          ])
+        );
+      }
+    }
+
+    card.appendChild(el("div", { class: "options" }, optionButtons.map((o) => o.btn)));
 
     if (state.answered) {
       const last = state.answers[state.answers.length - 1];
@@ -206,6 +240,7 @@
   function nextQuestion() {
     state.index += 1;
     state.answered = false;
+    state.hintShown = false;
     renderQuiz();
   }
 

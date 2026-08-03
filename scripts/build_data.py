@@ -1,0 +1,775 @@
+import json
+from pathlib import Path
+
+# ============================================================
+# LEVEL 1 — real Type 4 exam questions (48 of the 50; 12 and 42
+# are excluded because they were officially annulled/"anuladas").
+# Correct letters verified against the official gabarito:
+# 1:B 2:B 3:A 4:C 5:D 6:C 7:B 8:D 9:D 10:C 11:C 13:C 14:B 15:C
+# 16:B 17:C 18:B 19:A 20:D 21:D 22:A 23:C 24:A 25:A 26:D 27:A
+# 28:D 29:A 30:D 31:C 32:C 33:D 34:B 35:D 36:B 37:B 38:B 39:C
+# 40:A 41:A 43:D 44:C 45:C 46:D 47:D 48:D 49:D 50:D
+# ============================================================
+
+LEVEL1 = [
+    dict(number=1, topic="lingua_portuguesa",
+        question="Nem sempre os números indicam uma quantidade precisa. Assinale a frase em que há precisão.",
+        options={
+            "A": "Os especialistas em contagem de público dizem que havia mais de um milhão de pessoas na passeata.",
+            "B": "O mesmo motorista envolvido no acidente de ontem já havia passado por três outras ocorrências semelhantes.",
+            "C": "Perto de mil veículos passaram pelo pedágio, no mesmo dia, em função do feriado.",
+            "D": "O vídeo mostrava cerca de 50 automóveis que estavam parados por causa do desmoronamento.",
+        }, correct="B",
+        explanation="“Mais de um milhão”, “perto de mil” e “cerca de 50” são expressões aproximativas. Só “três outras ocorrências” apresenta uma quantidade exata e precisa."),
+
+    dict(number=2, topic="lingua_portuguesa",
+        question="Observe o texto de Bertrand Russell: “A matemática, vista corretamente, possui não apenas verdade, mas também suprema beleza – uma beleza fria e austera, como a da escultura.” Assinale a opção que mostra uma afirmação correta sobre o texto.",
+        options={
+            "A": "A frase mostra simultaneamente aspectos positivos e negativos da matemática.",
+            "B": "O emprego da expressão “não apenas verdade” abre a possibilidade de dizer-se “mas suprema beleza”.",
+            "C": "A expressão “uma beleza fria e austera” nega a afirmação anterior de que a matemática possui suprema beleza.",
+            "D": "Ao afirmar que a beleza da matemática é como a da escultura, a frase desvaloriza a escultura.",
+        }, correct="B",
+        explanation="A estrutura correlativa “não apenas X, mas também Y” prepara e justifica a continuação “mas também suprema beleza” — não há contradição nem desvalorização em nenhum dos dois termos comparados."),
+
+    dict(number=3, topic="estatistica_probabilidade",
+        question="O faturamento diário de uma rede varejista segue distribuição normal com média R$ 40.000,00. A probabilidade de que, em um dia aleatório, o faturamento esteja entre R$ 38.000,00 e R$ 42.000,00 é de 52%. Qual a probabilidade de o faturamento diário ser inferior a R$ 38.000,00?",
+        options={"A": "24%.", "B": "26%.", "C": "48%.", "D": "76%."}, correct="A",
+        explanation="R$ 38.000 e R$ 42.000 são simétricos em torno da média (± R$ 2.000). Os 48% restantes da curva se dividem igualmente nas duas caudas: 48% ÷ 2 = 24% abaixo de R$ 38.000."),
+
+    dict(number=4, topic="matematica_financeira",
+        question="Uma empresa financiou R$ 240.000,00 para pagar em 30 parcelas mensais pela Tabela SAC, com juros de 4% ao mês. Qual o valor do quinto pagamento?",
+        options={"A": "R$ 8.320,00.", "B": "R$ 16.000,00.", "C": "R$ 16.320,00.", "D": "R$ 17.600,00."}, correct="C",
+        explanation="Amortização constante = 240.000/30 = R$ 8.000. Antes do 5º pagamento já foram amortizadas 4 parcelas, saldo = 240.000 − 4×8.000 = R$ 208.000. Juros = 208.000×4% = R$ 8.320. Pagamento = 8.000+8.320 = R$ 16.320."),
+
+    dict(number=5, topic="licitacoes_concessoes",
+        question="Um órgão público federal deseja aderir a atas de registro de preços gerenciadas por um Município e por um Estado, sem ter participado da licitação original. Segundo a Lei nº 14.133/2021, esse órgão federal",
+        options={
+            "A": "não poderá aderir, salvo se houver concordância expressa dos entes federativos.",
+            "B": "poderá aderir somente à ata do Estado, não à do Município.",
+            "C": "poderá aderir somente à ata do Município, não à do Estado.",
+            "D": "não poderá aderir às atas geridas pelo Município e pelo Estado.",
+        }, correct="D",
+        explanation="A Lei nº 14.133/2021 restringiu a adesão (“carona”) a atas de registro de preços entre entes de esferas federativas distintas — órgão federal não pode aderir a ata gerida por Município ou Estado."),
+
+    dict(number=6, topic="licitacoes_concessoes",
+        question="Durante a execução de um contrato administrativo, a Administração Pública identifica necessidade de melhor adequá-lo às finalidades de interesse público. Segundo a Lei nº 14.133/2021, a Administração",
+        options={
+            "A": "não poderá modificar o contrato, que é lei entre as partes.",
+            "B": "poderá modificar o contrato apenas com concordância expressa ou tácita do contratado.",
+            "C": "poderá modificar unilateralmente o contrato, respeitados os direitos do contratado.",
+            "D": "não poderá modificar o contrato, salvo autorização judicial.",
+        }, correct="C",
+        explanation="As cláusulas exorbitantes autorizam a Administração a modificar unilateralmente os contratos administrativos por razões de interesse público, preservado o equilíbrio econômico-financeiro e os demais direitos do contratado."),
+
+    dict(number=7, topic="licitacoes_concessoes",
+        question="Uma sociedade empresária, concessionária de serviços públicos no Município Beta, deparou-se com a necessidade, em um sábado, de proceder à interrupção do serviço prestado à coletividade residente e domiciliada no bairro Gama, sem aviso prévio, em razão de situação de emergência constatada na localidade. Nesse cenário, considerando as disposições da Lei nº 8.987/1995, é correto afirmar que",
+        options={
+            "A": "não se está diante de hipótese de descontinuidade do serviço, pois a interrupção, em caso de emergência ou motivada por razões de ordem técnica, independe de aviso prévio.",
+            "B": "não se está diante de hipótese de descontinuidade do serviço, pois a interrupção ocorreu em situação de emergência, dispensando aviso prévio.",
+            "C": "se está diante de hipótese de descontinuidade do serviço, pois a interrupção, ainda que em situação de emergência, não pode se iniciar no final de semana.",
+            "D": "se está diante de hipótese de descontinuidade do serviço, pois a interrupção, ainda que em situação de emergência, pressupõe aviso prévio.",
+        }, correct="B",
+        explanation="O art. 6º, §3º, da Lei nº 8.987/1995 dispensa o aviso prévio quando a interrupção decorre de emergência. A opção B é a mais precisa porque aplica essa regra diretamente ao caso concreto descrito (interrupção que de fato ocorreu em situação de emergência), e não apenas enuncia a regra geral de forma abstrata como a opção A."),
+
+    dict(number=8, topic="etica_profissional",
+        question="Uma firma de auditoria, após emitir relatório de asseguração sobre informações financeiras de uma entidade, aceita, no mesmo exercício, assumir decisões administrativas relacionadas à elaboração dessas mesmas informações. Conforme a NBC PG 01 e a NBC PG 100 (R1), essa conduta",
+        options={
+            "A": "é aceitável se houver confiança mútua entre auditor e administração.",
+            "B": "é aceitável quando não houver impacto financeiro relevante.",
+            "C": "é aceitável desde que a firma revise tecnicamente seu próprio trabalho depois.",
+            "D": "não é aceitável, pois gera ameaça de autorrevisão e compromete a independência.",
+        }, correct="D",
+        explanation="Assumir responsabilidade de gestão da entidade auditada compromete a independência do auditor (ameaça de autorrevisão/familiaridade), ferindo o interesse público que fundamenta a profissão contábil."),
+
+    dict(number=9, topic="etica_profissional",
+        question="O contador de uma empresa é pressionado pela administração a postergar o reconhecimento de uma despesa relevante para melhorar artificialmente o resultado do período. Conforme a NBC PG 01, a conduta profissional adequada é",
+        options={
+            "A": "atender à solicitação, desde que sem impacto tributário relevante.",
+            "B": "ajustar temporariamente o resultado, se a administração assumir a responsabilidade por escrito.",
+            "C": "negociar a postergação da despesa para o exercício seguinte.",
+            "D": "manter a escrituração conforme as normas contábeis, mesmo sob pressão.",
+        }, correct="D",
+        explanation="O Código de Ética exige integridade e objetividade do contador, que deve resistir a pressões da administração e manter a escrituração de acordo com as normas contábeis vigentes, independentemente de conveniências gerenciais."),
+
+    dict(number=10, topic="estrutura_conceitual",
+        question="Uma empresa sabia que a inadimplência real estava próxima de 5%, mas manteve a estimativa anterior de 2% porque os administradores são avaliados pelo resultado operacional. Essa informação contábil pode ser considerada representação fidedigna?",
+        options={
+            "A": "Pode ser, pois é comparável.", "B": "Pode ser, pois é tempestiva.",
+            "C": "Não pode ser, pois não é neutra.", "D": "Não pode ser, pois não é verificável.",
+        }, correct="C",
+        explanation="Manter deliberadamente uma estimativa que se sabe desatualizada, para beneficiar o resultado apresentado, introduz viés — fere a neutralidade, um dos componentes da representação fidedigna na Estrutura Conceitual."),
+
+    dict(number=11, topic="normas_contabeis",
+        question="Uma máquina foi comprada em janeiro/2026 (contrato), paga em fevereiro, recebida e instalada em março (disponível para uso), mas só começou a ser efetivamente usada em abril. A partir de quando a máquina deve ser reconhecida no Balanço Patrimonial?",
+        options={"A": "Janeiro.", "B": "Fevereiro.", "C": "Março.", "D": "Abril."}, correct="C",
+        explanation="O reconhecimento do ativo ocorre quando a entidade obtém o controle do bem e ele está disponível para uso nas condições pretendidas pela administração — isso se dá em março, independentemente de o uso efetivo só começar em abril."),
+
+    dict(number=13, topic="estrutura_conceitual",
+        question="De acordo com a NBC TG Estrutura Conceitual (R2), ativo é um recurso econômico presente controlado pela entidade em decorrência de eventos passados. Um recurso econômico representa",
+        options={
+            "A": "um bem ou direito que pertence à entidade.",
+            "B": "uma obrigação de transferir benefícios econômicos.",
+            "C": "um direito que tem o potencial de produzir benefícios econômicos.",
+            "D": "uma obrigação que resulta em aumento no patrimônio líquido.",
+        }, correct="C",
+        explanation="A Estrutura Conceitual (R2) define recurso econômico como um direito que tem o potencial de produzir benefícios econômicos — o foco está no potencial de gerar benefícios, não na propriedade jurídica do bem em si."),
+
+    dict(number=14, topic="normas_contabeis",
+        question="Sobre a contabilização de um contrato de arrendamento mercantil de uma máquina entre a arrendatária ABC e a arrendadora XYZ, conforme a NBC TG 06 (R3), é correto afirmar que",
+        options={
+            "A": "o ativo de direito de uso é mensurado inicialmente pelo valor justo da máquina e depois pelo valor contábil de máquinas similares da ABC.",
+            "B": "se a ABC não pretende ficar com a máquina ao final do contrato, a vida útil para depreciação é a menor entre o prazo do arrendamento e a vida útil da máquina.",
+            "C": "o reconhecimento do direito de uso pela ABC obriga a baixa do imobilizado pela XYZ.",
+            "D": "a depreciação do direito de uso na ABC tem como contrapartida o passivo de arrendamento reconhecido pela XYZ.",
+        }, correct="B",
+        explanation="Quando não há expectativa de transferência de propriedade ao final do contrato, a arrendatária deve depreciar o ativo de direito de uso pelo menor prazo entre a duração do arrendamento e a vida útil do bem."),
+
+    dict(number=15, topic="normas_contabeis",
+        question="Uma empresa possui os segmentos “Cervejas” (12% da receita combinada) e “Refrigerantes” (9% da receita, mas 11% dos ativos combinados). Ambos são revisados regularmente pelo CODM. Conforme a NBC TG 22 (R2), sobre a divulgação por segmento é correto afirmar que",
+        options={
+            "A": "apenas Cervejas deve ser divulgado, pois só ele ultrapassa 10% da receita.",
+            "B": "apenas Refrigerantes deve ser divulgado, pois o critério de ativos já é suficiente.",
+            "C": "ambos devem ser divulgados, pois cada um atende a pelo menos um critério quantitativo de 10%.",
+            "D": "nenhum deve ser divulgado, pois é preciso atender simultaneamente aos critérios de receita, resultado e ativos.",
+        }, correct="C",
+        explanation="Basta que um segmento ultrapasse UM dos limiares de 10% (receita, resultado OU ativos) para ser reportável. Cervejas atinge o limiar de receita e Refrigerantes o de ativos — ambos devem ser divulgados separadamente."),
+
+    dict(number=16, topic="normas_contabeis",
+        question="Uma empresa reconheceu ativos fiscais diferidos relevantes decorrentes de prejuízos fiscais, sustentados por projeções de lucros tributáveis futuros elaboradas pela administração. Conforme a NBC TG 32 (R4), o reconhecimento desses ativos é adequado somente quando",
+        options={
+            "A": "houver qualquer projeção de lucro futuro, independentemente de sua probabilidade.",
+            "B": "for provável a existência de lucro tributável futuro suficiente para a compensação.",
+            "C": "existirem prejuízos fiscais acumulados, o que por si só já garante o reconhecimento.",
+            "D": "o auditor não fizer ressalva alguma sobre o tema em seu relatório.",
+        }, correct="B",
+        explanation="A NBC TG 32 exige que o reconhecimento do ativo fiscal diferido esteja condicionado à probabilidade de geração de lucro tributável futuro suficiente para absorver os prejuízos fiscais — mera projeção não sustentada por essa probabilidade não basta."),
+
+    dict(number=17, topic="normas_contabeis",
+        question="Um cliente compra um livro on-line, paga via PIX e recebe a nota fiscal na hora. A mercadoria é despachada pela própria transportadora da loja e, antes da entrega, o caminhão sofre acidente e destrói a carga. Conforme a NBC TG 47, a receita dessa venda deve ser reconhecida",
+        options={
+            "A": "no momento do pagamento via PIX.",
+            "B": "no momento do despacho da mercadoria pelo centro de distribuição.",
+            "C": "quando o livro for efetivamente entregue ao cliente; a perda antes disso é da própria companhia.",
+            "D": "no momento da emissão da nota fiscal eletrônica.",
+        }, correct="C",
+        explanation="A receita só é reconhecida quando o controle do bem é transferido ao cliente — na entrega. Como o acidente ocorreu antes da entrega, o controle ainda era da companhia, que deve arcar com a perda."),
+
+    dict(number=18, topic="normas_contabeis",
+        question="Uma empresa gastou R$ 10.000,00 na obtenção de novo conhecimento, R$ 15.000,00 na formulação e seleção final de alternativas de materiais e processos, e R$ 20.000,00 no projeto, construção e teste de protótipos — todos os requisitos da fase de desenvolvimento da NBC TG 04 (R4) estavam presentes. Vida útil do ativo intangível: 10 anos, valor residual zero, amortização pela linha reta. Qual a despesa de amortização anual?",
+        options={"A": "R$ 0,00.", "B": "R$ 2.000,00.", "C": "R$ 3.500,00.", "D": "R$ 4.500,00."}, correct="B",
+        explanation="A NBC TG 04 classifica “obtenção de novo conhecimento” e “formulação, avaliação e seleção final de alternativas” como fase de PESQUISA (sempre despesa do período). Só “projeto, construção e teste de protótipos” (R$ 20.000) é fase de desenvolvimento, capitalizável. Amortização anual = 20.000/10 = R$ 2.000."),
+
+    dict(number=19, topic="normas_contabeis",
+        question="Um prédio (custo R$ 500.000,00, vida útil 20 anos, valor residual R$ 100.000,00) foi classificado como mantido para venda após 5 anos de uso (05/01/2025). Um ano depois (05/01/2026), a empresa desistiu da venda e reclassificou o prédio como imobilizado. Em 05/01/2026: valor justo R$ 450.000,00, despesas de venda R$ 45.000,00, valor em uso R$ 420.000,00. Pela NBC TG 31 (R4), por qual valor o prédio deve ser reclassificado no imobilizado?",
+        options={"A": "R$ 380.000,00.", "B": "R$ 405.000,00.", "C": "R$ 420.000,00.", "D": "R$ 450.000,00."}, correct="A",
+        explanation="Reclassifica-se pelo MENOR valor entre: (i) o valor contábil que o ativo teria se nunca tivesse sido classificado como mantido para venda (500.000 − 100.000 depreciação acumulada de 5 anos = 400.000; menos mais 1 ano de depreciação de 20.000 = 380.000); e (ii) o valor recuperável em 05/01/2026 (maior entre 450.000−45.000=405.000 e 420.000, ou seja 420.000). O menor entre 380.000 e 420.000 é R$ 380.000,00."),
+
+    dict(number=20, topic="normas_contabeis",
+        question="Uma enchente inutilizou 25% dos estoques de uma metalúrgica. Qual o tratamento contábil correto dessa perda?",
+        options={
+            "A": "Custo da Mercadoria Vendida (CMV), pois reduz o volume disponível para venda.",
+            "B": "Despesa operacional, sem baixa do saldo de estoques.",
+            "C": "Custo normal das operações, diluído entre as unidades produzidas.",
+            "D": "Despesa (perda por sinistro), com a correspondente baixa no saldo de estoques.",
+        }, correct="D",
+        explanation="Perdas anormais/involuntárias de estoque (sinistros) não são custo do produto — devem ser reconhecidas diretamente como despesa do período, com a baixa correspondente no saldo de estoques, já que não há expectativa de recuperação econômica."),
+
+    dict(number=21, topic="normas_contabeis",
+        question="Uma concessionária emitiu faturas a prazo de R$ 100.000,00, vencíveis em 12 meses, com ajuste a valor presente de R$ 5.000,00 (NBC TG 12 – R1). Qual o lançamento correto no reconhecimento da receita?",
+        options={
+            "A": "Débito Clientes 100.000; Crédito Receita de Serviços 100.000.",
+            "B": "Débito Clientes 95.000; Crédito Receita Financeira a Apropriar 5.000; Crédito Receita de Serviços 100.000.",
+            "C": "Débito Clientes 95.000; Débito Juros a Apropriar 5.000; Crédito Receita de Serviços 100.000.",
+            "D": "Débito Clientes 100.000; Crédito Receita de Serviços 95.000; Crédito Juros a Apropriar 5.000.",
+        }, correct="D",
+        explanation="Clientes é debitado pelo valor nominal (100.000); a receita é reconhecida pelo valor presente (95.000); a diferença (5.000) vai para uma conta retificadora do ativo (“Juros/Receita Financeira a Apropriar”), a crédito, para ser apropriada como receita financeira ao longo do prazo."),
+
+    dict(number=22, topic="lancamentos_contabeis",
+        question="Uma empresa apresenta os saldos: Adiantamento a fornecedor R$ 12.000,00; Adiantamento de clientes R$ 8.000,00; Encargos financeiros a transcorrer (sobre empréstimos) R$ 3.500,00; Ações próprias em tesouraria R$ 5.000,00; Juros sobre capital próprio a pagar R$ 4.500,00; Perdas estimadas com créditos de liquidação duvidosa R$ 2.000,00. Qual o somatório, em valores absolutos, das contas de natureza devedora?",
+        options={"A": "R$ 20.500,00.", "B": "R$ 15.500,00.", "C": "R$ 12.000,00.", "D": "R$ 20.000,00."}, correct="A",
+        explanation="Natureza devedora: Adiantamento a fornecedor (12.000, ativo) + Encargos financeiros a transcorrer (3.500, retificadora de passivo) + Ações em tesouraria (5.000, retificadora do PL) = 20.500. Adiantamento de clientes e Juros sobre capital próprio a pagar são passivos (credoras); a PECLD é retificadora do ativo, portanto credora."),
+
+    dict(number=23, topic="lancamentos_contabeis",
+        question="A empresa Alfa possui 70% de participação em Beta, avaliada por equivalência patrimonial. Beta apurou lucro líquido de R$ 1.000.000,00, sendo R$ 800.000,00 destinados a reservas e R$ 200.000,00 a dividendos. Qual o ganho de equivalência patrimonial a ser reconhecido por Alfa?",
+        options={"A": "R$ 140.000,00.", "B": "R$ 560.000,00.", "C": "R$ 700.000,00.", "D": "R$ 3.500.000,00."}, correct="C",
+        explanation="A equivalência patrimonial incide sobre o lucro líquido total do período, independentemente da destinação (reservas ou dividendos): 70% × 1.000.000 = R$ 700.000,00."),
+
+    dict(number=24, topic="normas_contabeis",
+        question="Na Demonstração do Valor Adicionado (NBC TG 09 – R1), uma empresa apresenta: Despesas financeiras R$ 35.000,00; Assistência médica a empregados R$ 80.000,00; Aluguel R$ 120.000,00; Remuneração direta de empregados R$ 240.000,00. Qual o saldo de “Remuneração de Capitais de Terceiros”?",
+        options={"A": "R$ 155.000,00.", "B": "R$ 235.000,00.", "C": "R$ 320.000,00.", "D": "R$ 475.000,00."}, correct="A",
+        explanation="“Remuneração de Capitais de Terceiros” reúne despesas financeiras e aluguéis: 35.000 + 120.000 = R$ 155.000,00. Assistência médica e remuneração direta pertencem ao grupo “Pessoal”, não a capitais de terceiros."),
+
+    dict(number=25, topic="lancamentos_contabeis",
+        question="Uma empresa vendeu mercadorias por R$ 250.000,00, com controle transferido de imediato: 50% recebido em Caixa, 25% em Banco, 25% a prazo (30 dias). Qual o lançamento correto?",
+        options={
+            "A": "Débito Caixa 125.000; Débito Banco 62.500; Débito Duplicatas a Receber 62.500; Crédito Receita de Vendas 250.000.",
+            "B": "Débito Caixa 125.000; Débito Duplicatas a Receber 125.000; Crédito Receita de Vendas 250.000.",
+            "C": "Débito Caixa 250.000; Crédito Receita de Vendas 250.000.",
+            "D": "Débito Caixa 125.000; Débito Banco 125.000; Crédito Receita de Vendas 250.000.",
+        }, correct="A",
+        explanation="50% de 250.000 = 125.000 em Caixa; 25% = 62.500 em Banco; 25% = 62.500 em Duplicatas a Receber (a prazo); tudo creditado em Receita de Vendas, totalizando 250.000."),
+
+    dict(number=26, topic="lancamentos_contabeis",
+        question="Uma empresa de serviços apresenta: Receita bruta R$ 1.500.000,00; Impostos sobre serviços R$ 40.000,00; Descontos incondicionais R$ 30.000,00; Custo dos serviços prestados R$ 400.000,00; Despesas operacionais R$ 20.000,00; Despesas com tributos sobre o lucro R$ 510.000,00. Qual o resultado apurado?",
+        options={
+            "A": "Um lucro bruto de R$ 1.050.000,00.", "B": "Uma receita líquida de R$ 1.030.000,00.",
+            "C": "Um lucro bruto de R$ 1.010.000,00.", "D": "Um lucro líquido de R$ 500.000,00.",
+        }, correct="D",
+        explanation="Receita líquida = 1.500.000−40.000−30.000 = 1.430.000. Lucro bruto = 1.430.000−400.000 = 1.030.000. Resultado antes dos tributos = 1.030.000−20.000 = 1.010.000. Lucro líquido = 1.010.000−510.000 = R$ 500.000,00."),
+
+    dict(number=27, topic="lancamentos_contabeis",
+        question="Compra de mercadoria à vista: valor unitário R$ 200,00, 1.000 unidades; imposto de importação R$ 10,00/unidade (por fora, não recuperável); seguro R$ 6.000,00; transporte R$ 4.000,00; ICMS R$ 20,00/unidade (embutido, não recuperável); desconto comercial R$ 15,00/unidade. Qual o custo total do estoque adquirido?",
+        options={"A": "R$ 205.000,00.", "B": "R$ 210.000,00.", "C": "R$ 220.000,00.", "D": "R$ 235.000,00."}, correct="A",
+        explanation="200.000 (1.000×200, ICMS já embutido e não recuperável, permanece no custo) − 15.000 (desconto comercial) + 10.000 (imposto de importação, não recuperável) + 6.000 (seguro) + 4.000 (transporte) = R$ 205.000,00."),
+
+    dict(number=28, topic="normas_contabeis",
+        question="Uma construtora foi processada e os advogados avaliaram a chance de perda da causa como “possível” (não provável), com pedido de indenização de R$ 200.000,00. Conforme a NBC TG 25 (R2), qual o impacto no Balanço Patrimonial em 31/12/2025?",
+        options={
+            "A": "Provisão para contingências de R$ 200.000,00.", "B": "Provisão para contingências de R$ 500.000,00.",
+            "C": "Provisão para contingências de R$ 700.000,00.", "D": "Não houve impacto nos elementos patrimoniais.",
+        }, correct="D",
+        explanation="Provisões só são reconhecidas quando a perda é PROVÁVEL. Sendo a chance apenas “possível”, cabe apenas divulgação em nota explicativa (passivo contingente) — sem registro de provisão nas contas patrimoniais."),
+
+    dict(number=29, topic="normas_contabeis",
+        question="Uma empresa passou a apresentar a Demonstração dos Fluxos de Caixa pelo método indireto (antes usava o direto) e republicou o ano anterior para fins comparativos. Ao comparar o saldo de caixa gerado pelas três atividades (operacional, investimento e financiamento) nos dois métodos, verifica-se que",
+        options={
+            "A": "o saldo de caixa gerado pelas três atividades permanece igual.",
+            "B": "o saldo de caixa das três atividades apresenta mudança.",
+            "C": "apenas o saldo da atividade operacional apresenta mudança.",
+            "D": "apenas o saldo da atividade de financiamento apresenta mudança.",
+        }, correct="A",
+        explanation="Os métodos direto e indireto diferem apenas na FORMA de apresentar o fluxo das atividades operacionais; o valor total (saldo) gerado por cada uma das três atividades é sempre o mesmo, qualquer que seja o método escolhido."),
+
+    dict(number=30, topic="normas_contabeis",
+        question="Sobre influência significativa (NBC TG 18 – R4), analise: I. Presume-se influência significativa com 20% ou mais do poder de voto, salvo prova em contrário. II. Com menos de 20%, jamais se pode supor influência significativa. III. Representação no Conselho de Administração da investida pode evidenciar influência significativa. Está correto o que se afirma em",
+        options={"A": "I, apenas.", "B": "II e III, apenas.", "C": "I, II e III.", "D": "I e III, apenas."}, correct="D",
+        explanation="I e III são corretas pela NBC TG 18. II é falsa: mesmo com participação abaixo de 20%, influência significativa pode existir por outras evidências (como representação no conselho), não sendo uma impossibilidade absoluta."),
+
+    dict(number=31, topic="normas_contabeis",
+        question="Um ativo tem custo de aquisição R$ 105.000,00, depreciação acumulada R$ 20.000,00 e perda por redução ao valor recuperável já reconhecida em período anterior de R$ 10.000,00. No teste de recuperabilidade atual: valor justo líquido de despesas de venda R$ 80.000,00; valor em uso R$ 90.000,00. É correto afirmar que",
+        options={
+            "A": "o valor contábil líquido do ativo, antes do ajuste, é R$ 85.000,00.",
+            "B": "o valor recuperável do ativo é R$ 80.000,00.",
+            "C": "o valor recuperável do ativo é R$ 90.000,00.",
+            "D": "a perda estimada para esse ativo é de R$ 25.000,00.",
+        }, correct="C",
+        explanation="Valor contábil líquido atual = 105.000−20.000−10.000 = 75.000 (não 85.000). Valor recuperável = maior entre valor justo líquido de venda (80.000) e valor em uso (90.000) = R$ 90.000,00, que é maior que o valor contábil — logo não há nova perda."),
+
+    dict(number=32, topic="normas_contabeis",
+        question="Uma loja usa Custo Médio Ponderado móvel diário. Sem estoque inicial: 02/07 compra 20un a R$ 3.000; 10/07 vende 10un; 15/07 compra 15un a R$ 3.200; 20/07 vende 8un; 27/07 vende 5un. Qual o valor do estoque final em 31/07?",
+        options={"A": "R$ 36.988,00.", "B": "R$ 37.200,00.", "C": "R$ 37.440,00.", "D": "R$ 61.200,00."}, correct="C",
+        explanation="02/07: 20un a 3.000 (total 60.000). 10/07: vende 10, restam 10un a 3.000 (30.000). 15/07: compra 15 a 3.200 (48.000); total 25un = 78.000, média 3.120/un. 20/07: vende 8, restam 17un = 53.040. 27/07: vende 5, restam 12un × 3.120 = R$ 37.440,00."),
+
+    dict(number=33, topic="normas_contabeis",
+        question="Cia X (Disponibilidades R$ 80.000,00, PL R$ 80.000,00) adquire 90% da Cia Y (Disponibilidades R$ 40.000,00, PL R$ 40.000,00) por R$ 42.000,00 à vista, com os valores contábeis correspondendo aos valores justos. Qual o saldo do Ativo Circulante (Disponibilidades) no Balanço Consolidado após a compra?",
+        options={"A": "R$ 38.000,00.", "B": "R$ 74.000,00.", "C": "R$ 75.800,00.", "D": "R$ 78.000,00."}, correct="D",
+        explanation="Disponibilidades de X após o pagamento: 80.000−42.000 = 38.000. Na consolidação, soma-se 100% das disponibilidades de Y (mesmo com 90% de participação, a subsidiária é consolidada integralmente): 38.000+40.000 = R$ 78.000,00."),
+
+    dict(number=34, topic="normas_contabeis",
+        question="Uma empresa pagou R$ 20.000,00 de juros sobre empréstimo bancário. Conforme a NBC TG 03 (R3), os juros pagos podem ser classificados, na Demonstração dos Fluxos de Caixa, como fluxos de caixa",
+        options={
+            "A": "operacionais ou de investimento.", "B": "operacionais ou de financiamento.",
+            "C": "de investimento ou de financiamento.", "D": "de financiamento ou de equivalentes de caixa.",
+        }, correct="B",
+        explanation="A NBC TG 03 permite classificar os juros pagos como atividade operacional (por afetarem o resultado) ou como atividade de financiamento (por serem o custo de obtenção de recursos financeiros)."),
+
+    dict(number=35, topic="custos",
+        question="Uma fábrica de violinos vende cada unidade por R$ 2.000,00. Produziu 1.200 e vendeu 900 unidades. Custo variável: R$ 600,00/violino. Custos fixos mensais de fábrica: supervisores R$ 150.000,00, depreciação de máquinas R$ 39.800,00, aluguel da fábrica R$ 15.000,00, custos diversos de manufatura R$ 10.000,00. (Administrativo e propaganda não entram no custo fabril.) Pelo custeio por absorção, qual o Lucro Bruto?",
+        options={"A": "R$ 1.061.397,00.", "B": "R$ 1.465.200,00.", "C": "R$ 1.045.200,00.", "D": "R$ 1.098.900,00."}, correct="D",
+        explanation="Custos fixos de fábrica = 150.000+39.800+15.000+10.000 = 214.800. Custo variável total (produção) = 600×1.200 = 720.000. Custo total de produção = 934.800 ÷ 1.200 = R$ 779,00/un. CMV (900un) = 701.100. Receita = 900×2.000 = 1.800.000. Lucro Bruto = 1.800.000−701.100 = R$ 1.098.900,00."),
+
+    dict(number=36, topic="custos",
+        question="Uma indústria tem os setores Montagem (30 m²) e Acabamento (50 m²). O custo de energia elétrica da produção foi R$ 25.000,00, rateado por área ocupada. Qual o valor alocado ao setor de Montagem?",
+        options={"A": "R$ 15.625,00.", "B": "R$ 9.375,00.", "C": "R$ 12.500,00.", "D": "R$ 10.000,00."}, correct="B",
+        explanation="Área total = 30+50 = 80 m². Montagem = 30/80 × 25.000 = R$ 9.375,00."),
+
+    dict(number=37, topic="custos",
+        question="Uma indústria registrou: consumo de matéria-prima X R$ 17.900,00; depreciação do prédio do escritório R$ 6.600,00; compra de matéria-prima X R$ 100.000,00; depreciação de máquinas do parque fabril R$ 8.500,00; salários do setor de Faturamento R$ 23.000,00; aquisição de máquina para o parque fabril R$ 149.000,00. Quais os valores corretos de Custos, Despesas e Investimentos?",
+        options={
+            "A": "Custos: R$ 126.400,00; Despesas: R$ 29.600,00; Investimentos: R$ 149.000,00.",
+            "B": "Custos: R$ 26.400,00; Despesas: R$ 29.600,00; Investimentos: R$ 249.000,00.",
+            "C": "Custos: R$ 26.400,00; Despesas: R$ 52.600,00; Investimentos: R$ 149.000,00.",
+            "D": "Custos: R$ 35.100,00; Despesas: R$ 29.600,00; Investimentos: R$ 228.000,00.",
+        }, correct="B",
+        explanation="Custos (ligados à produção): consumo de matéria-prima (17.900) + depreciação de máquinas fabris (8.500) = 26.400. Despesas (administrativas/comerciais): depreciação do escritório (6.600) + salários do Faturamento (23.000) = 29.600. Investimentos (gastos ativados): compra de matéria-prima ainda em estoque (100.000) + aquisição da máquina (149.000) = 249.000."),
+
+    dict(number=38, topic="custos",
+        question="Custo Padrão × Custo Real (totais): Tensoativos 135,00 / 247,50; Óleo de Argan 39,30 / 49,30; Estabilizantes de espuma 38,25 / 14,03; Espessantes 5,60 / 14,00. Em relação às variações de custo, é correto afirmar que",
+        options={
+            "A": "o Óleo de Argan apresentou variações favoráveis.",
+            "B": "os Estabilizantes de espuma apresentam variações favoráveis.",
+            "C": "as variações de Estabilizantes de espuma e Espessantes são desfavoráveis.",
+            "D": "as variações de Tensoativos e Óleo de Argan são favoráveis.",
+        }, correct="B",
+        explanation="Variação favorável ocorre quando o custo real é MENOR que o padrão. Só os Estabilizantes de espuma tiveram custo real (14,03) menor que o padrão (38,25) — uma variação favorável. Os demais itens tiveram custo real maior que o padrão (desfavoráveis)."),
+
+    dict(number=39, topic="custos",
+        question="Uma empresa compra matéria-prima a prazo (pagamento em 20 dias), leva 70 dias para fabricar/armazenar/vender, e vende a prazo, recebendo em média em 80 dias. Qual o ciclo operacional dessa empresa?",
+        options={"A": "70 dias.", "B": "90 dias.", "C": "150 dias.", "D": "160 dias."}, correct="C",
+        explanation="Ciclo operacional = tempo de produção/armazenagem/venda + prazo médio de recebimento = 70+80 = 150 dias. O prazo de pagamento a fornecedores (20 dias) não integra o ciclo operacional — ele compõe o ciclo financeiro."),
+
+    dict(number=40, topic="custos",
+        question="Uma joalheria vende relógios a R$ 300,00 (custo variável R$ 170,00), com ponto de equilíbrio de 500 unidades. O preço sobe para R$ 330,00, mantidos os custos fixos e variáveis. Qual o novo ponto de equilíbrio?",
+        options={"A": "407 unidades.", "B": "455 unidades.", "C": "475 unidades.", "D": "550 unidades."}, correct="A",
+        explanation="Margem de contribuição original = 300−170 = 130/un. Custo fixo = 500×130 = 65.000. Nova margem = 330−170 = 160/un. Novo ponto de equilíbrio = 65.000/160 = 406,25 ≈ 407 unidades."),
+
+    dict(number=41, topic="indicadores_financeiros",
+        question="Uma empresa projeta: Receitas a prazo R$ 250.000,00 (recebimento médio em 38 dias); CPV R$ 110.000,00 (estoque médio de 32 dias); compras a prazo R$ 90.000,00 (pagamento em 34 dias); demais despesas operacionais R$ 30.000,00 (pagamento em 22 dias), ano de 365 dias. Qual a Necessidade de Capital de Giro (NCG)?",
+        options={"A": "R$ 25.479,00.", "B": "R$ 26.027,00.", "C": "R$ 27.287,00.", "D": "R$ 35.671,00."}, correct="A",
+        explanation="Contas a receber = (250.000/365)×38 ≈ 26.027. Estoques = (110.000/365)×32 ≈ 9.644. Ativo Circulante Operacional ≈ 35.671. Contas a pagar = (90.000/365)×34 ≈ 8.384. Demais despesas a pagar = (30.000/365)×22 ≈ 1.808. Passivo Circulante Operacional ≈ 10.192. NCG = 35.671−10.192 ≈ R$ 25.479,00."),
+
+    dict(number=43, topic="setor_publico",
+        question="Sobre ativos de concessão de serviços públicos, conforme o MCASP, avalie: I. A mensuração inicial deve ser pelo menor valor entre custo histórico e valor recuperável. II. Se o concedente não controla nem regula os serviços, o ativo não deve ser por ele reconhecido. III. Os ativos de concessão vão para o intangível, sem necessidade de segregação em classes. IV. Estão sujeitos a depreciação, reavaliação e redução a valor recuperável, como os demais itens do imobilizado. Estão corretas apenas",
+        options={"A": "I e IV.", "B": "III e IV.", "C": "II e III.", "D": "II e IV."}, correct="D",
+        explanation="I é falsa (a mensuração inicial é pelo valor justo, não pelo menor entre custo histórico e valor recuperável). III é falsa (há necessidade de segregação em classes, como nos demais itens do imobilizado). II e IV estão corretas."),
+
+    dict(number=44, topic="setor_publico",
+        question="Um governo estadual incluiu na LOA receitas de um novo tributo cuja criação ainda dependia de aprovação legislativa e regulamentação. Essa prática viola, principalmente, o princípio orçamentário da",
+        options={"A": "universalidade.", "B": "exclusividade.", "C": "legalidade.", "D": "anualidade."}, correct="C",
+        explanation="Só se pode orçar receita cuja base legal já exista (tributo efetivamente instituído e regulamentado). Prever receita de tributo ainda não aprovado fere o princípio da legalidade."),
+
+    dict(number=45, topic="setor_publico",
+        question="Um empenho formalizado foi anulado parcialmente. Qual o motivo mais provável para essa anulação parcial?",
+        options={
+            "A": "O objeto do contrato não foi cumprido.", "B": "A nota de empenho foi emitida de modo incorreto.",
+            "C": "O valor do empenho excedia o montante da despesa realizada.", "D": "O valor empenhado era insuficiente para a despesa realizada.",
+        }, correct="C",
+        explanation="A anulação parcial de empenho ocorre tipicamente quando o valor reservado é maior do que o efetivamente necessário para a despesa realizada — o excedente é anulado e liberado."),
+
+    dict(number=46, topic="etica_profissional",
+        question="Em uma organização contábil: o contador definiu diretrizes gerais de longo prazo; os gestores desdobraram essas diretrizes em metas por setor; a equipe executou as rotinas diárias. Associe: 1. Planejamento estratégico; 2. Tático; 3. Operacional — a I. execução de rotinas diárias; II. definição de diretrizes gerais de longo prazo; III. desdobramento em metas setoriais.",
+        options={"A": "1–III; 2–II; 3–I.", "B": "1–I; 2–III; 3–II.", "C": "1–II; 2–I; 3–III.", "D": "1–II; 2–III; 3–I."}, correct="D",
+        explanation="Estratégico = diretrizes gerais de longo prazo (II); Tático = desdobramento em metas setoriais (III); Operacional = execução das rotinas diárias (I). Logo: 1–II; 2–III; 3–I."),
+
+    dict(number=47, topic="auditoria",
+        question="Mesmo após a execução adequada dos procedimentos de auditoria, pode haver emissão de opinião inadequada sobre as demonstrações contábeis. Esse cenário representa o conceito de",
+        options={
+            "A": "julgamento técnico do auditor, sujeito a interpretações.",
+            "B": "erro natural do processo contábil, sem intenção da administração.",
+            "C": "probabilidade de falha nos procedimentos ou controles.",
+            "D": "possibilidade de o auditor emitir opinião inadequada quando há distorções relevantes não detectadas.",
+        }, correct="D",
+        explanation="Risco de auditoria é, por definição, a possibilidade de o auditor expressar uma opinião de auditoria inadequada quando as demonstrações contábeis contêm distorções relevantes que não foram detectadas pelo trabalho de auditoria."),
+
+    dict(number=48, topic="auditoria",
+        question="Durante uma auditoria, o auditor identifica vendas fictícias registradas por um funcionário para inflar as receitas — configurando fraude intencional. Diante da gravidade, o auditor deve, imediatamente,",
+        options={
+            "A": "procurar a ajuda de especialistas.", "B": "renunciar ao trabalho.",
+            "C": "fazer denúncia anônima à Polícia Federal.", "D": "relatar ao Conselho de Administração (aos responsáveis pela governança).",
+        }, correct="D",
+        explanation="Ao identificar fraude, especialmente envolvendo pessoal da entidade, a norma de auditoria exige comunicação tempestiva aos responsáveis pela governança (como o Conselho de Administração), e não medidas unilaterais como denúncia anônima ou renúncia imediata."),
+
+    dict(number=49, topic="direito_pericia",
+        question="Um perito contábil recebeu prazo de 30 dias úteis para entregar o laudo, mas, por dificuldades técnicas, solicitou prorrogação ao juiz. De acordo com o CPC/2015, o juiz",
+        options={
+            "A": "poderá conceder, por uma vez, prorrogação de mais 30 dias úteis, se justificado.",
+            "B": "deverá conceder, por uma vez, prorrogação de mais 15 dias úteis, se justificado.",
+            "C": "deverá conceder, por uma vez, prorrogação de mais 30 dias úteis, se justificado.",
+            "D": "poderá conceder, por uma vez, prorrogação de mais 15 dias úteis, se justificado.",
+        }, correct="D",
+        explanation="O art. 476 do CPC/2015 prevê que o prazo do perito pode ser prorrogado, por uma vez, por metade do prazo originalmente fixado (30÷2=15 dias úteis), mediante motivo justificado — é uma faculdade do juiz (“poderá”), não uma obrigação."),
+
+    dict(number=50, topic="direito_pericia",
+        question="Um empregado trabalhou de 01/03/2021 a 31/03/2023 (salário R$ 3.600,00/mês). Gozou 15 dias de férias; o restante ficou acumulado como férias proporcionais, com adicional de 1/3 (meses de 30 dias). Qual o valor total a pagar pelo saldo de férias proporcionais com o adicional de 1/3?",
+        options={"A": "R$ 4.800,00.", "B": "R$ 5.200,00.", "C": "R$ 6.780,00.", "D": "R$ 7.600,00."}, correct="D",
+        explanation="Em 25 meses trabalhados: 2 períodos completos (60 dias de férias) + 1 mês do 3º período (2,5 dias, a 2,5 dias/mês) = 62,5 dias de direito. Menos os 15 dias já gozados = 47,5 dias devidos. Salário-dia = 3.600/30 = 120. Com 1/3: 120×4/3 = 160/dia. 47,5×160 = R$ 7.600,00."),
+]
+
+assert len(LEVEL1) == 48, len(LEVEL1)
+
+# ============================================================
+# LEVEL 2 — 50 new original questions, written to mirror the
+# topic mix, style and difficulty of Level 1. Not from the CFC/
+# FGV exam; supplementary practice material.
+# ============================================================
+
+LEVEL2 = [
+    dict(topic="lingua_portuguesa",
+        question="Assinale a frase em que o número expressa uma quantidade aproximada, e não precisa.",
+        options={
+            "A": "A reunião contou com exatamente 42 participantes inscritos.",
+            "B": "O relatório apontou cerca de 300 divergências nos lançamentos contábeis.",
+            "C": "O auditor analisou as 12 notas fiscais destacadas pela equipe.",
+            "D": "A empresa emitiu 7 boletos referentes ao mês de março.",
+        }, correct="B",
+        explanation="“Cerca de 300” é uma expressão aproximativa. Os demais números (42, 12, 7) são apresentados como valores exatos e específicos."),
+
+    dict(topic="lingua_portuguesa",
+        question="Observe o texto: “A auditoria não busca apenas identificar erros, mas também compreender suas causas.” Assinale a opção correta sobre o texto.",
+        options={
+            "A": "A frase nega, na segunda parte, o que afirma na primeira.",
+            "B": "A estrutura “não apenas X, mas também Y” amplia o sentido de X com Y, sem contradizê-lo.",
+            "C": "A frase sugere que identificar erros é menos importante do que compreendê-los.",
+            "D": "A conjunção “mas” indica, aqui, uma oposição entre as duas partes da frase.",
+        }, correct="B",
+        explanation="A estrutura correlativa “não apenas X, mas também Y” tem valor aditivo/aditivo-enfático: soma um segundo elemento ao primeiro, sem negá-lo ou hierarquizá-lo como menos importante."),
+
+    dict(topic="estatistica_probabilidade",
+        question="O tempo de conclusão de um laudo pericial segue distribuição normal com média de 20 dias. A probabilidade de o laudo ficar pronto entre 18 e 22 dias é de 60%. Qual a probabilidade de o laudo demorar mais de 22 dias?",
+        options={"A": "20%.", "B": "30%.", "C": "40%.", "D": "60%."}, correct="A",
+        explanation="18 e 22 dias são simétricos em torno da média (±2 dias). Os 40% restantes se dividem igualmente entre as duas caudas: 40%÷2 = 20% acima de 22 dias."),
+
+    dict(topic="matematica_financeira",
+        question="Uma empresa financiou R$ 100.000,00 em 10 parcelas mensais pela Tabela SAC, com juros de 2% ao mês. Qual o valor do terceiro pagamento?",
+        options={"A": "R$ 10.000,00.", "B": "R$ 11.600,00.", "C": "R$ 11.800,00.", "D": "R$ 12.000,00."}, correct="B",
+        explanation="Amortização constante = 100.000/10 = R$ 10.000. Antes do 3º pagamento já foram amortizadas 2 parcelas: saldo = 100.000 − 20.000 = 80.000. Juros = 80.000×2% = 1.600. Pagamento = 10.000+1.600 = R$ 11.600,00."),
+
+    dict(topic="matematica_financeira",
+        question="Um financiamento de R$ 60.000,00 será quitado pelo Sistema Price (parcelas fixas) em 12 meses, com juros de 2% ao mês. O valor de cada parcela é aproximadamente",
+        options={"A": "R$ 5.000,00.", "B": "R$ 5.550,00.", "C": "R$ 5.680,00.", "D": "R$ 6.200,00."}, correct="C",
+        explanation="Pelo Sistema Price, a parcela fixa é PMT = PV × [i(1+i)^n] / [(1+i)^n − 1]. Com PV=60.000, i=2%, n=12: (1,02)^12 ≈ 1,2682; PMT ≈ 60.000 × (0,02×1,2682)/(0,2682) ≈ 60.000×0,09456 ≈ R$ 5.680,00."),
+
+    dict(topic="licitacoes_concessoes",
+        question="Uma autarquia estadual pretende utilizar, como procedimento auxiliar de licitação previsto na Lei nº 14.133/2021, um cadastro prévio de fornecedores previamente habilitados para participar de licitações futuras. Esse procedimento é denominado",
+        options={
+            "A": "sistema de registro de preços.", "B": "pré-qualificação permanente.",
+            "C": "credenciamento.", "D": "diálogo competitivo.",
+        }, correct="B",
+        explanation="A pré-qualificação permanente é um dos procedimentos auxiliares previstos na Lei nº 14.133/2021 (art. 78) que permite selecionar antecipadamente interessados que reúnam condições de habilitação para participar de licitações futuras."),
+
+    dict(topic="licitacoes_concessoes",
+        question="Um contrato administrativo, celebrado sob a Lei nº 14.133/2021, previa a execução de determinada obra pública. Durante a execução, a Administração decidiu extinguir o contrato unilateralmente por razões de interesse público, sem que houvesse inadimplemento do contratado. Nesse caso, o contratado",
+        options={
+            "A": "não tem direito a qualquer indenização, pois a extinção decorre de prerrogativa da Administração.",
+            "B": "tem direito a indenização pelos prejuízos comprovados decorrentes da extinção antecipada.",
+            "C": "deve arcar sozinho com os custos já incorridos na execução do contrato.",
+            "D": "só terá direito a indenização se a extinção ocorrer por decisão judicial.",
+        }, correct="B",
+        explanation="A extinção unilateral por interesse público é prerrogativa da Administração, mas, não havendo culpa do contratado, este tem direito à recomposição/indenização pelos prejuízos regularmente comprovados, preservando o equilíbrio econômico-financeiro."),
+
+    dict(topic="licitacoes_concessoes",
+        question="Uma concessionária de serviço público suspende o fornecimento de água a um usuário inadimplente há mais de 90 dias, após prévio aviso. Conforme a Lei nº 8.987/1995, essa suspensão",
+        options={
+            "A": "caracteriza descontinuidade do serviço, pois nunca pode haver corte por inadimplência.",
+            "B": "não caracteriza descontinuidade, pois o inadimplemento, após aviso prévio, autoriza a interrupção.",
+            "C": "só é válida se autorizada previamente pelo Poder Judiciário.",
+            "D": "caracteriza descontinuidade, salvo se o usuário for pessoa jurídica.",
+        }, correct="B",
+        explanation="O art. 6º, §3º, II, da Lei nº 8.987/1995 admite a interrupção do serviço por inadimplemento do usuário, mediante prévio aviso, sem que isso configure descontinuidade indevida do serviço público."),
+
+    dict(topic="etica_profissional",
+        question="Um contador presta serviços de escrituração contábil e, simultaneamente, assume a função de responsável pela tomada de decisões financeiras estratégicas da mesma empresa cliente. Conforme a NBC PG 100 (R1), essa situação representa principalmente uma ameaça de",
+        options={
+            "A": "intimidação.", "B": "interesse próprio.",
+            "C": "autorrevisão, por acumular funções de execução e gestão.", "D": "familiaridade.",
+        }, correct="C",
+        explanation="Ao acumular a execução da escrituração com decisões de gestão sobre as mesmas informações, o contador cria uma ameaça de autorrevisão: ele passaria a revisar/basear-se em decisões que ele próprio tomou, comprometendo a objetividade."),
+
+    dict(topic="etica_profissional",
+        question="Um contador percebe que um colega de profissão está cometendo, de forma reiterada, infrações às normas contábeis em benefício de um cliente comum. Conforme o Código de Ética Profissional do Contador (NBC PG 01), a conduta mais adequada é",
+        options={
+            "A": "ignorar a situação, pois não é responsabilidade do contador fiscalizar colegas.",
+            "B": "denunciar publicamente o colega nas redes sociais para alertar o mercado.",
+            "C": "buscar esclarecer a situação com o colega e, se necessário, comunicar ao Conselho Regional de Contabilidade.",
+            "D": "romper unilateralmente todo contato profissional, sem qualquer outra providência.",
+        }, correct="C",
+        explanation="O Código de Ética orienta que, diante de indícios de conduta antiética de um colega, o profissional busque primeiro esclarecimento e, sendo o caso, leve a questão às instâncias competentes (como o CRC), preservando o interesse público sem recorrer a exposição indevida."),
+
+    dict(topic="etica_profissional",
+        question="Um contador aceita realizar um trabalho de auditoria para o qual reconhece não possuir capacitação técnica suficiente, confiando em “aprender durante a execução”. Essa conduta viola principalmente o princípio fundamental da",
+        options={
+            "A": "confidencialidade.", "B": "competência técnica e zelo profissional.",
+            "C": "independência.", "D": "objetividade.",
+        }, correct="B",
+        explanation="O princípio da competência técnica exige que o profissional só assuma trabalhos para os quais tenha capacitação adequada, mantendo conhecimento e habilidade em nível que garanta serviço competente — aceitar um trabalho sem essa base viola diretamente esse princípio."),
+
+    dict(topic="estrutura_conceitual",
+        question="Segundo a NBC TG Estrutura Conceitual (R2), uma informação contábil que representa fielmente um fenômeno econômico deve ser completa, neutra e livre de erro. Uma informação divulgada com atraso significativo, embora completa e neutra, principalmente compromete a característica qualitativa de",
+        options={"A": "verificabilidade.", "B": "comparabilidade.", "C": "tempestividade.", "D": "compreensibilidade."}, correct="C",
+        explanation="Tempestividade significa disponibilizar a informação a tempo de influenciar decisões dos usuários. Um atraso significativo na divulgação compromete essa característica qualitativa de melhoria, mesmo que a informação seja completa e neutra."),
+
+    dict(topic="estrutura_conceitual",
+        question="Conforme a NBC TG Estrutura Conceitual (R2), um passivo é definido como uma obrigação presente da entidade de transferir um recurso econômico, como resultado de eventos passados. Para que essa obrigação exista, é necessário, entre outros requisitos, que",
+        options={
+            "A": "a entidade não tenha meios práticos de evitar a transferência do recurso.",
+            "B": "a obrigação já tenha sido liquidada financeiramente.",
+            "C": "haja decisão futura da administração para criar a obrigação.",
+            "D": "a obrigação decorra exclusivamente de contrato formal por escrito.",
+        }, correct="A",
+        explanation="A Estrutura Conceitual exige que a entidade não tenha meios práticos de evitar a transferência do recurso para que a obrigação seja considerada presente — obrigações que dependem de ações futuras evitáveis pela entidade não se qualificam como passivo."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa arrendatária celebra contrato de arrendamento de um veículo por 24 meses, sem opção de compra ao final, e não pretende permanecer com o bem. A vida útil econômica do veículo é de 60 meses. Conforme a NBC TG 06 (R3), por qual prazo o ativo de direito de uso deve ser depreciado?",
+        options={"A": "60 meses.", "B": "36 meses.", "C": "24 meses.", "D": "48 meses."}, correct="C",
+        explanation="Quando não há expectativa de transferência de propriedade ao final do contrato, o ativo de direito de uso é depreciado pelo menor prazo entre a duração do arrendamento (24 meses) e a vida útil do bem (60 meses) — logo, 24 meses."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa possui dois segmentos operacionais: “Norte”, com 8% da receita combinada, 12% do resultado combinado e 6% dos ativos combinados; e “Sul”, com 25% da receita combinada. Conforme a NBC TG 22 (R2), é correto afirmar que",
+        options={
+            "A": "apenas Sul deve ser divulgado, pois Norte não atinge nenhum limiar de 10%.",
+            "B": "nenhum segmento deve ser divulgado, pois nenhum atinge todos os três critérios.",
+            "C": "ambos devem ser divulgados, pois cada um atinge ao menos um limiar de 10%.",
+            "D": "apenas Norte deve ser divulgado, por atingir o critério de resultado.",
+        }, correct="C",
+        explanation="Norte atinge o limiar de 10% pelo critério de resultado (12%); Sul atinge o limiar de 10% pelo critério de receita (25%). Basta atingir UM dos três critérios para ser segmento reportável — ambos devem ser divulgados."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa reconheceu, no passado, ativo fiscal diferido sobre prejuízos fiscais por considerar provável a geração de lucros tributáveis futuros. No exercício atual, novas projeções indicam que não é mais provável que haja lucro tributável suficiente para realizar integralmente esse ativo. Conforme a NBC TG 32 (R4), a empresa deve",
+        options={
+            "A": "manter o ativo fiscal diferido integralmente, pois já havia sido reconhecido.",
+            "B": "baixar (reduzir) o ativo fiscal diferido na medida em que deixou de ser provável sua realização.",
+            "C": "transferir o ativo fiscal diferido para o resultado abrangente.",
+            "D": "aguardar o encerramento do prejuízo fiscal para qualquer ajuste.",
+        }, correct="B",
+        explanation="A NBC TG 32 exige a revisão, a cada data de balanço, do valor contábil do ativo fiscal diferido, reduzindo-o na medida em que deixar de ser provável a existência de lucro tributável suficiente para sua realização."),
+
+    dict(topic="normas_contabeis",
+        question="Uma loja vende um produto e, na mesma transação, se compromete a prestar assistência técnica gratuita por 12 meses. Conforme a NBC TG 47 (Receita de Contrato com Cliente), o valor da transação deve ser",
+        options={
+            "A": "reconhecido integralmente como receita no momento da venda do produto.",
+            "B": "alocado entre as obrigações de desempenho distintas (produto e assistência técnica) e reconhecido conforme cada uma é satisfeita.",
+            "C": "reconhecido integralmente apenas ao final dos 12 meses de assistência técnica.",
+            "D": "tratado inteiramente como despesa de garantia, sem impacto na receita.",
+        }, correct="B",
+        explanation="Quando um contrato contém mais de uma obrigação de desempenho distinta (venda do produto e prestação de serviço de assistência técnica), a NBC TG 47 exige alocar o preço da transação entre elas e reconhecer a receita à medida que cada obrigação é satisfeita."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa desenvolve internamente um software para uso próprio. Gastou R$ 8.000,00 em estudos de viabilidade técnica inicial (fase de pesquisa) e R$ 30.000,00 na programação e testes finais antes da entrada em produção (fase de desenvolvimento, com todos os requisitos da NBC TG 04 atendidos). Vida útil estimada: 5 anos, valor residual zero. Qual a amortização anual desse intangível?",
+        options={"A": "R$ 1.600,00.", "B": "R$ 6.000,00.", "C": "R$ 6.400,00.", "D": "R$ 7.600,00."}, correct="B",
+        explanation="Gastos de pesquisa (R$ 8.000,00) são sempre despesa do período. Só os R$ 30.000,00 da fase de desenvolvimento são capitalizados. Amortização anual = 30.000/5 = R$ 6.000,00."),
+
+    dict(topic="normas_contabeis",
+        question="Um terreno (custo R$ 300.000,00) foi classificado como mantido para venda em 01/06/2025. Seis meses depois, a empresa desistiu da venda e o reclassificou como imobilizado. Nesse meio-tempo, terrenos não são depreciados. Na data da reclassificação, o valor justo líquido de despesas de venda é R$ 340.000,00 e o valor em uso é R$ 320.000,00. Pela NBC TG 31 (R4), o terreno deve ser reclassificado por",
+        options={"A": "R$ 300.000,00.", "B": "R$ 320.000,00.", "C": "R$ 340.000,00.", "D": "R$ 620.000,00."}, correct="A",
+        explanation="Reclassifica-se pelo menor valor entre: (i) o valor contábil que o ativo teria caso nunca tivesse sido classificado como mantido para venda (aqui, R$ 300.000,00, já que terrenos não são depreciados) e (ii) o valor recuperável (maior entre 340.000 e 320.000, ou seja, 340.000). O menor dos dois é R$ 300.000,00."),
+
+    dict(topic="normas_contabeis",
+        question="Um incêndio destruiu 10% do estoque de matéria-prima de uma indústria, sem qualquer expectativa de recuperação econômica. Qual o tratamento contábil correto dessa perda, conforme as normas contábeis vigentes?",
+        options={
+            "A": "Custo de produção, rateado entre as unidades fabricadas no período.",
+            "B": "Despesa (perda por sinistro), com baixa do saldo de estoques.",
+            "C": "Redução do Patrimônio Líquido, sem passar pelo resultado do período.",
+            "D": "Ativo intangível, amortizado ao longo dos exercícios seguintes.",
+        }, correct="B",
+        explanation="Perdas anormais e involuntárias de estoque (sinistros como incêndio) não integram o custo do produto — devem ser reconhecidas como despesa do período, com a correspondente baixa do saldo de estoques."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa emitiu duplicatas a receber de R$ 50.000,00, vencíveis em 12 meses, calculando um ajuste a valor presente relevante de R$ 4.000,00, conforme a NBC TG 12 (R1). Qual o lançamento correto no reconhecimento da receita de vendas?",
+        options={
+            "A": "Débito Clientes 50.000; Crédito Receita de Vendas 50.000.",
+            "B": "Débito Clientes 46.000; Crédito Receita de Vendas 46.000.",
+            "C": "Débito Clientes 50.000; Crédito Receita de Vendas 46.000; Crédito Ajuste a Valor Presente (retificadora) 4.000.",
+            "D": "Débito Clientes 46.000; Débito Juros a Apropriar 4.000; Crédito Receita de Vendas 50.000.",
+        }, correct="C",
+        explanation="Clientes é debitado pelo valor nominal (50.000); a receita é reconhecida pelo valor presente (46.000); a diferença (4.000) fica registrada em conta retificadora do ativo (Ajuste a Valor Presente), a crédito, para apropriação futura como receita financeira."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa apresenta os saldos: Duplicatas a Receber R$ 30.000,00; Provisão para Créditos de Liquidação Duvidosa R$ 3.000,00; Adiantamento a Empregados R$ 5.000,00; Salários a Pagar R$ 18.000,00; Ações em Tesouraria R$ 6.000,00. Qual o somatório, em valores absolutos, das contas de natureza devedora?",
+        options={"A": "R$ 41.000,00.", "B": "R$ 44.000,00.", "C": "R$ 47.000,00.", "D": "R$ 62.000,00."}, correct="A",
+        explanation="Natureza devedora: Duplicatas a Receber (30.000, ativo) + Adiantamento a Empregados (5.000, ativo) + Ações em Tesouraria (6.000, retificadora do PL) = 41.000. A PECLD é retificadora do ativo (natureza credora) e Salários a Pagar é passivo (credora)."),
+
+    dict(topic="normas_contabeis",
+        question="A empresa Delta possui 40% de participação em Épsilon, avaliada por equivalência patrimonial (influência significativa, sem controle). Épsilon apurou lucro líquido de R$ 500.000,00 e prejuízo em ativos por redução ao valor recuperável de R$ 50.000,00, já refletido nesse lucro líquido. Qual o ganho de equivalência patrimonial a ser reconhecido por Delta?",
+        options={"A": "R$ 180.000,00.", "B": "R$ 200.000,00.", "C": "R$ 220.000,00.", "D": "R$ 250.000,00."}, correct="B",
+        explanation="A equivalência patrimonial incide sobre o lucro líquido total do período já apurado pela investida (que já contempla eventuais perdas por impairment): 40% × 500.000 = R$ 200.000,00."),
+
+    dict(topic="normas_contabeis",
+        question="Na Demonstração do Valor Adicionado, uma empresa apresenta: Juros sobre empréstimos R$ 25.000,00; Salários e encargos de empregados R$ 300.000,00; Aluguéis pagos R$ 60.000,00; Royalties pagos R$ 15.000,00. Qual o valor de “Remuneração de Capitais de Terceiros”?",
+        options={"A": "R$ 85.000,00.", "B": "R$ 100.000,00.", "C": "R$ 300.000,00.", "D": "R$ 400.000,00."}, correct="B",
+        explanation="Remuneração de Capitais de Terceiros reúne juros, aluguéis e royalties pagos a terceiros: 25.000+60.000+15.000 = R$ 100.000,00. Salários e encargos pertencem ao grupo “Pessoal”, não a capitais de terceiros."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa vendeu mercadorias por R$ 400.000,00, com controle transferido de imediato: 40% recebido em Caixa, 20% em Banco, 40% a prazo (60 dias). Qual o lançamento correto?",
+        options={
+            "A": "Débito Caixa 160.000; Débito Banco 80.000; Débito Duplicatas a Receber 160.000; Crédito Receita de Vendas 400.000.",
+            "B": "Débito Caixa 200.000; Débito Duplicatas a Receber 200.000; Crédito Receita de Vendas 400.000.",
+            "C": "Débito Caixa 400.000; Crédito Receita de Vendas 400.000.",
+            "D": "Débito Banco 400.000; Crédito Receita de Vendas 400.000.",
+        }, correct="A",
+        explanation="40% de 400.000 = 160.000 em Caixa; 20% = 80.000 em Banco; 40% = 160.000 em Duplicatas a Receber; tudo creditado em Receita de Vendas, totalizando 400.000."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa comercial apresenta: Receita bruta de vendas R$ 900.000,00; Devoluções de vendas R$ 20.000,00; ICMS sobre vendas R$ 90.000,00; CMV R$ 350.000,00; Despesas operacionais R$ 80.000,00; Despesas com tributos sobre o lucro R$ 90.000,00. Qual o Lucro Líquido do exercício?",
+        options={"A": "R$ 270.000,00.", "B": "R$ 360.000,00.", "C": "R$ 440.000,00.", "D": "R$ 530.000,00."}, correct="A",
+        explanation="Receita líquida = 900.000−20.000−90.000 = 790.000. Lucro bruto = 790.000−350.000 = 440.000. Resultado antes dos tributos = 440.000−80.000 = 360.000. Lucro líquido = 360.000−90.000 = R$ 270.000,00."),
+
+    dict(topic="normas_contabeis",
+        question="Compra à vista de mercadoria para revenda: valor unitário R$ 100,00, 2.000 unidades; IPI R$ 5,00/unidade (por fora, não recuperável); frete R$ 8.000,00; seguro do transporte R$ 2.000,00; ICMS R$ 12,00/unidade (embutido, recuperável pela empresa); desconto comercial R$ 10,00/unidade. Considerando o ICMS recuperável, qual o custo total do estoque adquirido?",
+        options={"A": "R$ 176.000,00.", "B": "R$ 190.000,00.", "C": "R$ 200.000,00.", "D": "R$ 224.000,00."}, correct="A",
+        explanation="Valor bruto: 2.000×100 = 200.000. (−) Desconto comercial: 2.000×10 = 20.000. (−) ICMS recuperável (não compõe custo, é excluído): 2.000×12 = 24.000. (+) IPI não recuperável: 2.000×5 = 10.000. (+) Frete: 8.000. (+) Seguro: 2.000. Total = 200.000−20.000−24.000+10.000+8.000+2.000 = R$ 176.000,00."),
+
+    dict(topic="normas_contabeis",
+        question="Uma construtora foi processada por um cliente insatisfeito, pedindo indenização de R$ 300.000,00. Os advogados avaliam a chance de perda como “provável”, estimando o valor da perda em R$ 180.000,00. Conforme a NBC TG 25 (R2), a empresa deve",
+        options={
+            "A": "não reconhecer nada, apenas divulgar em nota explicativa.",
+            "B": "reconhecer provisão de R$ 300.000,00, valor total pleiteado.",
+            "C": "reconhecer provisão de R$ 180.000,00, melhor estimativa da perda.",
+            "D": "reconhecer um passivo contingente de R$ 180.000,00, sem provisão.",
+        }, correct="C",
+        explanation="Sendo a perda avaliada como PROVÁVEL e havendo estimativa confiável do valor (R$ 180.000,00), a NBC TG 25 exige o reconhecimento de uma provisão pela melhor estimativa do desembolso necessário — não pelo valor total pleiteado pelo autor da ação."),
+
+    dict(topic="normas_contabeis",
+        question="Uma empresa, ao elaborar sua Demonstração dos Fluxos de Caixa pelo método direto, verifica que as atividades operacionais geraram caixa de R$ 200.000,00. Caso a mesma demonstração fosse elaborada pelo método indireto, o valor do caixa gerado pelas atividades operacionais seria",
+        options={
+            "A": "necessariamente maior que R$ 200.000,00.",
+            "B": "necessariamente menor que R$ 200.000,00.",
+            "C": "o mesmo, R$ 200.000,00, pois só a forma de apresentação muda.",
+            "D": "impossível de determinar sem mais informações sobre o método indireto.",
+        }, correct="C",
+        explanation="Os métodos direto e indireto diferem apenas na forma de apresentar o fluxo de caixa das atividades operacionais; o valor total do caixa gerado por essa atividade é sempre o mesmo, independentemente do método escolhido."),
+
+    dict(topic="normas_contabeis",
+        question="Uma investidora detém 15% do capital votante de uma investida, mas possui assento no Conselho de Administração e participa ativamente das decisões sobre política de dividendos. Conforme a NBC TG 18 (R4), essa situação",
+        options={
+            "A": "nunca pode configurar influência significativa, pois a participação é inferior a 20%.",
+            "B": "pode configurar influência significativa, mesmo com participação abaixo de 20%, devido às evidências qualitativas.",
+            "C": "configura automaticamente controle, exigindo consolidação integral.",
+            "D": "é irrelevante para fins contábeis, dado o percentual de participação baixo.",
+        }, correct="B",
+        explanation="A presunção de influência significativa aos 20% não é absoluta nem exclui outras evidências: representação no conselho e participação em decisões sobre política de dividendos são indícios de influência significativa mesmo com participação inferior a 20%."),
+
+    dict(topic="normas_contabeis",
+        question="Um equipamento tem custo de aquisição R$ 200.000,00 e depreciação acumulada R$ 60.000,00 (valor contábil líquido R$ 140.000,00). No teste de recuperabilidade: valor justo líquido de despesas de venda R$ 100.000,00; valor em uso R$ 115.000,00. Qual a perda por redução ao valor recuperável a ser reconhecida?",
+        options={"A": "R$ 25.000,00.", "B": "R$ 40.000,00.", "C": "R$ 60.000,00.", "D": "Nenhuma perda deve ser reconhecida."}, correct="A",
+        explanation="Valor recuperável = maior entre valor justo líquido de venda (100.000) e valor em uso (115.000) = 115.000. Como o valor contábil (140.000) é maior que o valor recuperável (115.000), há perda = 140.000−115.000 = R$ 25.000,00."),
+
+    dict(topic="normas_contabeis",
+        question="Uma loja usa Custo Médio Ponderado móvel diário. Sem estoque inicial: 03/09 compra 10un a R$ 500,00; 08/09 vende 5un; 12/09 compra 15un a R$ 600,00; 20/09 vende 12un. Qual o valor do estoque final em 30/09?",
+        options={"A": "R$ 2.500,00.", "B": "R$ 4.025,00.", "C": "R$ 4.600,00.", "D": "R$ 5.750,00."}, correct="C",
+        explanation="03/09: 10un a 500 (total 5.000). 08/09: vende 5, restam 5un a 500 (2.500). 12/09: compra 15 a 600 (9.000); total 20un = 11.500, média = 575,00/un. 20/09: vende 12, restam 8un × 575,00 = R$ 4.600,00."),
+
+    dict(topic="normas_contabeis",
+        question="Cia P (Disponibilidades R$ 100.000,00, PL R$ 100.000,00) adquire 80% da Cia Q (Disponibilidades R$ 50.000,00, PL R$ 50.000,00) por R$ 45.000,00 à vista, com valores contábeis iguais aos valores justos. Qual o saldo do Ativo Circulante (Disponibilidades) no Balanço Consolidado após a compra?",
+        options={"A": "R$ 55.000,00.", "B": "R$ 90.000,00.", "C": "R$ 95.000,00.", "D": "R$ 105.000,00."}, correct="D",
+        explanation="Disponibilidades de P após o pagamento: 100.000−45.000 = 55.000. Na consolidação, soma-se 100% das disponibilidades de Q (mesmo com 80% de participação): 55.000+50.000 = R$ 105.000,00."),
+
+    dict(topic="custos",
+        question="Uma fábrica de bolsas vende cada unidade por R$ 150,00. Produziu 2.000 e vendeu 1.700 unidades. Custo variável: R$ 60,00/bolsa. Custos fixos mensais de fábrica: mão de obra direta de supervisão R$ 80.000,00, depreciação de máquinas R$ 20.000,00, aluguel da fábrica R$ 10.000,00. (Despesas administrativas e comerciais não entram no custo fabril.) Pelo custeio por absorção, qual o Lucro Bruto?",
+        options={"A": "R$ 55.000,00.", "B": "R$ 59.500,00.", "C": "R$ 65.000,00.", "D": "R$ 70.000,00."}, correct="B",
+        explanation="Custos fixos de fábrica = 80.000+20.000+10.000 = 110.000. Custo variável total de produção = 60×2.000 = 120.000. Custo total de produção = 230.000 ÷ 2.000 = R$ 115,00/un. CMV (1.700un) = 1.700×115 = 195.500. Receita = 1.700×150 = 255.000. Lucro Bruto = 255.000−195.500 = R$ 59.500,00."),
+
+    dict(topic="custos",
+        question="Uma indústria tem os setores Corte (40 m²) e Costura (60 m²). O custo de aluguel do galpão fabril foi R$ 30.000,00, rateado por área ocupada. Qual o valor alocado ao setor de Costura?",
+        options={"A": "R$ 12.000,00.", "B": "R$ 15.000,00.", "C": "R$ 18.000,00.", "D": "R$ 20.000,00."}, correct="C",
+        explanation="Área total = 40+60 = 100 m². Costura = 60/100 × 30.000 = R$ 18.000,00."),
+
+    dict(topic="custos",
+        question="Uma indústria registrou: consumo de matéria-prima Y R$ 22.000,00; depreciação do prédio administrativo R$ 4.000,00; compra de matéria-prima Y R$ 60.000,00; depreciação de máquinas fabris R$ 6.000,00; salários do setor Comercial R$ 18.000,00; aquisição de uma nova máquina fabril R$ 90.000,00. Quais os valores corretos de Custos, Despesas e Investimentos?",
+        options={
+            "A": "Custos: R$ 28.000,00; Despesas: R$ 22.000,00; Investimentos: R$ 150.000,00.",
+            "B": "Custos: R$ 22.000,00; Despesas: R$ 28.000,00; Investimentos: R$ 90.000,00.",
+            "C": "Custos: R$ 28.000,00; Despesas: R$ 18.000,00; Investimentos: R$ 60.000,00.",
+            "D": "Custos: R$ 40.000,00; Despesas: R$ 4.000,00; Investimentos: R$ 90.000,00.",
+        }, correct="A",
+        explanation="Custos (produção): consumo de matéria-prima (22.000) + depreciação de máquinas fabris (6.000) = 28.000. Despesas (administrativas/comerciais): depreciação do prédio administrativo (4.000) + salários Comercial (18.000) = 22.000. Investimentos (gastos ativados): compra de matéria-prima em estoque (60.000) + aquisição da máquina (90.000) = 150.000."),
+
+    dict(topic="custos",
+        question="Custo Padrão × Custo Real (totais) de insumos de uma indústria: Insumo X 200,00 / 180,00; Insumo Y 90,00 / 110,00; Insumo Z 50,00 / 45,00. Em relação às variações de custo total, é correto afirmar que",
+        options={
+            "A": "os insumos X e Z apresentaram variações favoráveis.",
+            "B": "todos os insumos apresentaram variações desfavoráveis.",
+            "C": "apenas o insumo Y apresentou variação favorável.",
+            "D": "nenhum insumo apresentou variação, pois os valores são muito próximos.",
+        }, correct="A",
+        explanation="Variação favorável ocorre quando o custo real é menor que o padrão. Insumo X: real (180) < padrão (200) → favorável. Insumo Z: real (45) < padrão (50) → favorável. Insumo Y: real (110) > padrão (90) → desfavorável."),
+
+    dict(topic="custos",
+        question="Uma empresa compra matéria-prima a prazo (pagamento em 30 dias), leva 40 dias para fabricar e armazenar, vende a prazo e leva, em média, 50 dias para receber após a venda. Qual o ciclo operacional dessa empresa?",
+        options={"A": "40 dias.", "B": "50 dias.", "C": "80 dias.", "D": "90 dias."}, correct="D",
+        explanation="Ciclo operacional = tempo de fabricação/armazenagem + prazo médio de recebimento = 40+50 = 90 dias. O prazo de pagamento a fornecedores não compõe o ciclo operacional, mas sim o ciclo financeiro."),
+
+    dict(topic="custos",
+        question="Uma papelaria vende cadernos a R$ 20,00 (custo variável R$ 12,00), com ponto de equilíbrio de 1.000 unidades. O custo variável sobe para R$ 14,00, mantidos o preço de venda e os custos fixos. Qual o novo ponto de equilíbrio?",
+        options={"A": "1.000 unidades.", "B": "1.143 unidades.", "C": "1.200 unidades.", "D": "1.333 unidades."}, correct="D",
+        explanation="Margem de contribuição original = 20−12 = 8/un. Custo fixo = 1.000×8 = 8.000. Nova margem = 20−14 = 6/un. Novo ponto de equilíbrio = 8.000/6 ≈ 1.333 unidades."),
+
+    dict(topic="indicadores_financeiros",
+        question="Uma empresa apresenta: Receitas a prazo R$ 300.000,00 (recebimento médio em 40 dias); CPV R$ 150.000,00 (estoque médio de 25 dias); compras a prazo R$ 120.000,00 (pagamento em 30 dias), ano de 360 dias. Considerando apenas contas a receber, estoques e contas a pagar como itens operacionais, qual a Necessidade de Capital de Giro (NCG)?",
+        options={"A": "R$ 23.750,00.", "B": "R$ 33.750,00.", "C": "R$ 43.750,00.", "D": "R$ 53.750,00."}, correct="B",
+        explanation="Contas a receber = (300.000/360)×40 = 33.333,33. Estoques = (150.000/360)×25 = 10.416,67. Ativo Circulante Operacional = 43.750,00. Contas a pagar = (120.000/360)×30 = 10.000,00. NCG = 43.750,00−10.000,00 = R$ 33.750,00."),
+
+    dict(topic="indicadores_financeiros",
+        question="Uma empresa apresenta Ativo Circulante R$ 800.000,00, Passivo Circulante R$ 400.000,00 e Estoques R$ 200.000,00. Qual o Índice de Liquidez Seca dessa empresa?",
+        options={"A": "1,0.", "B": "1,5.", "C": "2,0.", "D": "2,5."}, correct="B",
+        explanation="Liquidez Seca = (Ativo Circulante − Estoques) / Passivo Circulante = (800.000−200.000)/400.000 = 600.000/400.000 = 1,5."),
+
+    dict(topic="setor_publico",
+        question="Sobre o reconhecimento de ativos de infraestrutura em contratos de concessão, conforme o MCASP, é correto afirmar que",
+        options={
+            "A": "o concedente sempre reconhece o ativo, independentemente de controlar ou regular os serviços.",
+            "B": "o concessionário sempre reconhece o ativo como imobilizado próprio, com plena propriedade.",
+            "C": "o reconhecimento pelo concedente depende de ele controlar ou regular os serviços prestados com o ativo.",
+            "D": "nenhuma das partes reconhece o ativo, que permanece fora do balanço de ambas.",
+        }, correct="C",
+        explanation="Conforme o MCASP e a interpretação técnica sobre concessões, o concedente só reconhece o ativo da concessão se controlar ou regular os serviços que serão prestados por meio dele — caso contrário, o reconhecimento não cabe a ele."),
+
+    dict(topic="setor_publico",
+        question="Um governo municipal, ao elaborar sua Lei Orçamentária Anual, previu despesas em valor superior à previsão de receitas, sem indicar as fontes de custeio do déficit. Essa prática viola principalmente o princípio orçamentário do(a)",
+        options={"A": "equilíbrio orçamentário.", "B": "unidade.", "C": "publicidade.", "D": "não afetação de receitas."}, correct="A",
+        explanation="O princípio do equilíbrio orçamentário exige que as despesas previstas sejam compatíveis com as receitas estimadas, com indicação das fontes de financiamento em caso de déficit planejado."),
+
+    dict(topic="setor_publico",
+        question="No ciclo da despesa pública, a fase em que a Administração reconhece que o credor cumpriu a obrigação assumida, tornando a despesa líquida e certa, denomina-se",
+        options={"A": "empenho.", "B": "liquidação.", "C": "pagamento.", "D": "licitação."}, correct="B",
+        explanation="A liquidação é a fase da despesa pública em que se verifica o direito adquirido pelo credor, com base nos documentos comprobatórios do cumprimento da obrigação — é o que antecede o pagamento."),
+
+    dict(topic="setor_publico",
+        question="Um empenho foi emitido para cobrir uma despesa estimada de R$ 10.000,00. Ao final da execução, verificou-se que a despesa efetivamente realizada foi de R$ 12.000,00. Nesse caso, é necessário",
+        options={
+            "A": "anular parcialmente o empenho original.", "B": "emitir um empenho suplementar (reforço) de R$ 2.000,00.",
+            "C": "aguardar o próximo exercício para regularizar a diferença.", "D": "cancelar totalmente o empenho e reiniciar o processo.",
+        }, correct="B",
+        explanation="Quando o valor empenhado é insuficiente para atender à despesa efetivamente realizada, emite-se um empenho suplementar (ou de reforço) pela diferença — no caso, R$ 2.000,00 — e não uma anulação, que se aplica ao caso oposto (empenho maior que a despesa)."),
+
+    dict(topic="auditoria",
+        question="Ao planejar uma auditoria, o auditor avalia o risco de que os controles internos da entidade não previnam ou detectem tempestivamente uma distorção relevante. Esse conceito é denominado",
+        options={"A": "risco inerente.", "B": "risco de controle.", "C": "risco de detecção.", "D": "risco de negócio."}, correct="B",
+        explanation="Risco de controle é o risco de que uma distorção relevante, que poderia ocorrer em uma afirmação, não seja prevenida ou detectada e corrigida tempestivamente pelos controles internos da entidade."),
+
+    dict(topic="auditoria",
+        question="Durante a auditoria, o auditor decide não aplicar determinado procedimento planejado porque não conseguiu obter evidência de auditoria apropriada e suficiente sobre uma área relevante das demonstrações contábeis. Essa limitação, se relevante e generalizada, pode levar o auditor a emitir uma opinião de",
+        options={"A": "opinião não modificada, sem qualquer menção.", "B": "opinião com ressalva ou abstenção de opinião.", "C": "opinião adversa, obrigatoriamente.", "D": "ênfase, sem alterar a opinião."}, correct="B",
+        explanation="Uma limitação de escopo (impossibilidade de obter evidência suficiente e apropriada) pode levar, conforme sua relevância e abrangência, a uma opinião com ressalva ou, em casos mais graves e generalizados, à abstenção de opinião."),
+
+    dict(topic="auditoria",
+        question="Um auditor identifica que a administração de uma empresa, de forma involuntária, classificou incorretamente uma despesa como ativo, sem qualquer intenção de manipular resultados. Esse tipo de distorção é classificado como",
+        options={"A": "fraude.", "B": "erro.", "C": "omissão intencional.", "D": "sonegação fiscal."}, correct="B",
+        explanation="Distorções não intencionais nas demonstrações contábeis, incluindo a omissão de um valor ou divulgação, são classificadas como erro. Fraude, por definição, pressupõe um ato intencional."),
+
+    dict(topic="direito_pericia",
+        question="Em uma ação judicial, o perito contábil nomeado pelo juiz constata, após aceitar o encargo, um conflito de interesses que compromete sua imparcialidade em relação a uma das partes. Conforme o CPC/2015, o perito deve",
+        options={
+            "A": "concluir o trabalho normalmente, pois já aceitou o encargo.", "B": "comunicar o fato apenas ao final do laudo, junto com a conclusão.",
+            "C": "declarar-se suspeito ou impedido e comunicar o fato ao juiz, escusando-se do encargo.", "D": "solicitar autorização da parte contrária para continuar o trabalho.",
+        }, correct="C",
+        explanation="Constatado impedimento ou suspeição, o perito deve se escusar do encargo e comunicar o fato ao juiz, que providenciará sua substituição — a imparcialidade é condição essencial para a validade da perícia."),
+
+    dict(topic="direito_pericia",
+        question="Um empregado foi admitido em 01/06/2022 e demitido sem justa causa em 31/12/2023, sem ter gozado nenhum dia de férias durante o vínculo. Salário mensal: R$ 3.000,00. Considerando apenas o período aquisitivo completo já vencido (01/06/2022 a 31/05/2023, com 30 dias de férias não gozadas) e o adicional de 1/3, qual o valor das férias vencidas mais o terço constitucional referente a esse período completo?",
+        options={"A": "R$ 3.000,00.", "B": "R$ 3.500,00.", "C": "R$ 4.000,00.", "D": "R$ 4.500,00."}, correct="C",
+        explanation="Férias vencidas do período completo = 1 salário mensal = R$ 3.000,00. Adicional de 1/3 = 3.000/3 = R$ 1.000,00. Total = 3.000+1.000 = R$ 4.000,00."),
+]
+
+assert len(LEVEL2) == 50, len(LEVEL2)
+
+# ============================================================
+# Assemble and write data/questions.json
+# ============================================================
+
+def build_entries(items, prefix):
+    entries = []
+    for i, item in enumerate(items, start=1):
+        entry = {
+            "id": f"{prefix}-q{i:02d}",
+            "topic": item["topic"],
+            "question": item["question"],
+            "options": item["options"],
+            "correct": item["correct"],
+            "explanation": item["explanation"],
+        }
+        if "number" in item:
+            entry["number"] = item["number"]
+        entries.append(entry)
+    return entries
+
+
+data = {
+    "level1": build_entries(LEVEL1, "l1"),
+    "level2": build_entries(LEVEL2, "l2"),
+}
+
+out_path = Path(__file__).resolve().parent.parent / "data" / "questions.json"
+out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"Wrote {len(data['level1'])} level1 + {len(data['level2'])} level2 questions to {out_path}")
+

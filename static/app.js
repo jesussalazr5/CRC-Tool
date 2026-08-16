@@ -86,8 +86,8 @@
             onclick: () => startLevel("level1", data.level1),
           },
           [
-            el("div", { class: "level-name" }, "Nível 1 — Prova Real (Tipo 4)"),
-            el("div", { class: "level-desc" }, `${data.level1.length} questões reais da prova CFC, embaralhadas.`),
+            el("div", { class: "level-name" }, "Nível 1 — Exame 2026.1 (Tipo 4)"),
+            el("div", { class: "level-desc" }, `${data.level1.length} questões reais dessa prova oficial do CFC, embaralhadas.`),
           ]
         ),
         el(
@@ -97,8 +97,8 @@
             onclick: () => startLevel("level2", data.level2),
           },
           [
-            el("div", { class: "level-name" }, "Nível 2 — Questões Extras"),
-            el("div", { class: "level-desc" }, `${data.level2.length} questões inéditas, no mesmo estilo da prova, para praticar mais.`),
+            el("div", { class: "level-name" }, "Nível 2 — Exame 2025.2 (Tipo 1)"),
+            el("div", { class: "level-desc" }, `${data.level2.length} questões reais de outra prova oficial do CFC, embaralhadas.`),
           ]
         ),
         el(
@@ -251,7 +251,7 @@
     const total = state.answers.length;
     const correctCount = state.answers.filter((a) => a.isCorrect).length;
     const pct = Math.round((correctCount / total) * 100);
-    const levelLabel = state.level === "level1" ? "Nível 1 — Prova Real" : "Nível 2 — Questões Extras";
+    const levelLabel = state.level === "level1" ? "Nível 1 — Exame 2026.1" : "Nível 2 — Exame 2025.2";
 
     const reviewItems = state.answers.map((a) => {
       const q = a.question;

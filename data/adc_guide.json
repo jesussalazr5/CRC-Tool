@@ -1,0 +1,82 @@
+{
+  "sections": [
+    {
+      "level": "Básico",
+      "levelDesc": "A estrutura das demonstrações contábeis e as duas técnicas de leitura mais fundamentais — comece por aqui.",
+      "topics": [
+        {
+          "title": "Estrutura do Balanço Patrimonial",
+          "summary": "Equação fundamental: Ativo = Passivo + Patrimônio Líquido. Ativo Circulante (bens/direitos de curto prazo: caixa, clientes, estoques) e Ativo Não Circulante (longo prazo: realizável a longo prazo, investimentos, imobilizado, intangível). Passivo Circulante e Passivo Não Circulante (obrigações com terceiros, divididas apenas por prazo — 12 meses). Patrimônio Líquido é o capital próprio: Capital Social, Reservas e Lucros/Prejuízos Acumulados."
+        },
+        {
+          "title": "Estrutura da DRE",
+          "summary": "A Demonstração do Resultado segue uma ordem em cascata: Receita Bruta → (−) deduções → Receita Líquida → (−) CMV/CPV/CSP → Lucro Bruto → (−) despesas operacionais → Lucro Operacional → (±) receitas/despesas financeiras → (−) tributos sobre o lucro → Lucro Líquido. Na Análise Vertical da DRE, a Receita Líquida é sempre a base (100%)."
+        },
+        {
+          "title": "Outras demonstrações: DFC, DVA e DMPL",
+          "summary": "DFC (Demonstração dos Fluxos de Caixa): movimento de caixa dividido em Operacional, Investimento e Financiamento. DVA (Demonstração do Valor Adicionado): mostra a riqueza gerada pela empresa e como foi distribuída entre Pessoal, Governo, Capital de Terceiros e Capital Próprio — não é a mesma coisa que a DRE (que apura lucro, não distribuição de riqueza). DMPL (Demonstração das Mutações do Patrimônio Líquido): mostra a movimentação de cada conta do PL ao longo do período."
+        },
+        {
+          "title": "Análise Vertical (AV)",
+          "summary": "Mostra a representatividade (%) de cada conta dentro de um total de referência: no Balanço, a base é o Ativo Total; na DRE, a base é a Receita Líquida. Fórmula: (valor da conta ÷ valor de referência) × 100. Serve para entender a “composição” da empresa em um momento específico."
+        },
+        {
+          "title": "Análise Horizontal (AH)",
+          "summary": "Mostra a evolução de uma conta ao longo do tempo, em dois formatos: Ano-Base (todos os períodos comparados sempre ao mesmo ano de referência fixo) e Ano a Ano (cada período comparado apenas ao período imediatamente anterior). Fórmula: (valor atual ÷ valor de referência − 1) × 100. AV mostra “composição”; AH mostra “evolução” — usar as duas juntas dá uma visão mais completa."
+        }
+      ]
+    },
+    {
+      "level": "Intermediário",
+      "levelDesc": "Como medir a eficiência operacional (giro, prazos, ciclos) e a saúde financeira e patrimonial (liquidez, endividamento).",
+      "topics": [
+        {
+          "title": "Giro dos Recursos",
+          "summary": "Mede quantas vezes um recurso (normalmente o estoque) se renovou em um período. Giro de Estoques = Custo das Vendas ÷ Estoque Médio. Usa-se o saldo médio (não o saldo final isolado) para amenizar distorções causadas pela sazonalidade."
+        },
+        {
+          "title": "Prazos Médios (PMRE, PMRC, PMPF)",
+          "summary": "Mesma lógica do giro, mas medida em dias. PMRE (Prazo Médio de Renovação de Estoques) = (Estoque Médio ÷ CMV) × dias do período. PMRC (Recebimento de Clientes) = (Saldo Médio de Clientes ÷ Vendas Brutas) × dias. PMPF (Pagamento a Fornecedores) = (Saldo Médio de Fornecedores ÷ Compras Brutas) × dias."
+        },
+        {
+          "title": "Ciclos: Econômico, Operacional e Financeiro",
+          "summary": "Ciclo Econômico: da compra até a venda (≈ PMRE), sem contar o recebimento. Ciclo Operacional = PMRE + PMRC (da compra até o recebimento do cliente). Ciclo Financeiro = Ciclo Operacional − PMPF (o período que a empresa precisa financiar por conta própria). Se o PMPF for maior que o Ciclo Operacional, o Ciclo Financeiro é negativo — situação favorável, pois os fornecedores financiam a operação."
+        },
+        {
+          "title": "Indicadores de Liquidez",
+          "summary": "Liquidez Corrente (LC) = Ativo Circulante ÷ Passivo Circulante. Liquidez Seca (LS) = (Ativo Circulante − Estoques) ÷ Passivo Circulante (mais conservadora, remove o item menos líquido). Liquidez Geral (LG) = (Ativo Circulante + Realizável a Longo Prazo) ÷ (Passivo Circulante + Passivo Não Circulante) — amplia a análise para o longo prazo. Quanto maior, melhor, em todos os três."
+        },
+        {
+          "title": "Indicadores de Endividamento",
+          "summary": "Endividamento Geral (EG) = Passivo Total ÷ Ativo Total (% do Ativo financiado por terceiros). Composição do Endividamento = Passivo Circulante ÷ Passivo Total (perfil da dívida: curto x longo prazo). Imobilização do Patrimônio Líquido (IPL) = recursos de longa maturação ÷ Patrimônio Líquido (quanto do capital próprio está “preso” em ativos fixos). Participação de Capitais de Terceiros (PCT) = Passivo Total ÷ Patrimônio Líquido."
+        }
+      ]
+    },
+    {
+      "level": "Avançado",
+      "levelDesc": "Rentabilidade, comparação com o mercado e os modelos mais sofisticados de previsão e gestão financeira.",
+      "topics": [
+        {
+          "title": "Indicadores de Rentabilidade",
+          "summary": "Margem Bruta = Lucro Bruto ÷ Receita Líquida. Margem Operacional = Lucro Operacional ÷ Receita Líquida. Margem Líquida (ML) = Lucro Líquido ÷ Receita Líquida. ROA (Retorno sobre o Ativo) = Lucro Líquido ÷ Ativo Total (eficiência no uso de TODOS os recursos). ROE (Retorno sobre o Patrimônio Líquido) = Lucro Líquido ÷ Patrimônio Líquido (retorno específico para os sócios). EBITDA = lucro operacional “limpo” de juros, impostos, depreciação e amortização — aproxima a geração de caixa operacional."
+        },
+        {
+          "title": "Índices-Padrão",
+          "summary": "Um índice isolado não diz muito — precisa ser comparado com um padrão do setor (mediana ou média de empresas do mesmo ramo). Os decis dividem a amostra em 10 partes iguais e servem para atribuir notas/conceitos: em índices “quanto maior, melhor” o decil 10 é o melhor; em índices “quanto menor, melhor” (como o Endividamento), o decil 1 é o melhor."
+        },
+        {
+          "title": "Fórmula DuPont",
+          "summary": "Versão original: ROA = Margem Líquida × Giro do Ativo (Receita Líquida ÷ Ativo Total) — mostra que o retorno vem da combinação entre lucratividade sobre vendas e eficiência no uso dos ativos. Versão modificada: vai além, incorporando o efeito da alavancagem financeira para chegar ao ROE, mostrando como o uso de capital de terceiros amplifica (ou reduz) o retorno dos sócios."
+        },
+        {
+          "title": "Termômetro de Solvabilidade de Kanitz",
+          "summary": "Modelo estatístico (a partir de uma amostra de empresas saudáveis e com problemas de continuidade) que combina cinco índices financeiros em uma única nota — o Fator de Solvabilidade. Classifica a empresa em três faixas: Solvência (saudável), Penumbra (zona de alerta) e Insolvência (alto risco de falência, exige atenção imediata)."
+        },
+        {
+          "title": "Análise Financeira Dinâmica (Modelo Fleuriet)",
+          "summary": "Reclassifica o Ativo e o Passivo Circulante por NATUREZA — operacional/cíclica (ligada à atividade-fim: estoques, clientes, fornecedores) ou financeira/errática (não ligada à operação: aplicações, empréstimos de curto prazo) — em vez de usar só o critério tradicional de prazo. A partir daí calcula: CCL (Capital Circulante Líquido, tradicional: todo o AC − PC), IOG/NCG (Necessidade de Capital de Giro: só a parte operacional do circulante) e ST (Saldo de Tesouraria: só a parte financeira do circulante). Um IOG/NCG alto com ST negativo é sinal de alerta financeiro."
+        }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,20 @@
 (() => {
   const root = document.getElementById("app");
 
+  const GUIDES = {
+    cfc: { url: "data/guide.json", title: "Guia de Estudos — CFC", subtitle: "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem." },
+    adc: { url: "data/adc_guide.json", title: "Guia de Estudos — Análise das Demonstrações Contábeis", subtitle: "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem." },
+  };
+
   const state = {
     data: null,
-    guide: null,
-    level: null, // "level1" | "level2"
+    adcData: null,
+    guides: {}, // cache per GUIDES key
+    levelKey: null,
+    levelLabel: null,
+    feedbackNote: null,
+    guideKey: null,
+    rawQuestions: [],
     questions: [], // shuffled, with shuffled option order baked in
     index: 0,
     answers: [], // { question, chosenLetter, isCorrect }
@@ -39,11 +49,19 @@
     return state.data;
   }
 
-  async function loadGuide() {
-    if (state.guide) return state.guide;
-    const res = await fetch("data/guide.json");
-    state.guide = await res.json();
-    return state.guide;
+  async function loadAdcData() {
+    if (state.adcData) return state.adcData;
+    const res = await fetch("data/adc_questions.json");
+    state.adcData = await res.json();
+    return state.adcData;
+  }
+
+  async function loadGuideByKey(key) {
+    if (state.guides[key]) return state.guides[key];
+    const res = await fetch(GUIDES[key].url);
+    const guide = await res.json();
+    state.guides[key] = guide;
+    return guide;
   }
 
   function el(tag, attrs = {}, children = []) {
@@ -71,19 +89,23 @@
 
   // ---------------- Start screen ----------------
 
+  const CFC_FEEDBACK_NOTE = "Explicação de apoio para os estudos — não é conteúdo oficial da FGV/CFC.";
+  const ADC_FEEDBACK_NOTE = "Explicação de apoio para os estudos, baseada no livro-texto e em normas contábeis — não é o gabarito oficial da sua prova.";
+
   async function renderStart() {
     root.innerHTML = "";
     const data = await loadData();
+    const adcData = await loadAdcData();
 
     const card = el("div", { class: "card" }, [
       el("h1", {}, "Vamos praticar? 💜"),
-      el("p", { class: "subtitle" }, "Escolha um nível para começar seu simulado. As perguntas e as opções aparecem em uma ordem diferente a cada tentativa."),
+      el("p", { class: "subtitle" }, "Escolha um simulado ou guia para começar. As perguntas e as opções aparecem em uma ordem diferente a cada tentativa."),
       el("div", { class: "level-grid" }, [
         el(
           "button",
           {
             class: "level-btn",
-            onclick: () => startLevel("level1", data.level1),
+            onclick: () => startLevel("level1", data.level1, "Nível 1 — Exame 2026.1", CFC_FEEDBACK_NOTE, "cfc"),
           },
           [
             el("div", { class: "level-name" }, "Nível 1 — Exame 2026.1 (Tipo 4)"),
@@ -94,7 +116,7 @@
           "button",
           {
             class: "level-btn",
-            onclick: () => startLevel("level2", data.level2),
+            onclick: () => startLevel("level2", data.level2, "Nível 2 — Exame 2025.2", CFC_FEEDBACK_NOTE, "cfc"),
           },
           [
             el("div", { class: "level-name" }, "Nível 2 — Exame 2025.2 (Tipo 1)"),
@@ -105,11 +127,33 @@
           "button",
           {
             class: "level-btn",
-            onclick: renderGuide,
+            onclick: () => renderGuide("cfc"),
           },
           [
-            el("div", { class: "level-name" }, "Módulo 3 — Guia de Estudos"),
+            el("div", { class: "level-name" }, "Módulo 3 — Guia de Estudos (CFC)"),
             el("div", { class: "level-desc" }, "Os temas que caem na prova, organizados do básico ao avançado, para estudar antes (ou entre) os simulados."),
+          ]
+        ),
+        el(
+          "button",
+          {
+            class: "level-btn",
+            onclick: () => startLevel("adc", adcData.questions, "Simulado ADC", ADC_FEEDBACK_NOTE, "adc"),
+          },
+          [
+            el("div", { class: "level-name" }, "Módulo 4 — Análise das Demonstrações Contábeis"),
+            el("div", { class: "level-desc" }, `${adcData.questions.length} questões (livro-texto + complementares) sobre AV/AH, liquidez, endividamento, giro, prazos, ciclos, DuPont e Kanitz.`),
+          ]
+        ),
+        el(
+          "button",
+          {
+            class: "level-btn",
+            onclick: () => renderGuide("adc"),
+          },
+          [
+            el("div", { class: "level-name" }, "Módulo 4 — Guia de Estudos (ADC)"),
+            el("div", { class: "level-desc" }, "Os temas da sua prova de Análise das Demonstrações Contábeis, organizados do básico ao avançado."),
           ]
         ),
       ]),
@@ -119,8 +163,12 @@
     root.appendChild(card);
   }
 
-  function startLevel(level, rawQuestions) {
-    state.level = level;
+  function startLevel(levelKey, rawQuestions, levelLabel, feedbackNote, guideKey) {
+    state.levelKey = levelKey;
+    state.levelLabel = levelLabel;
+    state.feedbackNote = feedbackNote;
+    state.guideKey = guideKey;
+    state.rawQuestions = rawQuestions;
     state.questions = prepareQuestions(rawQuestions);
     state.index = 0;
     state.answers = [];
@@ -140,7 +188,7 @@
     root.innerHTML = "";
     const total = state.questions.length;
     const q = state.questions[state.index];
-    const levelLabel = state.level === "level1" ? "Nível 1" : "Nível 2";
+    const levelLabel = state.levelLabel;
 
     const progressPct = Math.round((state.index / total) * 100);
 
@@ -185,7 +233,7 @@
               "📚 Tema para revisar: ",
               el("strong", {}, q.topicLabel),
               " — veja no ",
-              el("a", { class: "hint-guide-link", onclick: renderGuide }, "Módulo 3 — Guia de Estudos"),
+              el("a", { class: "hint-guide-link", onclick: () => renderGuide(state.guideKey) }, "Guia de Estudos"),
               ".",
             ]),
           ])
@@ -205,7 +253,7 @@
       const feedback = el("div", { class: `feedback ${last.isCorrect ? "correct" : "incorrect"}` }, [
         el("div", { class: "feedback-title" }, last.isCorrect ? "Certo! 🎉" : `Não foi dessa vez — a resposta certa é ${q.correct}.`),
         el("div", {}, q.explanation),
-        el("div", { class: "feedback-note" }, "Explicação de apoio para os estudos — não é conteúdo oficial da FGV/CFC."),
+        el("div", { class: "feedback-note" }, state.feedbackNote),
       ]);
       card.appendChild(feedback);
 
@@ -251,7 +299,7 @@
     const total = state.answers.length;
     const correctCount = state.answers.filter((a) => a.isCorrect).length;
     const pct = Math.round((correctCount / total) * 100);
-    const levelLabel = state.level === "level1" ? "Nível 1 — Exame 2026.1" : "Nível 2 — Exame 2025.2";
+    const levelLabel = state.levelLabel;
 
     const reviewItems = state.answers.map((a) => {
       const q = a.question;
@@ -281,7 +329,7 @@
           "button",
           {
             class: "btn",
-            onclick: () => startLevel(state.level, state.data[state.level]),
+            onclick: () => startLevel(state.levelKey, state.rawQuestions, state.levelLabel, state.feedbackNote, state.guideKey),
           },
           "Repetir nível"
         ),
@@ -296,9 +344,10 @@
 
   const GUIDE_LEVEL_SLUGS = { "Básico": "basico", "Intermediário": "intermediario", "Avançado": "avancado" };
 
-  async function renderGuide() {
+  async function renderGuide(guideKey) {
     root.innerHTML = "";
-    const guide = await loadGuide();
+    const meta = GUIDES[guideKey];
+    const guide = await loadGuideByKey(guideKey);
 
     const sections = guide.sections.map((section) => {
       const topics = section.topics.map((topic) =>
@@ -317,8 +366,8 @@
 
     const card = el("div", { class: "card" }, [
       el("a", { class: "exit-link", onclick: renderStart }, "← Voltar ao início"),
-      el("h1", {}, "Guia de Estudos"),
-      el("p", { class: "subtitle" }, "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem."),
+      el("h1", {}, meta.title),
+      el("p", { class: "subtitle" }, meta.subtitle),
       el("div", { class: "guide-sections" }, sections),
     ]);
 

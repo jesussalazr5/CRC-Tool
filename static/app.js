@@ -205,6 +205,9 @@
       return { letter: opt.letter, btn };
     });
 
+    const correctSoFar = state.answers.filter((a) => a.isCorrect).length;
+    const incorrectSoFar = state.answers.length - correctSoFar;
+
     const card = el("div", { class: "card" }, [
       el("a", { class: "exit-link", onclick: renderStart }, "← Voltar ao início"),
       el("div", { class: "progress-row" }, [
@@ -212,6 +215,10 @@
         el("span", {}, `${progressPct}%`),
       ]),
       el("div", { class: "progress-bar" }, [el("div", { class: "progress-fill", style: `width:${progressPct}%` })]),
+      el("div", { class: "tally-row" }, [
+        el("span", { class: "tally tally-correct" }, `✓ Certas: ${correctSoFar}`),
+        el("span", { class: "tally tally-incorrect" }, `✗ Erradas: ${incorrectSoFar}`),
+      ]),
       el("p", { class: "question-text" }, q.question),
     ]);
 

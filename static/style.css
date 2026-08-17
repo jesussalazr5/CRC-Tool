@@ -155,6 +155,29 @@ button {
   transition: width 0.3s ease;
 }
 
+.tally-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tally {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.tally-correct {
+  background: var(--good-bg);
+  color: #1f6b48;
+}
+
+.tally-incorrect {
+  background: var(--bad-bg);
+  color: #99334f;
+}
+
 .question-text {
   font-size: 17px;
   line-height: 1.6;
@@ -547,4 +570,6 @@ button {
   .feedback.incorrect { color: #f0a8bd; }
   .review-tag.correct { color: #8fe0b8; }
   .review-tag.incorrect { color: #f0a8bd; }
+  .tally-correct { color: #8fe0b8; }
+  .tally-incorrect { color: #f0a8bd; }
 }

@@ -44,11 +44,11 @@
         },
         {
           "title": "Indicadores de Liquidez",
-          "summary": "Liquidez Corrente (LC) = Ativo Circulante ÷ Passivo Circulante. Liquidez Seca (LS) = (Ativo Circulante − Estoques) ÷ Passivo Circulante (mais conservadora, remove o item menos líquido). Liquidez Geral (LG) = (Ativo Circulante + Realizável a Longo Prazo) ÷ (Passivo Circulante + Passivo Não Circulante) — amplia a análise para o longo prazo. Quanto maior, melhor, em todos os três."
+          "summary": "Liquidez Corrente (LC) = Ativo Circulante ÷ Passivo Circulante. Liquidez Seca (LS) = (Ativo Circulante − Estoques) ÷ Passivo Circulante (mais conservadora, remove o item menos líquido). Liquidez Geral (LG) = (Ativo Circulante + Realizável a Longo Prazo) ÷ (Passivo Circulante + Passivo Não Circulante) — amplia a análise para o longo prazo. Liquidez Imediata (LI) = Disponibilidades (Caixa + Aplicações Financeiras) ÷ Passivo Circulante — a mais conservadora de todas, só considera o que já é dinheiro ou quase-dinheiro. Quanto maior, melhor, em todos os quatro."
         },
         {
           "title": "Indicadores de Endividamento",
-          "summary": "Endividamento Geral (EG) = Passivo Total ÷ Ativo Total (% do Ativo financiado por terceiros). Composição do Endividamento = Passivo Circulante ÷ Passivo Total (perfil da dívida: curto x longo prazo). Imobilização do Patrimônio Líquido (IPL) = recursos de longa maturação ÷ Patrimônio Líquido (quanto do capital próprio está “preso” em ativos fixos). Participação de Capitais de Terceiros (PCT) = Passivo Total ÷ Patrimônio Líquido."
+          "summary": "Endividamento Geral (EG) = Passivo Total ÷ Ativo Total × 100 (% do Ativo financiado por terceiros). Composição do Endividamento (CE) = Passivo Circulante ÷ Passivo Total × 100 (perfil da dívida: curto x longo prazo). Participação de Capitais de Terceiros (PCT) = Passivo Total ÷ Patrimônio Líquido × 100. Imobilização do Patrimônio Líquido (IPL) = (Investimentos + Imobilizado + Intangível) ÷ Patrimônio Líquido × 100. Imobilização dos Recursos Não Correntes (IRNC) = (Investimentos + Imobilizado + Intangível) ÷ (Patrimônio Líquido + Passivo Não Circulante) × 100 — mesma ideia do IPL, mas dividindo por um “colchão” maior (PL + dívida de longo prazo). Alavancagem dos Recursos Próprios (ARP) = Ativo Total ÷ Patrimônio Líquido — mostra o efeito multiplicador do capital de terceiros sobre o Ativo. Cobertura de Juros (CJ) = LAJIR ÷ Despesas Financeiras — quanto maior, mais folgada é a capacidade de pagar os encargos da dívida com o resultado operacional."
         }
       ]
     },
@@ -58,7 +58,7 @@
       "topics": [
         {
           "title": "Indicadores de Rentabilidade",
-          "summary": "Margem Bruta = Lucro Bruto ÷ Receita Líquida. Margem Operacional = Lucro Operacional ÷ Receita Líquida. Margem Líquida (ML) = Lucro Líquido ÷ Receita Líquida. ROA (Retorno sobre o Ativo) = Lucro Líquido ÷ Ativo Total (eficiência no uso de TODOS os recursos). ROE (Retorno sobre o Patrimônio Líquido) = Lucro Líquido ÷ Patrimônio Líquido (retorno específico para os sócios). EBITDA = lucro operacional “limpo” de juros, impostos, depreciação e amortização — aproxima a geração de caixa operacional."
+          "summary": "Margem Bruta (MB) = Lucro Bruto ÷ Receita Líquida × 100. Mark-up Global (MG) = Lucro Bruto ÷ Custo das Vendas × 100 — parecido com a MB, mas compara o lucro bruto ao CUSTO, não à receita; não confunda os dois. Margem Operacional (MO) = Lucro Operacional ÷ Receita Líquida × 100. Margem Líquida (ML) = Lucro Líquido ÷ Receita Líquida × 100. Margem do EBITDA (ME) = EBITDA ÷ Receita Líquida × 100. ROA/ROI (Retorno sobre o Ativo/Investimento) = Lucro Líquido ÷ Ativo Total × 100 (eficiência no uso de TODOS os recursos). ROE (Retorno sobre o Patrimônio Líquido) = Lucro Líquido ÷ Patrimônio Líquido × 100 (retorno específico para os sócios). EBITDA = lucro operacional “limpo” de juros, impostos, depreciação e amortização — aproxima a geração de caixa operacional (na prática, costuma-se somar a Depreciação/Amortização de volta ao Lucro Operacional)."
         },
         {
           "title": "Índices-Padrão",
@@ -66,7 +66,7 @@
         },
         {
           "title": "Fórmula DuPont",
-          "summary": "Versão original: ROA = Margem Líquida × Giro do Ativo (Receita Líquida ÷ Ativo Total) — mostra que o retorno vem da combinação entre lucratividade sobre vendas e eficiência no uso dos ativos. Versão modificada: vai além, incorporando o efeito da alavancagem financeira para chegar ao ROE, mostrando como o uso de capital de terceiros amplifica (ou reduz) o retorno dos sócios."
+          "summary": "Versão original: ROA = Margem Líquida × Giro do Ativo (Receita Líquida ÷ Ativo Total) — mostra que o retorno vem da combinação entre lucratividade sobre vendas e eficiência no uso dos ativos. Versão modificada: ROE = ROA × ARP (Alavancagem dos Recursos Próprios = Ativo Total ÷ Patrimônio Líquido) — mostra como o uso de capital de terceiros amplifica (ou reduz) o retorno específico dos sócios."
         },
         {
           "title": "Termômetro de Solvabilidade de Kanitz",

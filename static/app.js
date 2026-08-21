@@ -138,11 +138,11 @@
           "button",
           {
             class: "level-btn",
-            onclick: () => startLevel("adc", adcData.questions, "Simulado ADC", ADC_FEEDBACK_NOTE, "adc"),
+            onclick: renderAdcProvasMenu,
           },
           [
             el("div", { class: "level-name" }, "Módulo 4 — Análise das Demonstrações Contábeis"),
-            el("div", { class: "level-desc" }, `${adcData.questions.length} questões (livro-texto + complementares) sobre AV/AH, liquidez, endividamento, giro, prazos, ciclos, DuPont e Kanitz.`),
+            el("div", { class: "level-desc" }, `6 provas práticas de 10 questões cada (${adcData.provas.reduce((n, p) => n + p.questions.length, 0)} no total) — cada uma com um Balanço ou DRE real para classificar e calcular os indicadores.`),
           ]
         ),
         el(
@@ -175,6 +175,37 @@
     state.answered = false;
     state.hintShown = false;
     renderQuiz();
+  }
+
+  // ---------------- ADC provas menu ----------------
+
+  async function renderAdcProvasMenu() {
+    root.innerHTML = "";
+    const adcData = await loadAdcData();
+
+    const provaButtons = adcData.provas.map((prova, i) =>
+      el(
+        "button",
+        {
+          class: "level-btn",
+          onclick: () => startLevel(`adc-prova-${i + 1}`, prova.questions, prova.name, ADC_FEEDBACK_NOTE, "adc"),
+        },
+        [
+          el("div", { class: "level-name" }, prova.name),
+          el("div", { class: "level-desc" }, `${prova.questions.length} questões práticas, embaralhadas.`),
+        ]
+      )
+    );
+
+    const card = el("div", { class: "card" }, [
+      el("a", { class: "exit-link", onclick: renderStart }, "← Voltar ao início"),
+      el("h1", {}, "Escolha uma prova"),
+      el("p", { class: "subtitle" }, "6 provas de 10 questões cada, no formato do seu simulado real. Cada uma parte de um Balanço ou DRE — classifique as contas e calcule os indicadores."),
+      el("div", { class: "level-grid" }, provaButtons),
+    ]);
+
+    root.appendChild(brand());
+    root.appendChild(card);
   }
 
   function toggleHint() {

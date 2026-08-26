@@ -1,0 +1,82 @@
+{
+  "sections": [
+    {
+      "level": "Básico",
+      "levelDesc": "Os conceitos fundamentais de S&OP, CAPEX/OPEX e custos — comece por aqui.",
+      "topics": [
+        {
+          "title": "O que é S&OP",
+          "summary": "Sales and Operations Planning é um processo recorrente (tipicamente mensal) que integra as áreas Comercial, Operações/Supply Chain e Financeiro em um plano único e factível. O objetivo central é alinhar o que a empresa QUER vender (demanda) com o que ela CONSEGUE produzir/entregar (capacidade), dentro do resultado financeiro esperado — evitando que cada área planeje isoladamente."
+        },
+        {
+          "title": "CAPEX vs OPEX",
+          "summary": "CAPEX (Capital Expenditure) é investimento em ativos de longo prazo (uma nova linha, máquina, fábrica) — desembolso alto de uma vez, que expande a capacidade de forma permanente e é depreciado ao longo dos anos. OPEX (Operational Expenditure) é gasto operacional recorrente (turno extra, hora extra, terceirização) — sem investimento inicial, mas com custo variável mais alto por unidade, normalmente mais fácil de reverter. A escolha entre os dois é sempre um trade-off entre flexibilidade/custo no curto prazo e eficiência/capacidade no longo prazo."
+        },
+        {
+          "title": "Custo Fixo, Custo Variável e Custo Unitário",
+          "summary": "Custo Fixo não varia com o volume produzido no curto prazo (aluguel, depreciação, salários de supervisão). Custo Variável varia proporcionalmente ao volume (matéria-prima, mão de obra direta, energia de produção). Custo Unitário = Custo Total ÷ Volume produzido — quanto maior o volume (diluindo o custo fixo), menor tende a ser o custo unitário, até o limite da capacidade instalada."
+        },
+        {
+          "title": "Margem de Contribuição",
+          "summary": "Margem de Contribuição = Preço de Venda − Custo Variável Unitário. É o quanto cada unidade vendida “contribui” para cobrir os custos fixos e, depois, gerar lucro. É a métrica-chave para decisões de mix de produção, especialmente quando há um recurso escasso (gargalo) — nesse caso, o critério certo é a margem de contribuição POR UNIDADE DO RECURSO ESCASSO, não a margem unitária isolada."
+        },
+        {
+          "title": "Capacidade Produtiva",
+          "summary": "Capacidade é o volume máximo que uma linha/fábrica consegue produzir em um período, dado o tempo disponível e a velocidade padrão do equipamento. Quando a demanda projetada ultrapassa a capacidade instalada, diz-se que há “saturação de capacidade” — e a empresa precisa decidir entre OPEX (turno extra, terceirização), CAPEX (nova linha/fábrica) ou uma combinação das duas, faseada ao longo do tempo."
+        }
+      ]
+    },
+    {
+      "level": "Intermediário",
+      "levelDesc": "O ciclo de S&OP em detalhe e as primeiras ferramentas de análise financeira e de estoque.",
+      "topics": [
+        {
+          "title": "O Ciclo de S&OP em detalhe",
+          "summary": "Sequência clássica: (1) Demand Review — consolida e valida o forecast de vendas; (2) Supply Review — confronta a demanda com a capacidade/estoque/recursos disponíveis, identificando gaps; (3) Reconciliation (Pre-S&OP) — trabalha os gaps, prepara cenários e recomendações; (4) Executive S&OP — decisão final da liderança multifuncional sobre trade-offs. É um ciclo mensal, com horizonte de planejamento rolante (tipicamente 18–24 meses à frente)."
+        },
+        {
+          "title": "Payback Simples",
+          "summary": "Payback Simples = Investimento Inicial ÷ Fluxo de Caixa Anual (constante). Responde “em quanto tempo o investimento se paga”. É rápido e intuitivo, mas tem duas limitações importantes: ignora o valor do dinheiro no tempo (não desconta os fluxos futuros) e ignora tudo que acontece depois do período de payback."
+        },
+        {
+          "title": "Fluxo de Caixa Incremental",
+          "summary": "É o fluxo de caixa ADICIONAL gerado especificamente por uma decisão (ex.: nova linha), comparado ao cenário sem essa decisão. Tipicamente: Fluxo Incremental = (Volume adicional × Margem de contribuição unitária) − Custos fixos adicionais. É a base de qualquer cálculo de Payback, VPL ou TIR — nunca se usa o fluxo de caixa total da empresa, apenas o que a decisão especificamente muda."
+        },
+        {
+          "title": "Giro de Estoque e Cobertura em Dias",
+          "summary": "Giro de Estoque = CMV ÷ Estoque Médio (quantas vezes o estoque se renova no período). Cobertura em dias (Days of Supply) = número de dias do período ÷ Giro (ou, de forma equivalente, (Estoque Médio ÷ CMV) × dias do período). Em supply chain, a cobertura em dias é geralmente mais usada no dia a dia do que o giro, por ser mais intuitiva para decisões operacionais."
+        },
+        {
+          "title": "Sazonalidade e Nivelamento de Produção",
+          "summary": "Quando a demanda varia fortemente ao longo do ano (sazonalidade) e a capacidade é fixa, o “nivelamento de produção” (level loading) busca produzir em ritmo mais constante, formando estoque na entressafra para atender aos picos — sem precisar de CAPEX adicional. O trade-off central: custo de produzir fora do pico (ineficiências, turnos extras) versus custo/risco de carregar estoque (capital de giro, armazenagem, e — em produtos perecíveis — risco de perda por validade)."
+        }
+      ]
+    },
+    {
+      "level": "Avançado",
+      "levelDesc": "As ferramentas financeiras mais robustas, a alocação ótima de mix e como comunicar decisões de capacidade no nível executivo.",
+      "topics": [
+        {
+          "title": "VPL (Valor Presente Líquido)",
+          "summary": "VPL = Σ [Fluxo de Caixa do período ÷ (1 + taxa de desconto)^período] − Investimento Inicial. Traz todos os fluxos futuros a valor presente (descontados pelo custo de capital/WACC) e subtrai o investimento inicial. VPL positivo = o projeto gera valor acima do custo de capital exigido → aceitar. VPL negativo = o projeto destrói valor → rejeitar. Ao contrário do Payback, o VPL considera o valor do dinheiro no tempo e TODO o horizonte do projeto."
+        },
+        {
+          "title": "TIR (Taxa Interna de Retorno)",
+          "summary": "TIR é, por definição, a taxa de desconto que zera o VPL do projeto. Regra de decisão: se TIR > WACC (custo de capital), o projeto deve ser aceito (equivalente a dizer que o VPL é positivo àquela taxa de desconto). Como o VPL cai conforme a taxa de desconto sobe, um VPL positivo a uma determinada taxa sempre implica que a TIR do projeto é MAIOR do que essa taxa."
+        },
+        {
+          "title": "OEE (Overall Equipment Effectiveness)",
+          "summary": "OEE = Disponibilidade × Performance × Qualidade. Disponibilidade = Tempo Disponível ÷ Tempo Total (perdas por paradas). Performance = Produção Real ÷ Produção Teórica Máxima no tempo disponível (perdas de velocidade/microparadas). Qualidade = Unidades Boas ÷ Produção Real (perdas por defeito/retrabalho). Um OEE de “classe mundial” costuma ser referenciado próximo de 85%. Antes de propor CAPEX, o Analista de S&OP deve identificar QUAL dos três componentes tem mais espaço de ganho de baixo investimento."
+        },
+        {
+          "title": "Alocação Ótima de Mix (Recurso Escasso)",
+          "summary": "Quando um recurso é limitante (gargalo, ex.: horas-máquina), o critério de priorização de produção NÃO é a margem de contribuição unitária de cada produto isoladamente — é a margem de contribuição POR UNIDADE DO RECURSO ESCASSO. Aloca-se o recurso na ordem decrescente dessa margem por hora (ou por kg, ou por outra unidade do gargalo), até esgotar a demanda de cada produto ou o recurso disponível. Um produto com alta margem unitária, mas que consome muito do recurso escasso, pode não ser prioritário."
+        },
+        {
+          "title": "Comunicação Executiva de Decisões de Capacidade",
+          "summary": "Ao levar uma recomendação de CAPEX/OPEX para a Diretoria, a defesa mais sólida combina: (1) dados quantificados (capacidade, custo unitário, Payback, VPL); (2) alternativas concretas de curto prazo (otimização de OEE, revisão de mix, turnos) antes de pedir capital; (3) os riscos e trade-offs de cada cenário, de forma explícita — nunca apenas uma opinião sem números. O objetivo é permitir que a liderança decida com clareza sobre o trade-off real, não “vender” uma única alternativa sem contexto."
+        }
+      ]
+    }
+  ]
+}

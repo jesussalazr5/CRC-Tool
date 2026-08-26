@@ -3,10 +3,12 @@
 
   const GUIDES = {
     cfc: { url: "data/guide.json", title: "Guia de Estudos — CFC", subtitle: "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem." },
+    sop: { url: "data/sop_guide.json", title: "Guia de Estudos — S&OP / CAPEX", subtitle: "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem." },
   };
 
   const state = {
     data: null,
+    sopData: null,
     guides: {}, // cache per GUIDES key
     levelKey: null,
     levelLabel: null,
@@ -47,6 +49,13 @@
     return state.data;
   }
 
+  async function loadSopData() {
+    if (state.sopData) return state.sopData;
+    const res = await fetch("data/sop_questions.json");
+    state.sopData = await res.json();
+    return state.sopData;
+  }
+
   async function loadGuideByKey(key) {
     if (state.guides[key]) return state.guides[key];
     const res = await fetch(GUIDES[key].url);
@@ -81,10 +90,12 @@
   // ---------------- Start screen ----------------
 
   const CFC_FEEDBACK_NOTE = "Explicação de apoio para os estudos — não é conteúdo oficial da FGV/CFC.";
+  const SOP_FEEDBACK_NOTE = "Explicação de apoio para os estudos, com base em conceitos de S&OP e finanças corporativas — material de preparação, não um gabarito oficial.";
 
   async function renderStart() {
     root.innerHTML = "";
     const data = await loadData();
+    const sopData = await loadSopData();
 
     const card = el("div", { class: "card" }, [
       el("h1", {}, "Vamos praticar? 💜"),
@@ -123,6 +134,28 @@
             el("div", { class: "level-desc" }, "Os temas que caem na prova, organizados do básico ao avançado, para estudar antes (ou entre) os simulados."),
           ]
         ),
+        el(
+          "button",
+          {
+            class: "level-btn",
+            onclick: renderSopProvasMenu,
+          },
+          [
+            el("div", { class: "level-name" }, "Módulo 4 — S&OP / CAPEX"),
+            el("div", { class: "level-desc" }, `6 provas práticas de 10 questões cada (${sopData.provas.reduce((n, p) => n + p.questions.length, 0)} no total) — CAPEX x OPEX, VPL/TIR, ciclo de S&OP, OEE, estoques e mix de produção.`),
+          ]
+        ),
+        el(
+          "button",
+          {
+            class: "level-btn",
+            onclick: () => renderGuide("sop"),
+          },
+          [
+            el("div", { class: "level-name" }, "Módulo 4 — Guia de Estudos (S&OP / CAPEX)"),
+            el("div", { class: "level-desc" }, "Os conceitos de planejamento integrado e estratégia de capacidade, organizados do básico ao avançado."),
+          ]
+        ),
       ]),
     ]);
 
@@ -142,6 +175,37 @@
     state.answered = false;
     state.hintShown = false;
     renderQuiz();
+  }
+
+  // ---------------- S&OP provas menu ----------------
+
+  async function renderSopProvasMenu() {
+    root.innerHTML = "";
+    const sopData = await loadSopData();
+
+    const provaButtons = sopData.provas.map((prova, i) =>
+      el(
+        "button",
+        {
+          class: "level-btn",
+          onclick: () => startLevel(`sop-prova-${i + 1}`, prova.questions, prova.name, SOP_FEEDBACK_NOTE, "sop"),
+        },
+        [
+          el("div", { class: "level-name" }, prova.name),
+          el("div", { class: "level-desc" }, `${prova.questions.length} questões práticas, embaralhadas.`),
+        ]
+      )
+    );
+
+    const card = el("div", { class: "card" }, [
+      el("a", { class: "exit-link", onclick: renderStart }, "← Voltar ao início"),
+      el("h1", {}, "Escolha uma prova"),
+      el("p", { class: "subtitle" }, "6 provas de 10 questões cada, cobrindo CAPEX x OPEX, VPL/TIR, ciclo de S&OP, OEE, estoques e mix de produção."),
+      el("div", { class: "level-grid" }, provaButtons),
+    ]);
+
+    root.appendChild(brand());
+    root.appendChild(card);
   }
 
   function toggleHint() {

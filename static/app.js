@@ -3,12 +3,10 @@
 
   const GUIDES = {
     cfc: { url: "data/guide.json", title: "Guia de Estudos — CFC", subtitle: "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem." },
-    adc: { url: "data/adc_guide.json", title: "Guia de Estudos — Análise das Demonstrações Contábeis", subtitle: "Toque em cada tema para abrir o resumo. Organizado do básico ao avançado — vale a pena estudar nessa ordem." },
   };
 
   const state = {
     data: null,
-    adcData: null,
     guides: {}, // cache per GUIDES key
     levelKey: null,
     levelLabel: null,
@@ -49,13 +47,6 @@
     return state.data;
   }
 
-  async function loadAdcData() {
-    if (state.adcData) return state.adcData;
-    const res = await fetch("data/adc_questions.json");
-    state.adcData = await res.json();
-    return state.adcData;
-  }
-
   async function loadGuideByKey(key) {
     if (state.guides[key]) return state.guides[key];
     const res = await fetch(GUIDES[key].url);
@@ -90,12 +81,10 @@
   // ---------------- Start screen ----------------
 
   const CFC_FEEDBACK_NOTE = "Explicação de apoio para os estudos — não é conteúdo oficial da FGV/CFC.";
-  const ADC_FEEDBACK_NOTE = "Explicação de apoio para os estudos, baseada no livro-texto e em normas contábeis — não é o gabarito oficial da sua prova.";
 
   async function renderStart() {
     root.innerHTML = "";
     const data = await loadData();
-    const adcData = await loadAdcData();
 
     const card = el("div", { class: "card" }, [
       el("h1", {}, "Vamos praticar? 💜"),
@@ -134,28 +123,6 @@
             el("div", { class: "level-desc" }, "Os temas que caem na prova, organizados do básico ao avançado, para estudar antes (ou entre) os simulados."),
           ]
         ),
-        el(
-          "button",
-          {
-            class: "level-btn",
-            onclick: renderAdcProvasMenu,
-          },
-          [
-            el("div", { class: "level-name" }, "Módulo 4 — Análise das Demonstrações Contábeis"),
-            el("div", { class: "level-desc" }, `6 provas práticas de 10 questões cada (${adcData.provas.reduce((n, p) => n + p.questions.length, 0)} no total) — cada uma com um Balanço ou DRE real para classificar e calcular os indicadores.`),
-          ]
-        ),
-        el(
-          "button",
-          {
-            class: "level-btn",
-            onclick: () => renderGuide("adc"),
-          },
-          [
-            el("div", { class: "level-name" }, "Módulo 4 — Guia de Estudos (ADC)"),
-            el("div", { class: "level-desc" }, "Os temas da sua prova de Análise das Demonstrações Contábeis, organizados do básico ao avançado."),
-          ]
-        ),
       ]),
     ]);
 
@@ -175,37 +142,6 @@
     state.answered = false;
     state.hintShown = false;
     renderQuiz();
-  }
-
-  // ---------------- ADC provas menu ----------------
-
-  async function renderAdcProvasMenu() {
-    root.innerHTML = "";
-    const adcData = await loadAdcData();
-
-    const provaButtons = adcData.provas.map((prova, i) =>
-      el(
-        "button",
-        {
-          class: "level-btn",
-          onclick: () => startLevel(`adc-prova-${i + 1}`, prova.questions, prova.name, ADC_FEEDBACK_NOTE, "adc"),
-        },
-        [
-          el("div", { class: "level-name" }, prova.name),
-          el("div", { class: "level-desc" }, `${prova.questions.length} questões práticas, embaralhadas.`),
-        ]
-      )
-    );
-
-    const card = el("div", { class: "card" }, [
-      el("a", { class: "exit-link", onclick: renderStart }, "← Voltar ao início"),
-      el("h1", {}, "Escolha uma prova"),
-      el("p", { class: "subtitle" }, "6 provas de 10 questões cada, no formato do seu simulado real. Cada uma parte de um Balanço ou DRE — classifique as contas e calcule os indicadores."),
-      el("div", { class: "level-grid" }, provaButtons),
-    ]);
-
-    root.appendChild(brand());
-    root.appendChild(card);
   }
 
   function toggleHint() {

@@ -2,79 +2,111 @@
   "sections": [
     {
       "level": "Básico",
-      "levelDesc": "Planejamento, níveis de decisão e a lógica do orçamento — comece por aqui.",
+      "levelDesc": "Aula 1 — Do planejamento ao orçamento: conceitos, níveis, missão e visão, plano de ação.",
       "topics": [
         {
-          "title": "O que é planejamento",
-          "summary": "Planejamento é um processo contínuo e orientado ao futuro: define aonde se quer chegar e como. Não é um evento pontual — como o ambiente interno e externo muda, precisa ser revisto periodicamente. É também pré-requisito do controle: sem planejamento não existem padrões para comparar com o realizado."
+          "title": "Planejamento: origens e conceito",
+          "summary": "Só em meados de 1900 surgiram sistemas de administração orçamentária, como forma rudimentar de planejamento. Planejar é, basicamente, uma tomada de decisões sistematizada e contínua por parte dos gestores: uma programação antecipada de decisões para alcançar os objetivos organizacionais da melhor forma possível. O planejamento deve responder: onde se pretende chegar? o que deve ser feito? quando? como? em que sequência? Segundo Chiavenatto (1993), produz antecipadamente os alvos a alcançar e como alcançá-los: um modelo teórico para uma ação futura."
+        },
+        {
+          "title": "Planejamento no processo administrativo",
+          "summary": "A primeira função do processo administrativo é planejar; as demais são organização, direção e controle. Planejar envolve: coletar dados, diagnosticar a situação, definir objetivos a alcançar, desdobrar os objetivos em metas, alocar os recursos necessários, elaborar o plano de ação e desdobrar os planos em programas. Em resumo: do presente (onde estamos agora, situação atual) para o futuro (onde pretendemos chegar, objetivos pretendidos), passando por planejamento e planos."
+        },
+        {
+          "title": "Importância e motivos para planejar",
+          "summary": "O exercício sistemático do planejamento reduz as incertezas do processo decisório e aumenta a probabilidade de alcançar objetivos, desafios e metas; é um processo contínuo de pensamento sobre o futuro e, portanto, envolve incertezas. Motivos para utilizar: reduz a incerteza; traz cooperação e coordenação; economia em operação; antecipa contingências imprevisíveis; alcance dos objetivos predeterminados; evitar a mortalidade organizacional. Reflexão da aula: quem não sabe para onde quer ir é um barco à deriva; para quem não tem destino, qualquer caminho serve (Alice no País das Maravilhas). Jim Collins: os gestores devem administrar pensando 25 anos adiante, não um quarto de ano."
+        },
+        {
+          "title": "Níveis de abrangência e integração dos tempos",
+          "summary": "Estratégico: definido pela alta administração, envolve toda a empresa, é amplo e de longo prazo. Tático: nível setorial, médio prazo, definido por cada unidade ou departamento, dá aos gestores objetivos quantitativos mensuráveis. Operacional: voltado a cada tarefa ou atividade isoladamente, curto prazo, plano detalhado das operações. Integrando os tempos: missão e visão 5 a 10 anos; planejamento estratégico 5 a 10 anos; tático 1 a 5 anos; operacional 1 a 5 anos; plano contingencial 1 ano; orçamento e outros planos 1 ano."
+        },
+        {
+          "title": "Planejamento como processo e aspectos limitantes",
+          "summary": "Processo de planejamento (ciclo de 5 etapas): 1) desenvolva o plano estratégico; 2) traduza o plano estratégico em etapas táticas; 3) planeje as operações diárias; 4) execute os planos; 5) monitore o progresso e ajuste os planos. Aspectos limitantes: falta de informações precisas; resistência à mudança; inflexibilidade; planejamento inadequado; fatores de tempo e custo; filosofia organizacional."
         },
         {
           "title": "Missão e Visão",
-          "summary": "Missão é a razão de existir da organização e o propósito que orienta suas ações no presente. Visão é a imagem de futuro desejada no longo prazo — onde a empresa quer chegar. A missão serve de caminho entre a situação atual e a visão. Não são sinônimos e nenhuma das duas trata das tarefas do dia a dia."
+          "summary": "Princípios, valores e crenças são expressos pela definição de visão e missão. Visão: ideologia da empresa e sua perspectiva de futuro; orienta a organização em uma meta de longo prazo, criando um compromisso consigo própria. Missão: declaração ampla e duradoura de propósitos que individualiza a organização e distingue seu negócio, delimitando as atividades no espaço que deseja ocupar diante das oportunidades. A missão deveria responder: quais produtos/serviços? que atividades? quem é o cliente? em que mercado atua? qual o benefício ao acionista? Exemplo CEMIG — missão: atuar no setor de energia com rentabilidade, qualidade e responsabilidade social; visão: consolidar-se, nesta década, como o maior grupo do setor elétrico nacional em valor de mercado, líder mundial em sustentabilidade."
         },
         {
-          "title": "Níveis de planejamento: Estratégico, Tático e Operacional",
-          "summary": "Estratégico: longo prazo, alta direção, define rumo e posicionamento — e serve de base aos demais. Tático: médio prazo, gerentes/departamentos, desdobra a estratégia em metas e planos por área. Operacional: curto prazo, supervisores/equipes, rotinas e tarefas do dia a dia. Os três precisam estar integrados: metas táticas e ações operacionais devem derivar da estratégia, nunca contradizê-la."
-        },
-        {
-          "title": "O orçamento empresarial",
-          "summary": "O orçamento é a expressão quantitativa e financeira do planejamento: transforma metas em números (vendas, custos, despesas, caixa) e permite compará-los depois com o realizado. É um plano integrado — as peças se relacionam entre si — e não um conjunto de orçamentos isolados por área."
-        },
-        {
-          "title": "Condições para implantar o orçamento",
-          "summary": "Três pilares: (1) apoio da administração; (2) informações adequadas e confiáveis; (3) comunicação clara entre os envolvidos. O orçamento deve ser participativo: envolver vários níveis hierárquicos, especialmente os gestores que executam cada parte, pois são eles que conhecem os recursos que suas áreas necessitam. Elaborá-lo apenas pela cúpula ou de forma isolada por área são práticas inadequadas."
+          "title": "Plano de ação",
+          "summary": "De nada adianta planejar se não se converter em ações que gerem os resultados propostos. Um plano de ação é um projeto que estrutura as principais ideias e estratégias na realização de atividades e responde: o que será feito? (etapas para atingir o objetivo); por que será feito? (justificativa e objetivos); quando? (prazo, para evitar que fique na gaveta); por quem? (responsáveis e entregas); como? (estratégias e método); de que recursos precisarei? (financeiros, estrutura, equipamentos, pessoas, conhecimento, treinamento); como saberei que atingi os objetivos? (controle, com evidências financeiras, de tempo, de construção, de medição)."
         }
       ]
     },
     {
       "level": "Intermediário",
-      "levelDesc": "O controle orçamentário e o encadeamento das peças: vendas, produção, matérias-primas, impostos e despesas.",
+      "levelDesc": "Aula 2 — O orçamento: características, premissas, metas, implantação e controle.",
       "topics": [
         {
-          "title": "Controle orçamentário e análise de desvios",
-          "summary": "Três fases, em sequência: (1) estabelecer padrões (o orçado); (2) observar o desempenho e compará-lo com os padrões; (3) tomar ações corretivas — que é a ÚLTIMA fase, nunca uma etapa intermediária. Desvio = Realizado − Orçado; desvio % = desvio ÷ Orçado. Para receitas, abaixo do orçado é desfavorável; para despesas e custos, acima do orçado é desfavorável. O objetivo é entender as causas e corrigir, não punir."
+          "title": "O orçamento: conceito, recursos e características",
+          "summary": "Orçamento é o plano administrativo que abrange todas as fases das operações para um período futuro definido; a capacidade de fixar limites de gastos para atingir um objetivo maior; a expressão quantitativa do que se pretende atingir, baseada nos objetivos e metas organizacionais. Mostra os recursos necessários e sua forma de utilização: pessoal, técnicas específicas, equipamentos, espaço de trabalho e dinheiro. Características: evita a tomada de decisão no improviso; não deve ser inflexível; minimiza riscos de ameaças; gera segurança; baseia-se na viabilidade. O orçamento empresarial traduz o planejamento e o controle em algo estruturado e mensurável e é a previsão dos resultados operacionais desejados."
         },
         {
-          "title": "Sequência das peças orçamentárias",
-          "summary": "O Orçamento de Vendas é a peça inicial e o “motor” do sistema: alimenta produção, matérias-primas, mão de obra, impostos, comissões e despesas com vendas. Numa indústria a cadeia lógica é: Vendas → Produção → Matérias-primas e mão de obra (e CIF) → Despesas → Caixa. O gerente de vendas deve participar da elaboração do orçamento de suas próprias despesas."
+          "title": "Objetivos, vantagens e falhas do orçamento",
+          "summary": "Objetivos: direcionar os gerentes ao planejamento; fornecer informações para melhorar a decisão; ser forma de avaliação de performance; melhorar comunicação e coordenação. Vantagens: definir metas e objetivos; pensar o plano futuro; otimizar a alocação de recursos; descobrir potenciais gargalos; coordenar atividades de forma sistêmica; comunicar os planos a todos os níveis; fixar objetivos e políticas; forçar os gestores a planejar conforme os planos gerais; obrigar a quantificar e datar atividades; reduzir o envolvimento dos altos administradores com o dia a dia (delegação); identificar pontos de eficiência ou deficiência; melhorar o uso dos recursos. Falha: os dados são apenas estimativas, sujeitas a eventos internos e externos que podem inviabilizar a previsão."
         },
         {
-          "title": "Orçamento de Vendas",
-          "summary": "Receita orçada = preço unitário × quantidade projetada. A quantidade de dias úteis do mês influencia diretamente o valor (ex.: R$ 5.000 por dia útil × 22 dias = R$ 110.000; × 20 dias = R$ 100.000). Cuidado: preço × quantidade resulta na receita, não nas despesas de marketing."
+          "title": "Sistema orçamentário",
+          "summary": "Contempla todas as atividades operacionais e acessórias da empresa; dispõe de controle eficiente e eficaz para apurar desvios; prevê e controla os fluxos de caixa, resultados e patrimônio. Características: projeção para o futuro, expressão monetária, flexibilidade, comprometimento, completude, oportunidade, uniformidade e controle."
         },
         {
-          "title": "Impostos e despesas sobre vendas",
-          "summary": "Impostos e comissões dependem do volume e dos valores projetados no orçamento de vendas, portanto só podem ser calculados depois que ele estiver definido. Imposto = alíquota × receita do período (ex.: 5% × R$ 120.000 = R$ 6.000). O mesmo raciocínio vale para comissões de vendas expressas em percentual da receita."
+          "title": "Premissas orçamentárias",
+          "summary": "São orientações básicas ou pressupostos para iniciar a elaboração do orçamento, em conformidade com o planejamento estratégico, baseadas em hipóteses viáveis, possíveis e prováveis, com compreensão do cenário econômico do período. Cenário: PIB (nível de atividade econômica do país); inflação (perda do poder aquisitivo da moeda); juros (custo de oportunidade de reter o recurso). Operacionais: fatores de consumo de materiais e mão de obra, hierarquia de produtos, estrutura organizacional do ponto de partida, centros de custos e unidades de negócio no plano de contas, tendência de obtenção de insumos (importados ou nacionais), pontos de partida (saldos de balanço, preços, salários). Estruturais: moeda de decisão e período de planejamento (anual, semestral, coincidente ou não com o ano civil). Econômico-financeiras: inflação, juros, variação nos preços dos insumos e variação cambial."
         },
         {
-          "title": "Orçamento de Produção e Matérias-Primas",
-          "summary": "Produção = Vendas + Estoque Final desejado − Estoque Inicial. Consumo de matéria-prima = unidades produzidas × consumo por unidade. Compras de matéria-prima = Consumo + Estoque Final desejado − Estoque Inicial. Custo das compras = kg a comprar × preço/kg. Mão de obra direta = unidades produzidas × horas por unidade × valor da hora. O estoque inicial de um mês é o estoque final do mês anterior."
+          "title": "Metas orçamentárias e participação dos gerentes",
+          "summary": "As metas orçamentárias quantificam os objetivos do planejamento estratégico e se dividem em metas de lucro e metas de desempenho. Desempenho: aumento do giro dos ativos; aumento ou redução do capital de giro; redução do índice de devolução de vendas; redução da inadimplência; redução do custo de mão de obra por produtividade; redução ou aumento do endividamento; redução do nível de imobilização do patrimônio líquido; redução ou aumento do nível de estoques. Participação dos gerentes: a aceitação das metas e o empenho em cumpri-las são maiores porque não foram impostas pela alta administração, e a participação promove troca de informações entre os setores."
+        },
+        {
+          "title": "Implantação do orçamento: condições, fatores e falhas",
+          "summary": "Condições: estrutura organizacional compatível com objetivos e metas; contabilidade aberta, informatizada e descentralizada (autogerenciável, lançamento feito na origem pelo próprio usuário); fixação de objetivos e metas; análise da situação interna e externa; disciplina e seriedade. Welsch: um sistema de informação, com dados contábeis, históricos adequados e apropriados. Fatores imprescindíveis: envolvimento da alta administração; adaptação organizacional; definição de objetivos; comunicação integral; expectativas realistas; oportunidade; reconhecimento de esforços individuais e em grupo; acompanhamento. Falhas: estrutura inadequada; sistema ineficaz de registro contábil; falta de sistema de custos; falta de apoio da cúpula; expectativa grande demais ou prematura; implantação apressada; supervisão deficiente; falta de cooperação; falha na análise das variações; falta de dados históricos; papelada excessiva; período de projeção longo demais; falta de definição do processo; falta de flexibilidade nas estimativas; pesquisa de mercado mal feita; falta de decisões globais sobre preços, salários e despesas."
+        },
+        {
+          "title": "Controle orçamentário e desvios",
+          "summary": "É a técnica que acompanha, avalia e analisa o planejamento financeiro em suas várias etapas, verificando as defasagens entre orçado e realizado para sugerir medidas saneadoras na próxima proposta orçamentária. Objetivos: confrontar realizado com orçado; analisar as defasagens positivas e negativas; auxiliar na conquista contínua de retorno sobre o capital investido; sugerir medidas preventivas, corretivas e saneadoras em tempo hábil. Desvio = Realizado − Orçado; desvio % = desvio ÷ Orçado. Para receitas, abaixo do orçado é desfavorável; para despesas, acima do orçado é desfavorável. Ex.: vendas orçadas 500.000 e realizadas 460.000 → −8% (desfavorável). Indicadores de desempenho: nível mundial, nacional/estadual e interno; painéis de vendas e marketing, cliente, financeiros, pessoas, operações, TI e gestão de projetos."
         }
       ]
     },
     {
       "level": "Avançado",
-      "levelDesc": "Tipos de orçamento, liquidez, custos indiretos e gestão por projetos.",
+      "levelDesc": "Aulas 3, 4 e 5 — Elaboração das peças, tipos de orçamento, fluxo de caixa e DRE projetados.",
       "topics": [
         {
-          "title": "Orçamento Estático x Flexível",
-          "summary": "Estático: elaborado para um único nível de atividade; não se ajusta se o volume real for diferente. Flexível: recalcula o orçado para o volume realmente atingido — os custos variáveis acompanham o volume e os fixos (na faixa relevante) permanecem. Exemplo: custo variável R$ 30/un, fixo R$ 50.000. Orçado estático (10.000 un) = R$ 350.000; flexível para 12.000 un = R$ 410.000. Se o real foi R$ 420.000, o desvio justo é R$ 10.000 (contra o flexível), não R$ 70.000 (contra o estático) — a maior parte da diferença é só volume."
+          "title": "Consolidação e orçamento de vendas",
+          "summary": "O orçamento de vendas é o ponto de partida: dele derivam produção (matéria-prima, mão de obra e custos indiretos), despesas operacionais (de vendas, administrativas, financeiras e tributárias), investimentos, marketing e caixa. Fatores internos da previsão: capacidade produtiva; vendas e marketing; engenharia; gestão e finanças. Fatores externos: mercado; competitividade; economia e governo; tecnologia; impactos ambientais. Política de preços e volumes: com volume mantido e preço maior, ou com preço mantido e volume maior, lucro e rentabilidade tendem a subir. O orçamento traz quantidades e valores por produto/região, preço unitário, modalidades e prazos de venda e formas de distribuição. Métodos de estimação: crescimento histórico (médias aritméticas ou geométricas); crescimento esperado (setor no curto prazo, economia no longo prazo); previsão dos analistas; determinantes de crescimento (ROE, alavancagem, ROA, margem, giro); levantamentos de intenções de compradores, opiniões de vendedores e especialistas (o que se diz); instrumental matemático e estatístico (o que se fez). Considerar também a sazonalidade."
         },
         {
-          "title": "Orçamento Contínuo e Base Zero",
-          "summary": "Contínuo (rolling): à medida que um período termina, acrescenta-se um novo no fim do horizonte, mantendo sempre um planejamento à frente. Base Zero (OBZ): cada despesa precisa ser justificada do início a cada ciclo, sem presumir aprovação automática baseada no que foi gasto no passado — o objetivo é eliminar ineficiências históricas. O OBZ não é solução automática: exige análise e justificativa."
+          "title": "Orçamento de produção e custos de produção",
+          "summary": "Aspectos: quantidades de cada produto, política de estoques, capacidade operacional, capacidade financeira, sazonalidade das vendas, capacidade de estocagem, necessidade de investimentos, escala econômica, capacidade máxima de fabricação, utilização de mão de obra direta, duração e etapas do processo. Nível de estoque desejado depende de sazonalidade, capacidade financeira e de crédito e disponibilidade de mão de obra capacitada. Produção = Vendas + Estoque Final desejado − Estoque Inicial. Compras de matéria-prima = Consumo + Estoque Final − Estoque Inicial. Custos de produção: matérias-primas (insumos, embalagens, rótulos, suprimentos), mão de obra (avaliação de desempenho, treinamento, sindicatos, recrutamento, especificação de tarefas, administração salarial) e custos gerais/indiretos de fabricação (máquinas, mão de obra e insumos compartilhados)."
         },
         {
-          "title": "Orçamento de Caixa e Liquidez",
-          "summary": "Lucro contábil não é o mesmo que liquidez: vendas a prazo geram receita reconhecida antes do recebimento. O orçamento de caixa projeta entradas e saídas reais de dinheiro e antecipa sobras e faltas. Saldo final = Saldo inicial + Recebimentos − Pagamentos. Recebimentos do mês = parte à vista das vendas do mês + parte a prazo das vendas dos meses anteriores (conforme o prazo). Um saldo negativo sinaliza a necessidade de captar recursos ou renegociar prazos."
+          "title": "Despesas operacionais, investimentos e marketing",
+          "summary": "Despesas com vendas: salários e encargos dos vendedores, impostos sobre a venda, aluguel do ponto de venda, telefonemas, fretes, perdas com devedores duvidosos, cobrança. Administrativas: controladoria, secretaria, diretoria, portaria, contabilidade, pessoal, limpeza e vigilância, seguros, aluguel, material de expediente, comunicação, despesas judiciais e legais, depreciação de bens da administração. Tributárias: IPI, ICMS, ISS, PIS, COFINS, IRPJ, CSLL, IPTU, IPVA, INSS, II, taxas e contribuições sindicais. Financeiras: juros e correção monetária recebidos (+) e pagos (−), tarifas. Investimentos: acréscimos, melhoramentos, substituições de ativos, patentes; usa métodos de avaliação e se alinha à estratégia global, pois determina o crescimento futuro. Marketing: comunicação, pesquisa, vendas, desenvolvimento de produtos, serviço ao cliente, distribuição."
         },
         {
-          "title": "Custos Indiretos de Fabricação (CIF) e rateio",
-          "summary": "CIF são gastos que beneficiam vários produtos/setores e não podem ser atribuídos diretamente a uma única unidade — por isso exigem critério de rateio (horas-máquina, horas de mão de obra, área ocupada etc.). Exemplo: CIF de R$ 60.000; A usa 3.000 h-máq e B usa 1.000 h-máq → A recebe 75% = R$ 45.000 e B, 25% = R$ 15.000."
+          "title": "Orçamento de caixa e fluxo de caixa projetado",
+          "summary": "O fluxo de caixa projetado indica o excesso ou a insuficiência de disponibilidades e a necessidade de empréstimos ou a disponibilidade de fundos para investimento temporário. Entradas: vendas, capital, empréstimos, desconto de duplicatas. Saídas: fornecedores, impostos, pessoal, aquisição de imobilizado, publicidade, comissões, fretes etc. Fluxo do mês = entradas − saídas; saldo final = saldo inicial + fluxo do mês. Exemplo: 60% à vista e 40% a prazo (recebido no mês seguinte); vendas mês 0 = 80.000 e mês 1 = 100.000 → recebimentos do mês 1 = 60.000 + 32.000 = 92.000. Lucro contábil não é liquidez: vendas a prazo geram receita antes do recebimento."
         },
         {
-          "title": "Administração por Projetos",
-          "summary": "Gerir por projetos ajuda a alinhar os investimentos com a estratégia global da empresa, priorizando iniciativas que geram valor e acompanhando-as com orçamento e prazo. Contribui para o desempenho financeiro ao evitar dispersão de recursos e melhorar o retorno dos investimentos."
+          "title": "Demonstração de Resultado Projetada",
+          "summary": "Permite a análise da formação do resultado econômico da empresa, isto é, o confronto da previsão das vendas com as respectivas deduções (impostos), custos e despesas. Estrutura: receita bruta − impostos = receita líquida; − custos = lucro bruto; − despesas (comissões, administrativas etc.) = resultado. Exemplo: receita 444.000; impostos 5% = 22.200; receita líquida 421.800; custo (3.700 un × R$ 50) 185.000; lucro bruto 236.800; comissões 4% = 17.760; despesas administrativas 60.000; resultado 159.040."
+        },
+        {
+          "title": "Orçamento estático e orçamento contínuo",
+          "summary": "Estático: é o próprio orçamento empresarial tradicional, elaborado a partir de determinados níveis de produção ou vendas; a gestão não tolera alterações nas peças orçamentárias. Contínuo: quebra o paradigma do período anual; à medida que um mês encerra, um novo entra no fim do horizonte (20x1 → 20x2); análises constantes e mensais; mantém os envolvidos continuamente no processo; incorpora condições variáveis em momentos oportunos; permite replanejar diante de circunstâncias não esperadas. Características importantes: analisar pontos positivos e negativos do período passado, comportamento proativo, relatórios mensais em tempo hábil, autocorreção, competência dos participantes, detalhar receita e despesas controláveis. Vantagens: facilidade de orçar períodos menores, novas variáveis, orçamento mais preciso e detalhado, fácil implementação e gerenciamento, menor tempo de elaboração, verdadeira responsabilidade."
+        },
+        {
+          "title": "Orçamento Base Zero (OBZ)",
+          "summary": "Objetivo: eliminar a perpetuação de ineficiências históricas. O histórico NÃO é o ponto de partida (antes, o histórico era importante e se incrementavam percentuais sobre o período passado). Todas as atividades são analisadas e todos os recursos submetidos à aprovação; exige exame detalhado dos gastos; define metas de redução específicas por gerência; é elaborado de baixo para cima, com envolvimento de todos os níveis de chefia e apoio da maior autoridade executiva; analisa o custo-benefício de todos os projetos, processos e atividades; aprova o nível de gastos com critérios previamente definidos; é participativo. Vantagens: força a refletir sobre as operações, foca nas reais necessidades, atitude interrogativa, mais envolvimento e motivação, foco na produtividade e não só no custo, informações detalhadas, evidencia excessos e duplicidades, melhor acompanhamento do planejado x realizado, aplicável a qualquer entidade. Aspecto negativo: pode engessar (ex.: meta de R$ 10.000 = 10.000 unidades; e se vender 12.000?) e demanda mais tempo."
+        },
+        {
+          "title": "Orçamento flexível",
+          "summary": "Responde à incerteza e às variações: é ajustado conforme as mudanças no nível de atividade real (ou receita e medidas de custo reais); os custos incorridos são comparados com os necessários para aquele nível; no planejamento, mostra quanto serão os custos em vários níveis de atividade; exige profundo conhecimento do comportamento dos custos e separa custos fixos e variáveis; sofre efeito de variação em preços, quantidades e valor de aquisição. Exemplo da aula (preço R$ 20,00): Mês 1, 10.000 un: fixo 100.000 + variável 40.000 = 140.000 (R$ 14,00/un), receita 200.000, lucro 60.000. Mês 2, 12.000 un (+20%): fixo 100.000 + variável 48.000 = 148.000 (R$ 12,33/un), receita 240.000, lucro 92.000 (o slide mostra 92.040 por usar 12,33 arredondado). O custo unitário cai porque o fixo é diluído."
+        },
+        {
+          "title": "Orçamento por atividades e Beyond Budgeting",
+          "summary": "Por atividades: baseia-se na precificação das atividades e seus benefícios; permite orçamentos mais realistas, melhor identificação dos recursos, associação dos custos à produção, vinculação mais clara dos custos às responsabilidades, identificação de folgas, eliminação de atividades supérfluas, redução de tempo ou recursos e seleção das atividades de custo mais baixo; desenvolve descrição de caso, define prioridades e justificativas, monitora benefícios e avalia o desempenho para melhoria contínua. Beyond Budgeting (além do orçamento): sistema organizacional descentralizado, com métodos adaptativos; críticas ao orçamento tradicional: demorado e caro, raramente focado na estratégia, não estimula criação de valor, cria obstáculos à mudança e aumenta a centralização do poder. Origem em empresas de software; métodos ágeis migrando para outros setores; prazos de análise trimestrais ou semestrais; metas por indicadores-chave; desempenho com base no mercado (não em resultados internos anteriores); gestores com elevada autonomia."
         }
       ]
     }

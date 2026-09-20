@@ -1,214 +1,346 @@
 {
   "provas": [
     {
-      "name": "Prova 1 — Planejamento Estratégico, Tático e Operacional",
-      "topic": "planejamento_niveis",
+      "name": "Prova 1 — Aula 1: Planejamento",
+      "topic": "aula1_planejamento",
       "questions": [
         {
           "id": "orc-p1-q01",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "Na estrutura do planejamento estratégico, a Visão de uma organização representa",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Em um plano de ação, a pergunta “Como saberei que atingi os objetivos?” está ligada principalmente a",
           "options": {
-            "A": "a imagem de futuro desejada para a empresa no longo prazo, ou seja, onde ela pretende chegar.",
-            "B": "a lista de tarefas diárias de cada colaborador.",
-            "C": "o orçamento aprovado para o próximo mês.",
-            "D": "o conjunto de regras operacionais de cada setor."
+            "A": "controle: evidências (financeiras, de tempo, de medição) de que os objetivos que geraram a necessidade foram atingidos.",
+            "B": "definição dos responsáveis por cada etapa.",
+            "C": "justificativa de por que o plano será executado.",
+            "D": "identificação dos recursos financeiros, de estrutura e de pessoas."
           },
           "correct": "A",
-          "explanation": "A Visão descreve o futuro desejado no longo prazo — o “onde queremos chegar”. As demais opções tratam de rotinas, orçamento mensal e regras internas, que pertencem a outros níveis.",
-          "hint": "Visão = futuro desejado, longo prazo.",
-          "source": "original"
+          "explanation": "O plano de ação responde: o que, por que, quando, por quem, como, de que recursos e como saberei que atingi os objetivos. Esta última pergunta é a do controle, que exige evidências de que os objetivos foram alcançados.",
+          "hint": "Das perguntas do plano de ação, qual delas fala em “evidências”?",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q02",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "A Missão de uma organização expressa principalmente",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Segundo a aula, planejar é, basicamente,",
           "options": {
-            "A": "sua razão de existir e o propósito que orienta suas ações no presente, servindo de caminho entre a situação atual e a visão de futuro.",
-            "B": "a previsão de vendas do trimestre.",
-            "C": "o resultado contábil do último exercício.",
-            "D": "apenas o preço praticado nos seus produtos."
+            "A": "uma tomada de decisões sistematizada e contínua por parte dos gestores, com programação antecipada para alcançar os objetivos organizacionais.",
+            "B": "registrar os fatos passados da empresa para prestar contas.",
+            "C": "executar as tarefas operacionais do dia a dia.",
+            "D": "uma decisão isolada, tomada apenas uma vez ao ano pela alta administração."
           },
           "correct": "A",
-          "explanation": "A Missão responde “para que a empresa existe e como atua hoje”, funcionando como ponte entre o presente e a Visão (o futuro desejado).",
-          "hint": "Missão = razão de existir e forma de atuar no presente; Visão = onde se quer chegar.",
-          "source": "original"
+          "explanation": "A aula define planejar como tomada de decisões sistematizada e contínua, com programação antecipada de decisões para que os objetivos sejam alcançados da melhor forma possível.",
+          "hint": "As duas palavras-chave são “sistematizada e contínua”.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q03",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "Uma indústria de alimentos definiu, em reunião da diretoria, ampliar sua participação de mercado nos próximos 5 anos. Em seguida, cada gerente traduziu essa diretriz em metas anuais para sua área, e os supervisores organizaram as tarefas diárias das equipes para cumpri-las. Sobre a relação entre os níveis de planejamento, é correto afirmar que",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Qual das perguntas abaixo NÃO faz parte das que o planejamento deve responder, segundo a aula?",
           "options": {
-            "A": "o planejamento estratégico orienta as decisões de longo prazo e serve de base para os planejamentos tático e operacional.",
-            "B": "o planejamento operacional define a visão de longo prazo da empresa.",
-            "C": "os três níveis são independentes e não precisam estar alinhados.",
-            "D": "o planejamento tático é responsabilidade exclusiva dos supervisores e se limita às tarefas diárias."
+            "A": "Onde se pretende chegar?",
+            "B": "O que deve ser feito?",
+            "C": "Quanto o concorrente lucrou no último ano?",
+            "D": "Em que sequência deve ser feito?"
           },
-          "correct": "A",
-          "explanation": "A diretriz de 5 anos é estratégica; as metas anuais por área são táticas; as tarefas diárias são operacionais. Cada nível se desdobra do anterior, e o estratégico é a base dos demais.",
-          "hint": "Identifique o que é longo prazo (diretoria), médio prazo (gerentes) e curto prazo (supervisores).",
-          "source": "original"
+          "correct": "C",
+          "explanation": "As perguntas do planejamento são: onde se pretende chegar, o que deve ser feito, quando, como e em que sequência. O lucro do concorrente não é uma delas.",
+          "hint": "São cinco perguntas sobre a própria empresa: onde, o quê, quando, como e sequência.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q04",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "O planejamento tático caracteriza-se por",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "A primeira função do processo administrativo é",
           "options": {
-            "A": "traduzir as diretrizes estratégicas em metas e planos por departamento/área, normalmente no médio prazo, sob responsabilidade dos gerentes.",
-            "B": "definir a missão e a visão da empresa.",
-            "C": "executar as tarefas rotineiras de produção.",
-            "D": "tratar exclusivamente do fluxo de caixa diário."
+            "A": "planejar.",
+            "B": "controlar.",
+            "C": "dirigir.",
+            "D": "organizar."
           },
           "correct": "A",
-          "explanation": "O nível tático faz a ponte: pega o que a alta direção decidiu e o desdobra em metas e planos por área, tipicamente em horizonte de médio prazo.",
-          "hint": "Tático = “desdobrar” a estratégia por departamento.",
-          "source": "original"
+          "explanation": "A aula destaca que a primeira função do processo administrativo é planejar (coletar dados, diagnosticar a situação, definir objetivos, desdobrá-los em metas, alocar recursos, elaborar o plano de ação e desdobrar os planos em programas). Depois vêm organização, direção e controle.",
+          "hint": "O ciclo começa pelo que vem antes de organizar, dirigir e controlar.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q05",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "O planejamento operacional está relacionado principalmente a",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Segundo a aula, o exercício sistemático do planejamento contribui principalmente para",
           "options": {
-            "A": "tarefas e rotinas do dia a dia, no curto prazo, executadas pelas equipes sob a coordenação de supervisores.",
-            "B": "decisões de longo prazo sobre o posicionamento da empresa.",
-            "C": "definição da visão de futuro.",
-            "D": "escolha do mercado em que a empresa atuará daqui a 10 anos."
+            "A": "reduzir as incertezas do processo decisório e aumentar a probabilidade de alcançar os objetivos e metas da empresa.",
+            "B": "eliminar totalmente as incertezas sobre o futuro.",
+            "C": "dispensar o acompanhamento dos resultados.",
+            "D": "substituir a definição de missão e visão."
           },
           "correct": "A",
-          "explanation": "O operacional trata do “como executar hoje”: rotinas, escalas e tarefas, com foco no curto prazo.",
-          "hint": "Operacional = execução, dia a dia, curto prazo.",
-          "source": "original"
+          "explanation": "O planejamento reduz as incertezas (não as elimina, pois é um processo de pensamento sobre o futuro e, portanto, envolve incertezas) e aumenta a probabilidade de atingir objetivos, desafios e metas.",
+          "hint": "Reduz incerteza, mas não a elimina.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q06",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "Analise as afirmativas sobre planejamento:\nI. O planejamento é orientado ao futuro: busca definir aonde se quer chegar e como.\nII. O planejamento é pré-requisito do controle, pois define os padrões que serão comparados ao realizado.\nIII. O planejamento consiste em analisar apenas o passado da empresa, sem se preocupar com o futuro.\nEstão corretas",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "O planejamento tático é caracterizado por ser",
           "options": {
-            "A": "I e II, apenas.",
-            "B": "I e III, apenas.",
-            "C": "II e III, apenas.",
-            "D": "I, II e III."
+            "A": "de nível setorial, voltado ao médio prazo, definido por cada unidade ou departamento, com objetivos quantitativos mensuráveis.",
+            "B": "definido pela alta administração, envolvendo toda a empresa no longo prazo.",
+            "C": "voltado a cada tarefa isolada, no curto prazo, como plano detalhado das operações.",
+            "D": "restrito à declaração de missão e visão."
           },
           "correct": "A",
-          "explanation": "I e II descrevem corretamente o planejamento (voltado ao futuro e base do controle). III é falsa: o planejamento olha para o futuro; o passado serve apenas de referência.",
-          "hint": "Planejamento olha para frente — isso já elimina a III.",
-          "source": "original"
+          "explanation": "Tático: setorial, médio prazo, por unidade/departamento, com objetivos quantitativos mensuráveis. Estratégico: alta administração, toda a empresa, longo prazo. Operacional: cada tarefa, curto prazo, plano detalhado.",
+          "hint": "Tático = departamentos + médio prazo + metas mensuráveis.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q07",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. O planejamento deve ser tratado como um processo contínuo, e não como um evento pontual.\nPORQUE\nII. As condições internas e externas da empresa mudam e exigem revisões e ajustes periódicos.\nA respeito dessas asserções, assinale a opção correta.",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Na figura “Integrando os tempos”, o horizonte do orçamento (e de outros planos) é de",
           "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
+            "A": "1 ano.",
+            "B": "5 a 10 anos.",
+            "C": "1 a 5 anos.",
+            "D": "mais de 10 anos."
           },
           "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II explica a I: como o ambiente muda, o planejamento precisa ser revisto continuamente.",
-          "hint": "Pergunte-se: a segunda frase explica por que a primeira é verdadeira?",
-          "source": "original"
+          "explanation": "Na figura, missão/visão e planejamento estratégico ficam em 5 a 10 anos; tático e operacional em 1 a 5 anos; plano contingencial e orçamento em 1 ano.",
+          "hint": "O orçamento está no círculo mais interno da figura.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q08",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. Missão e visão são conceitos idênticos e podem ser usados como sinônimos.\nPORQUE\nII. Ambas descrevem exclusivamente as tarefas operacionais do dia a dia.\nA respeito dessas asserções, assinale a opção correta.",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Qual dos itens abaixo NÃO é um motivo para utilizar o planejamento, segundo a aula?",
           "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
+            "A": "Reduzir a incerteza.",
+            "B": "Trazer cooperação e coordenação.",
+            "C": "Evitar a mortalidade organizacional.",
+            "D": "Dispensar o controle e o acompanhamento dos resultados."
           },
-          "correct": "E",
-          "explanation": "As duas são falsas: missão (propósito atual) e visão (futuro desejado) são conceitos distintos, e nenhum deles trata de tarefas operacionais do dia a dia.",
-          "hint": "Lembre a diferença: missão = presente/propósito; visão = futuro desejado.",
-          "source": "original"
+          "correct": "D",
+          "explanation": "Os motivos citados são: reduz a incerteza, traz cooperação e coordenação, economia em operação, antecipa contingências imprevisíveis, alcance dos objetivos predeterminados e evitar a mortalidade organizacional.",
+          "hint": "Planejamento e controle andam juntos; um não dispensa o outro.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q09",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "Qual alternativa associa corretamente cada nível de planejamento ao seu foco predominante?",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "Qual dos itens abaixo é um aspecto limitante do planejamento, segundo a aula?",
           "options": {
-            "A": "Estratégico: longo prazo e alta direção; Tático: médio prazo e departamentos; Operacional: curto prazo e tarefas diárias.",
-            "B": "Estratégico: tarefas diárias; Tático: longo prazo; Operacional: definição da visão.",
-            "C": "Estratégico: supervisores; Tático: alta direção; Operacional: gerentes.",
-            "D": "Os três níveis têm o mesmo foco e horizonte de tempo."
+            "A": "Falta de informações precisas.",
+            "B": "Cooperação e coordenação entre as áreas.",
+            "C": "Antecipação de contingências imprevisíveis.",
+            "D": "Redução da incerteza."
           },
           "correct": "A",
-          "explanation": "Cada nível tem horizonte e responsáveis próprios: estratégico (longo prazo/alta direção), tático (médio prazo/gerentes) e operacional (curto prazo/supervisores).",
-          "hint": "Ordene por horizonte de tempo: longo → médio → curto.",
-          "source": "original"
+          "explanation": "Aspectos limitantes: falta de informações precisas, resistência à mudança, inflexibilidade, planejamento inadequado, fatores de tempo e custo e filosofia organizacional. As demais alternativas são benefícios do planejamento.",
+          "hint": "Procure o item que atrapalha o planejamento, e não o que o justifica.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p1-q10",
-          "topic": "planejamento_niveis",
-          "topicLabel": "Planejamento Estratégico, Tático e Operacional",
-          "question": "A diretoria definiu como estratégia posicionar os produtos como premium, com margens elevadas, mas a meta atribuída ao gerente comercial é aumentar o volume de vendas por meio de descontos agressivos. O principal problema dessa situação é",
+          "topic": "aula1_planejamento",
+          "topicLabel": "Aula 1 — Planejamento",
+          "question": "A declaração “Atuar no setor de energia com rentabilidade, qualidade e responsabilidade social” (exemplo da CEMIG na aula) é um exemplo de",
           "options": {
-            "A": "a falta de alinhamento entre o nível estratégico e o tático, gerando metas que contradizem a estratégia.",
-            "B": "o excesso de planejamento operacional.",
-            "C": "a ausência de estoques.",
-            "D": "o fato de o orçamento ser flexível."
+            "A": "missão, pois declara o propósito e delimita a atuação da organização.",
+            "B": "visão, pois descreve a perspectiva de futuro de longo prazo.",
+            "C": "plano de ação, pois define prazos e responsáveis.",
+            "D": "premissa orçamentária, pois fixa a inflação do período."
           },
           "correct": "A",
-          "explanation": "Se as metas de um nível contradizem a estratégia, os níveis não estão integrados. O planejamento tático deveria desdobrar a estratégia, e não conflitar com ela.",
-          "hint": "Compare a meta do gerente com a estratégia da diretoria: elas caminham na mesma direção?",
-          "source": "original"
+          "explanation": "A missão é declaração ampla e duradoura de propósitos que individualiza a organização e delimita suas atividades. A visão, no exemplo, é “Consolidar-se, nesta década, como o maior grupo do setor elétrico nacional...”, com perspectiva de futuro.",
+          "hint": "Missão = o que a empresa faz e como; visão = onde quer chegar.",
+          "source": "slides Aulas 1-5"
         }
       ]
     },
     {
-      "name": "Prova 2 — Implantação e Controle Orçamentário",
-      "topic": "implantacao_controle",
+      "name": "Prova 2 — Aula 2: O Orçamento",
+      "topic": "aula2_orcamento",
       "questions": [
         {
           "id": "orc-p2-q01",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "Uma empresa vai implantar o processo orçamentário. Para que a implantação tenha chance de sucesso, é fundamental",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Segundo a aula, o orçamento pode ser definido como",
           "options": {
-            "A": "garantir o apoio da administração, dispor de informações adequadas e assegurar a comunicação entre os envolvidos.",
-            "B": "elaborar o orçamento apenas na contabilidade, sem envolver as demais áreas.",
-            "C": "impor as metas sem explicá-las aos responsáveis pela execução.",
-            "D": "utilizar apenas estimativas sem base em dados da empresa."
+            "A": "um plano administrativo que abrange todas as fases das operações para um período futuro definido, expresso de forma quantitativa.",
+            "B": "um registro dos fatos contábeis já ocorridos.",
+            "C": "uma lista de tarefas diárias das equipes.",
+            "D": "a declaração de missão e visão da empresa."
           },
           "correct": "A",
-          "explanation": "Os três pilares clássicos são: apoio da alta administração, informações confiáveis e comunicação clara entre os envolvidos. Sem eles, o orçamento vira apenas um documento formal.",
-          "hint": "Pense nos três pilares: apoio, informação e comunicação.",
-          "source": "original"
+          "explanation": "O orçamento é o plano administrativo que abrange todas as fases das operações para um período futuro definido e a expressão quantitativa do que se pretende atingir, baseada nos objetivos e metas organizacionais.",
+          "hint": "Orçamento olha para o futuro e é quantitativo.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p2-q02",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "Sobre a participação na elaboração do orçamento, a prática mais adequada é",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Qual dos itens abaixo NÃO é um dos recursos que o orçamento mostra, segundo a aula?",
           "options": {
-            "A": "envolver vários níveis hierárquicos, especialmente os gestores responsáveis por executar cada parte do orçamento.",
-            "B": "restringir a elaboração à alta direção.",
-            "C": "deixar que cada área elabore o seu orçamento de forma totalmente isolada.",
-            "D": "entregar o orçamento pronto aos gestores, sem consulta."
+            "A": "Pessoal.",
+            "B": "Equipamentos.",
+            "C": "Espaço de trabalho.",
+            "D": "Cotação do dólar."
           },
-          "correct": "A",
-          "explanation": "O orçamento participativo gera comprometimento e usa o conhecimento de quem executa. Nem a elaboração exclusiva pela cúpula nem a totalmente isolada por área são adequadas.",
-          "hint": "Quem executa conhece melhor os recursos de que precisa.",
-          "source": "original"
+          "correct": "D",
+          "explanation": "O orçamento mostra os recursos necessários e sua forma de utilização: pessoal, técnicas específicas, equipamentos, espaço de trabalho e dinheiro.",
+          "hint": "Cinco recursos: pessoal, técnicas, equipamentos, espaço e dinheiro.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p2-q03",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. O orçamento deve envolver os vários níveis hierárquicos da empresa.\nPORQUE\nII. Os gestores de cada área conhecem melhor os recursos de que suas áreas necessitam.\nA respeito dessas asserções, assinale a opção correta.",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Qual das alternativas apresenta uma característica do orçamento segundo a aula?",
+          "options": {
+            "A": "Não deve ser uma ferramenta inflexível.",
+            "B": "Deve ser imutável depois de aprovado.",
+            "C": "Dispensa a análise de viabilidade.",
+            "D": "Estimula a tomada de decisão no improviso."
+          },
+          "correct": "A",
+          "explanation": "Características: evita a tomada de decisão no improviso, não deve ser inflexível, minimiza riscos de ameaças, gera segurança e baseia-se na viabilidade.",
+          "hint": "O orçamento evita o improviso e admite ajustes.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q04",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Qual das alternativas apresenta um objetivo do orçamento?",
+          "options": {
+            "A": "Tornar-se uma forma de avaliação de performance.",
+            "B": "Substituir o planejamento estratégico.",
+            "C": "Eliminar a necessidade de controle.",
+            "D": "Impor as metas sem participação dos gerentes."
+          },
+          "correct": "A",
+          "explanation": "Objetivos: direcionar os gerentes ao planejamento, fornecer informações para melhorar a tomada de decisão, servir de forma de avaliação de performance e melhorar a comunicação e a coordenação.",
+          "hint": "Um dos objetivos é justamente medir o desempenho.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q05",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Qual das alternativas descreve uma vantagem do orçamento apontada na aula?",
+          "options": {
+            "A": "Reduz o envolvimento dos altos administradores com as operações diárias, por meio da delegação de poderes e de autoridade.",
+            "B": "Elimina qualquer estimativa e incerteza do processo.",
+            "C": "Dispensa a coordenação entre as áreas.",
+            "D": "Impede que se identifiquem pontos de deficiência das unidades."
+          },
+          "correct": "A",
+          "explanation": "Vantagens citadas: definir metas, pensar o futuro, alocar recursos de forma otimizada, descobrir gargalos, coordenar atividades, comunicar os planos, fixar objetivos e políticas, delegar poderes, identificar eficiência ou deficiência das unidades e melhorar a utilização dos recursos.",
+          "hint": "Pense em delegação: a cúpula sai do operacional.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q06",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Por que os orçamentos podem falhar em se concretizar, segundo a aula?",
+          "options": {
+            "A": "Porque os dados contidos neles são estimativas, sujeitas a eventos internos e externos que podem inviabilizar a previsão.",
+            "B": "Porque o orçamento sempre é elaborado sem dados.",
+            "C": "Porque o orçamento só considera o passado.",
+            "D": "Porque o controle orçamentário é proibido."
+          },
+          "correct": "A",
+          "explanation": "Os dados do orçamento não passam de estimativas e estão sujeitos a eventos internos e externos que afetam a previsão.",
+          "hint": "Orçamento = estimativa.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q07",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Um sistema orçamentário, segundo a aula,",
+          "options": {
+            "A": "contempla todas as atividades operacionais e acessórias, dispõe de controle eficiente para apurar desvios e prevê e controla fluxos de caixa, resultados e patrimônio.",
+            "B": "abrange apenas as vendas e ignora as demais atividades.",
+            "C": "não precisa apurar desvios, apenas registrar os valores.",
+            "D": "prevê somente o patrimônio, sem considerar caixa."
+          },
+          "correct": "A",
+          "explanation": "As características do sistema orçamentário incluem: projeção para o futuro, expressão monetária, flexibilidade, comprometimento, completude, oportunidade, uniformidade e controle.",
+          "hint": "Completo e com controle de desvios.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q08",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "“Período de planejamento (anual, semestral, coincidente com o ano civil ou não)” é exemplo de qual tipo de premissa orçamentária?",
+          "options": {
+            "A": "Estrutural.",
+            "B": "Operacional.",
+            "C": "Econômico-financeira.",
+            "D": "Tributária."
+          },
+          "correct": "A",
+          "explanation": "Premissas estruturais: moeda de decisão e período de planejamento. Operacionais: fatores de consumo de materiais e mão de obra, hierarquia de produtos, estrutura organizacional, centros de custos. Econômico-financeiras: inflação, juros, preços dos insumos e variação cambial.",
+          "hint": "Moeda e período de planejamento formam o grupo das premissas estruturais.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q09",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "No cenário e premissas orçamentárias, a taxa de juros representa",
+          "options": {
+            "A": "o custo de oportunidade de reter o recurso.",
+            "B": "o nível de atividade econômica do país.",
+            "C": "a perda do poder aquisitivo da moeda.",
+            "D": "a variação do preço dos insumos importados."
+          },
+          "correct": "A",
+          "explanation": "Na aula: PIB é o nível de atividade econômica do país; inflação é a perda do poder aquisitivo da moeda; taxa de juros é o custo de oportunidade de reter o recurso.",
+          "hint": "Juros: custo de oportunidade.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p2-q10",
+          "topic": "aula2_orcamento",
+          "topicLabel": "Aula 2 — O Orçamento (conceito, premissas, metas)",
+          "question": "Qual das alternativas é um exemplo de meta de desempenho (e não de meta de lucro), segundo a aula?",
+          "options": {
+            "A": "Redução do índice de inadimplência dos clientes.",
+            "B": "Definição da missão da empresa.",
+            "C": "Escolha da moeda de decisão.",
+            "D": "Estimativa do PIB do período."
+          },
+          "correct": "A",
+          "explanation": "Metas orçamentárias quantificam os objetivos do planejamento estratégico e se dividem em metas de lucro e de desempenho. Exemplos de desempenho: aumento do giro dos ativos, redução da devolução de vendas, da inadimplência, do custo de mão de obra, do endividamento e da imobilização do PL.",
+          "hint": "Meta de desempenho é um indicador operacional a melhorar.",
+          "source": "slides Aulas 1-5"
+        }
+      ]
+    },
+    {
+      "name": "Prova 3 — Aula 2: Implantação e Controle",
+      "topic": "aula2_implantacao_controle",
+      "questions": [
+        {
+          "id": "orc-p3-q01",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. A participação dos gerentes na elaboração do orçamento aumenta a aceitação das metas e o empenho em cumpri-las.\nPORQUE\nII. Nessa situação, as metas orçamentárias não foram impostas pela alta administração.\nA respeito dessas asserções, assinale a opção correta.",
           "options": {
             "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
             "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
@@ -217,46 +349,111 @@
             "E": "As asserções I e II são falsas."
           },
           "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II justifica a I: o conhecimento dos gestores de área é justamente o motivo de sua participação.",
-          "hint": "A segunda afirmação explica o “porquê” da primeira?",
-          "source": "original"
+          "explanation": "Ambas são verdadeiras e a II justifica a I: a aula afirma que a aceitação e o empenho são maiores justamente porque as metas não foram impostas pela alta administração.",
+          "hint": "A segunda frase explica por que a primeira acontece?",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p2-q04",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "As fases do controle orçamentário, em sequência lógica, são:",
+          "id": "orc-p3-q02",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "Na aula, “contabilidade aberta, informatizada e descentralizada” significa",
           "options": {
-            "A": "estabelecer padrões; observar o desempenho; tomar ações corretivas.",
-            "B": "tomar ações corretivas; estabelecer padrões; observar o desempenho.",
-            "C": "observar o desempenho; tomar ações corretivas; estabelecer padrões.",
-            "D": "tomar ações corretivas; observar o desempenho; estabelecer padrões."
+            "A": "um processo autogerenciável, com o lançamento contábil feito na origem pelo próprio usuário.",
+            "B": "que apenas o contador pode lançar valores no sistema.",
+            "C": "que os dados contábeis ficam restritos à diretoria.",
+            "D": "que a contabilidade é feita manualmente ao final do ano."
           },
           "correct": "A",
-          "explanation": "Primeiro se definem os padrões (o orçado), depois se observa o desempenho real e se compara, e só então se tomam as ações corretivas — que são a última fase.",
-          "hint": "A ação corretiva só faz sentido depois de comparar o realizado com o padrão.",
-          "source": "original"
+          "explanation": "Uma das condições para implantar o orçamento é a contabilidade aberta, informatizada e descentralizada: processo autogerenciável, com lançamento feito na origem pelo próprio usuário.",
+          "hint": "Descentralizada: quem gera o fato faz o lançamento.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p2-q05",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "Analise as afirmativas sobre o controle orçamentário:\nI. Estabelecer padrões é a primeira fase do controle.\nII. Observar o desempenho e compará-lo aos padrões é uma fase do controle.\nIII. A ação corretiva é uma fase intermediária, executada antes de observar o desempenho.\nEstão corretas",
+          "id": "orc-p3-q03",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "As condições para a implantação do orçamento apontadas por Welsch são:",
           "options": {
-            "A": "I e II, apenas.",
-            "B": "I e III, apenas.",
-            "C": "II e III, apenas.",
-            "D": "I, II e III."
+            "A": "um sistema de informação, com dados contábeis, históricos adequados e apropriados.",
+            "B": "apenas o apoio verbal da diretoria.",
+            "C": "a ausência de dados históricos, para não engessar a projeção.",
+            "D": "a imposição das metas pela alta administração."
           },
           "correct": "A",
-          "explanation": "I e II estão corretas. A III é falsa: a ação corretiva é a última fase, feita depois de observar o desempenho e identificar desvios.",
-          "hint": "Qual fase vem por último na sequência do controle?",
-          "source": "original"
+          "explanation": "Para Welsch, as condições são um sistema de informação com dados contábeis e históricos adequados e apropriados.",
+          "hint": "Sistema de informação + dados contábeis + histórico.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p2-q06",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
+          "id": "orc-p3-q04",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "Qual das alternativas é um fator imprescindível para a implantação do orçamento, segundo a aula?",
+          "options": {
+            "A": "Expectativas realistas.",
+            "B": "Implantação muito apressada.",
+            "C": "Expectativa prematura de resultados.",
+            "D": "Papelada e detalhes excessivos."
+          },
+          "correct": "A",
+          "explanation": "Fatores imprescindíveis: envolvimento da alta administração, adaptação organizacional, definição de objetivos, comunicação integral, expectativas realistas, oportunidade, reconhecimento de esforços individuais e em grupo e acompanhamento. As demais alternativas são falhas de implantação.",
+          "hint": "Três das alternativas são erros de implantação.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p3-q05",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "Qual das alternativas é uma falha na implantação do orçamento, segundo a aula?",
+          "options": {
+            "A": "Implantação muito apressada.",
+            "B": "Comunicação integral.",
+            "C": "Envolvimento da alta administração.",
+            "D": "Reconhecimento de esforços individuais e em grupo."
+          },
+          "correct": "A",
+          "explanation": "Entre as falhas: estrutura organizacional inadequada, sistema ineficaz de registro contábil, falta de sistema de custos, falta de apoio da cúpula, expectativas exageradas ou prematuras, implantação apressada, supervisão deficiente, falta de cooperação, falta de dados históricos, papelada excessiva, período de projeção longo demais e falta de flexibilidade.",
+          "hint": "Procure o que atrapalha, não o que ajuda.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p3-q06",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "O controle orçamentário é a técnica que procura",
+          "options": {
+            "A": "acompanhar, avaliar e analisar o planejamento financeiro, verificando as defasagens entre orçado e realizado para sugerir medidas saneadoras na próxima proposta orçamentária.",
+            "B": "elaborar o orçamento sem comparar com o realizado.",
+            "C": "substituir o planejamento estratégico.",
+            "D": "registrar apenas o que aconteceu no passado, sem sugerir medidas."
+          },
+          "correct": "A",
+          "explanation": "Definição da aula: acompanhar, avaliar e analisar o planejamento financeiro em suas várias etapas, verificando as defasagens entre valores orçados e realizados, para sugerir medidas saneadoras na próxima proposta orçamentária.",
+          "hint": "Compara orçado x realizado e sugere medidas.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p3-q07",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. O controle orçamentário permite sugerir medidas preventivas, corretivas e saneadoras em tempo hábil.\nPORQUE\nII. O controle orçamentário confronta os valores realizados com os orçados e analisa as defasagens positivas e negativas.\nA respeito dessas asserções, assinale a opção correta.",
+          "options": {
+            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
+            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
+            "C": "A asserção I é verdadeira e a II é falsa.",
+            "D": "A asserção I é falsa e a II é verdadeira.",
+            "E": "As asserções I e II são falsas."
+          },
+          "correct": "A",
+          "explanation": "Ambas são verdadeiras e a II explica a I: é ao confrontar realizado x orçado e analisar as defasagens que se conseguem sugerir medidas em tempo hábil.",
+          "hint": "Sem comparar orçado e realizado não há como sugerir medidas.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p3-q08",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
           "question": "A meta orçada de vendas de um mês era de R$ 500.000,00 e as vendas realizadas somaram R$ 460.000,00. Qual o desvio percentual em relação ao orçado e como ele se classifica?",
           "options": {
             "A": "−8%, desfavorável.",
@@ -267,12 +464,12 @@
           "correct": "A",
           "explanation": "Desvio = (460.000 − 500.000) ÷ 500.000 = −8%. Como as vendas ficaram abaixo do orçado, o desvio é desfavorável.",
           "hint": "Desvio % = (Realizado − Orçado) ÷ Orçado. Para receitas, abaixo do orçado é desfavorável.",
-          "source": "original"
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p2-q07",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
+          "id": "orc-p3-q09",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
           "question": "A despesa orçada de um departamento era de R$ 80.000,00 e a despesa realizada foi de R$ 92.000,00. O desvio é de",
           "options": {
             "A": "R$ 12.000,00 (15%), desfavorável, pois o gasto superou o orçado.",
@@ -283,404 +480,115 @@
           "correct": "A",
           "explanation": "Desvio = 92.000 − 80.000 = 12.000, ou 12.000 ÷ 80.000 = 15% (o percentual é sobre o orçado). Para despesas, gastar acima do orçado é desfavorável.",
           "hint": "O percentual do desvio sempre usa o valor ORÇADO como base.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p2-q08",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. A revisão periódica do orçamento permite identificar desvios e corrigir o rumo da empresa.\nPORQUE\nII. O orçamento é sempre um instrumento rígido, que não admite qualquer revisão depois de aprovado.\nA respeito dessas asserções, assinale a opção correta.",
-          "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
-          },
-          "correct": "C",
-          "explanation": "A I é verdadeira. A II é falsa: o orçamento deve ter algum grau de flexibilidade e pode ser revisado quando o ambiente muda.",
-          "hint": "A ideia de que o orçamento “não admite revisão” combina com a I?",
-          "source": "original"
-        },
-        {
-          "id": "orc-p2-q09",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "O principal objetivo da análise de desvios entre o orçado e o realizado é",
-          "options": {
-            "A": "identificar as causas das diferenças e subsidiar ações corretivas.",
-            "B": "punir os gestores cujas áreas ultrapassaram o orçamento.",
-            "C": "substituir a etapa de planejamento.",
-            "D": "eliminar a necessidade de novos orçamentos."
-          },
-          "correct": "A",
-          "explanation": "A análise de desvios serve para entender por que o realizado diferiu do orçado e decidir o que corrigir — não para punir nem para substituir o planejamento.",
-          "hint": "Pense no papel do desvio dentro do ciclo: comparar → entender → corrigir.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p2-q10",
-          "topic": "implantacao_controle",
-          "topicLabel": "Implantação e Controle Orçamentário",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. Dados históricos podem ser usados como referência na elaboração do orçamento.\nPORQUE\nII. O orçamento deve ser elaborado de forma isolada por cada área, sem integração com as demais.\nA respeito dessas asserções, assinale a opção correta.",
-          "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
-          },
-          "correct": "C",
-          "explanation": "A I é verdadeira: o histórico é uma referência útil. A II é falsa: o orçamento é um plano integrado, e as áreas dependem umas das outras (por exemplo, vendas alimentam produção).",
-          "hint": "Um orçamento integrado pode ser feito “isoladamente” por cada área?",
-          "source": "original"
-        }
-      ]
-    },
-    {
-      "name": "Prova 3 — Tipos de Orçamento",
-      "topic": "tipos_orcamento",
-      "questions": [
-        {
-          "id": "orc-p3-q01",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "O orçamento estático é aquele que",
-          "options": {
-            "A": "é elaborado para um único nível de atividade e não se ajusta às variações do volume real.",
-            "B": "se ajusta automaticamente a qualquer volume de vendas.",
-            "C": "adiciona um novo período sempre que outro termina.",
-            "D": "exige justificar todos os gastos a partir de zero."
-          },
-          "correct": "A",
-          "explanation": "O orçamento estático parte de um único nível de atividade planejado e permanece o mesmo, mesmo que o volume real seja diferente.",
-          "hint": "Estático = “parado” em um único nível de atividade.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q02",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "O orçamento flexível se caracteriza por",
-          "options": {
-            "A": "ajustar os custos variáveis ao volume real de atividade, mantendo os custos fixos, permitindo uma comparação mais justa com o realizado.",
-            "B": "manter todos os valores idênticos ao orçado, independentemente do volume.",
-            "C": "ser elaborado uma única vez na vida da empresa.",
-            "D": "ignorar os custos variáveis."
-          },
-          "correct": "A",
-          "explanation": "O orçamento flexível recalcula o orçado para o volume efetivamente atingido: os custos variáveis acompanham o volume, e os fixos (na faixa relevante) permanecem.",
-          "hint": "Flexível = recalcula o orçado para o volume que realmente aconteceu.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q03",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "No orçamento contínuo (ou rolling budget),",
-          "options": {
-            "A": "novos períodos são adicionados à medida que os anteriores terminam, mantendo sempre um horizonte de planejamento à frente.",
-            "B": "o orçamento é feito uma única vez e nunca revisado.",
-            "C": "todo gasto precisa ser justificado do zero a cada ciclo.",
-            "D": "considera apenas o volume do mês corrente."
-          },
-          "correct": "A",
-          "explanation": "No orçamento contínuo, a cada período encerrado acrescenta-se um novo período no fim do horizonte, mantendo o planejamento sempre “rolando” à frente.",
-          "hint": "Pense em uma janela que vai avançando no tempo.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q04",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "O Orçamento Base Zero (OBZ) exige que",
-          "options": {
-            "A": "cada despesa seja justificada desde o início a cada ciclo, sem presumir aprovação automática baseada no que foi gasto no passado.",
-            "B": "todas as despesas do ano anterior sejam automaticamente aprovadas.",
-            "C": "o orçamento parta sempre do valor do ano anterior mais um percentual.",
-            "D": "as despesas fixas sejam eliminadas."
-          },
-          "correct": "A",
-          "explanation": "A lógica do OBZ é começar do zero: cada gasto precisa provar seu valor, evitando perpetuar ineficiências históricas.",
-          "hint": "“Base zero” significa que o passado não garante aprovação.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q05",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. O Orçamento Base Zero não aceita a aprovação automática de despesas com base no que foi gasto no passado.\nPORQUE\nII. O OBZ exige a justificativa de cada despesa a cada ciclo orçamentário.\nA respeito dessas asserções, assinale a opção correta.",
-          "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
-          },
-          "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II é a razão da I: por exigir justificativa a cada ciclo, o OBZ não permite aprovação automática baseada no histórico.",
-          "hint": "Uma afirmação descreve o efeito; a outra, o mecanismo que o causa.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q06",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "A Tecnologia Norte Ltda. elaborou seu orçamento estático para 10.000 unidades: custo variável de R$ 30,00 por unidade e custos fixos de R$ 50.000,00 no mês. O volume real do mês foi de 12.000 unidades e o custo total realizado foi de R$ 420.000,00.\n\nQual o custo total previsto no orçamento estático (10.000 unidades)?",
-          "options": {
-            "A": "R$ 300.000,00.",
-            "B": "R$ 350.000,00.",
-            "C": "R$ 410.000,00.",
-            "D": "R$ 420.000,00."
-          },
-          "correct": "B",
-          "explanation": "Custo estático = 10.000 × 30 + 50.000 = 300.000 + 50.000 = R$ 350.000,00.",
-          "hint": "Custo total = custo variável total + custos fixos.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q07",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "A Tecnologia Norte Ltda. elaborou seu orçamento estático para 10.000 unidades: custo variável de R$ 30,00 por unidade e custos fixos de R$ 50.000,00 no mês. O volume real do mês foi de 12.000 unidades e o custo total realizado foi de R$ 420.000,00.\n\nQual o custo total do orçamento flexível para o volume real de 12.000 unidades?",
-          "options": {
-            "A": "R$ 350.000,00.",
-            "B": "R$ 360.000,00.",
-            "C": "R$ 410.000,00.",
-            "D": "R$ 420.000,00."
-          },
-          "correct": "C",
-          "explanation": "Custo flexível = 12.000 × 30 + 50.000 = 360.000 + 50.000 = R$ 410.000,00 (variáveis ajustadas ao volume; fixos mantidos).",
-          "hint": "Recalcule só o custo variável para 12.000 un; o custo fixo permanece o mesmo.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q08",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "A Tecnologia Norte Ltda. elaborou seu orçamento estático para 10.000 unidades: custo variável de R$ 30,00 por unidade e custos fixos de R$ 50.000,00 no mês. O volume real do mês foi de 12.000 unidades e o custo total realizado foi de R$ 420.000,00.\n\nComparando o custo real com o orçamento flexível, o desvio é de",
-          "options": {
-            "A": "R$ 10.000,00 desfavorável.",
-            "B": "R$ 10.000,00 favorável.",
-            "C": "R$ 70.000,00 desfavorável.",
-            "D": "R$ 60.000,00 favorável."
-          },
-          "correct": "A",
-          "explanation": "Desvio = 420.000 (real) − 410.000 (flexível) = R$ 10.000,00. O custo real superou o que seria esperado para aquele volume, portanto é desfavorável.",
-          "hint": "Compare o realizado com o orçamento ajustado ao volume real (flexível).",
-          "source": "original"
-        },
-        {
-          "id": "orc-p3-q09",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "A Tecnologia Norte Ltda. elaborou seu orçamento estático para 10.000 unidades: custo variável de R$ 30,00 por unidade e custos fixos de R$ 50.000,00 no mês. O volume real do mês foi de 12.000 unidades e o custo total realizado foi de R$ 420.000,00.\n\nSe o custo real (R$ 420.000,00) fosse comparado diretamente com o orçamento estático (R$ 350.000,00), o desvio aparente seria de R$ 70.000,00, o que",
-          "options": {
-            "A": "superestimaria o problema, pois grande parte da diferença decorre do maior volume produzido, e não de ineficiência.",
-            "B": "seria a medida mais correta de desempenho.",
-            "C": "mostraria que a empresa economizou custos.",
-            "D": "não teria nenhuma relação com o volume."
-          },
-          "correct": "A",
-          "explanation": "Dos R$ 70.000, R$ 60.000 se explicam pelo volume extra (2.000 un × R$ 30). Só R$ 10.000 são desvio real de eficiência — por isso o flexível é a comparação justa.",
-          "hint": "Quanto do desvio de R$ 70.000 é explicado apenas por produzir 2.000 unidades a mais?",
-          "source": "original"
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p3-q10",
-          "topic": "tipos_orcamento",
-          "topicLabel": "Tipos de Orçamento (Base Zero, Flexível, Estático, Contínuo)",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. O Orçamento Base Zero resolve automaticamente todos os problemas históricos da empresa.\nPORQUE\nII. O OBZ aprova as despesas com base no que foi gasto no ano anterior.\nA respeito dessas asserções, assinale a opção correta.",
+          "topic": "aula2_implantacao_controle",
+          "topicLabel": "Aula 2 — Implantação e Controle Orçamentário",
+          "question": "Segundo a aula, os indicadores de desempenho podem ser referenciados em qual conjunto de níveis?",
           "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
+            "A": "Nível mundial, nível nacional/estadual e nível interno.",
+            "B": "Apenas nível interno.",
+            "C": "Apenas nível mundial.",
+            "D": "Nível diário, semanal e mensal."
           },
-          "correct": "E",
-          "explanation": "As duas são falsas: o OBZ não é uma solução automática (depende de análise e justificativa) e, sobretudo, não aprova despesas com base no passado — ao contrário, exige justificá-las do zero.",
-          "hint": "A afirmação II contradiz a própria definição de Base Zero.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "Na aula, os indicadores de desempenho são apresentados em nível mundial, nacional/estadual e interno, e podem ser acompanhados em painéis (vendas e marketing, cliente, financeiros, pessoas, operações, TI e gestão de projetos).",
+          "hint": "Do mais amplo ao mais interno: mundial, nacional/estadual, interno.",
+          "source": "slides Aulas 1-5"
         }
       ]
     },
     {
-      "name": "Prova 4 — Orçamento de Vendas, Impostos e Despesas",
-      "topic": "vendas_impostos_despesas",
+      "name": "Prova 4 — Aula 3: Elaboração das Peças",
+      "topic": "aula3_elaboracao",
       "questions": [
         {
           "id": "orc-p4-q01",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual a receita orçada do Mês 1 (preço × quantidade)?",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "Na consolidação do orçamento empresarial, a peça que serve de ponto de partida e alimenta as demais (produção, despesas operacionais, investimentos, marketing e caixa) é o orçamento de",
           "options": {
-            "A": "R$ 100.000,00.",
-            "B": "R$ 120.000,00.",
-            "C": "R$ 144.000,00.",
-            "D": "R$ 180.000,00."
+            "A": "vendas.",
+            "B": "caixa.",
+            "C": "investimentos.",
+            "D": "marketing."
           },
-          "correct": "B",
-          "explanation": "Receita = 1.000 un × R$ 120,00 = R$ 120.000,00.",
-          "hint": "Receita = preço unitário × quantidade projetada.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "A previsão de vendas é o ponto de partida do orçamento empresarial: dela derivam produção (matéria-prima, mão de obra e custos indiretos), despesas operacionais, investimentos, marketing e caixa.",
+          "hint": "O que vender determina todo o resto.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p4-q02",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual a receita orçada do Mês 2?",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "Na previsão de vendas, qual dos fatores abaixo é um fator EXTERNO (e não interno)?",
           "options": {
-            "A": "R$ 120.000,00.",
-            "B": "R$ 132.000,00.",
-            "C": "R$ 144.000,00.",
-            "D": "R$ 150.000,00."
+            "A": "Concorrência e intensidade da competição.",
+            "B": "Capacidade produtiva.",
+            "C": "Custo e disponibilidade de capital.",
+            "D": "Estrutura administrativa."
           },
-          "correct": "C",
-          "explanation": "Receita = 1.200 × 120 = R$ 144.000,00.",
-          "hint": "Multiplique o preço pela quantidade do Mês 2.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "Fatores internos: capacidade produtiva, vendas e marketing, engenharia e gestão e finanças. Fatores externos: mercado, competitividade, economia e governo, tecnologia e impactos ambientais.",
+          "hint": "Três alternativas descrevem a empresa por dentro.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p4-q03",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual a receita orçada total do trimestre?",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "Segundo a aula, na política de preços e volumes, se o preço permanece e o volume de itens vendidos aumenta, a tendência é que",
           "options": {
-            "A": "R$ 420.000,00.",
-            "B": "R$ 432.000,00.",
-            "C": "R$ 444.000,00.",
-            "D": "R$ 460.000,00."
+            "A": "lucro e rentabilidade aumentem.",
+            "B": "lucro e rentabilidade diminuam.",
+            "C": "o preço tenha de cair obrigatoriamente.",
+            "D": "o orçamento de vendas deixe de ser o ponto de partida."
           },
-          "correct": "C",
-          "explanation": "Mês 1: 120.000; Mês 2: 144.000; Mês 3: 1.500 × 120 = 180.000. Total = 120.000 + 144.000 + 180.000 = R$ 444.000,00.",
-          "hint": "Calcule o Mês 3 (1.500 × 120) e some os três meses.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "Nos esquemas da aula, tanto o aumento do preço mantido o volume quanto o aumento do volume mantido o preço levam a aumento de lucro e rentabilidade.",
+          "hint": "Mais unidades vendidas ao mesmo preço.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p4-q04",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual o valor dos impostos (5%) do Mês 1?",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "O método de estimação de vendas baseado no levantamento de intenções de compradores, opiniões de vendedores e opiniões de especialistas é classificado, na aula, como",
           "options": {
-            "A": "R$ 5.000,00.",
-            "B": "R$ 6.000,00.",
-            "C": "R$ 7.200,00.",
-            "D": "R$ 9.000,00."
+            "A": "método baseado no que se diz.",
+            "B": "método baseado no crescimento histórico (médias aritméticas ou geométricas).",
+            "C": "método baseado no que se fez (modelos matemáticos e estatísticos).",
+            "D": "método baseado em determinantes de crescimento (ROE, alavancagem, margem e giro)."
           },
-          "correct": "B",
-          "explanation": "Imposto = 5% × 120.000 = R$ 6.000,00.",
-          "hint": "Imposto = alíquota × receita do mês.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "A aula separa: crescimento histórico; crescimento esperado da empresa/setor/economia; previsão dos analistas; determinantes de crescimento; métodos baseados no que se diz (levantamentos) e método baseado no que se fez (instrumental matemático e estatístico).",
+          "hint": "Perguntar a compradores, vendedores e especialistas = “o que se diz”.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p4-q05",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual o valor dos impostos (5%) do Mês 3?",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "Na aula, qual dos itens abaixo é um aspecto inerente ao nível de estoque desejado no orçamento de produção?",
           "options": {
-            "A": "R$ 7.200,00.",
-            "B": "R$ 8.000,00.",
-            "C": "R$ 9.000,00.",
-            "D": "R$ 10.000,00."
+            "A": "Sazonalidade das vendas.",
+            "B": "Cotação da moeda estrangeira.",
+            "C": "Localização da matriz da empresa.",
+            "D": "Escolha das cores da embalagem."
           },
-          "correct": "C",
-          "explanation": "Receita do Mês 3 = 180.000; imposto = 5% × 180.000 = R$ 9.000,00.",
-          "hint": "Primeiro ache a receita do Mês 3, depois aplique 5%.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "O nível de estoque desejado depende da sazonalidade das vendas, da capacidade financeira e de crédito e da disponibilidade de mão de obra capacitada.",
+          "hint": "Vendas sazonais exigem estoques diferentes ao longo do ano.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p4-q06",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual o total de impostos do trimestre?",
-          "options": {
-            "A": "R$ 21.000,00.",
-            "B": "R$ 22.200,00.",
-            "C": "R$ 23.400,00.",
-            "D": "R$ 24.000,00."
-          },
-          "correct": "B",
-          "explanation": "5% × 444.000 = R$ 22.200,00 (ou 6.000 + 7.200 + 9.000).",
-          "hint": "Aplique 5% sobre a receita total do trimestre.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p4-q07",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade, com o seguinte volume: Mês 1 – 1.000 unidades; Mês 2 – 1.200 unidades; Mês 3 – 1.500 unidades. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%.\n\nQual o valor das comissões de vendas (4%) do Mês 2?",
-          "options": {
-            "A": "R$ 4.800,00.",
-            "B": "R$ 5.760,00.",
-            "C": "R$ 7.200,00.",
-            "D": "R$ 7.680,00."
-          },
-          "correct": "B",
-          "explanation": "4% × 144.000 = R$ 5.760,00.",
-          "hint": "Comissão = 4% × receita do Mês 2.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p4-q08",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "Uma empresa vende, em média, R$ 5.000,00 por dia útil. Janeiro tem 22 dias úteis e fevereiro, 20. Qual a diferença entre os orçamentos de vendas dos dois meses?",
-          "options": {
-            "A": "R$ 5.000,00.",
-            "B": "R$ 10.000,00.",
-            "C": "R$ 12.000,00.",
-            "D": "R$ 22.000,00."
-          },
-          "correct": "B",
-          "explanation": "Janeiro: 22 × 5.000 = 110.000; fevereiro: 20 × 5.000 = 100.000. Diferença = R$ 10.000,00 — a quantidade de dias do mês influencia diretamente a receita orçada.",
-          "hint": "Calcule cada mês multiplicando os dias úteis pela venda diária média.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p4-q09",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "O orçamento de vendas costuma ser o ponto de partida do processo orçamentário porque",
-          "options": {
-            "A": "seus dados alimentam os demais orçamentos (produção, matérias-primas, impostos, despesas com vendas etc.).",
-            "B": "é o único que não depende de estimativas.",
-            "C": "dispensa a elaboração dos demais orçamentos.",
-            "D": "é elaborado apenas depois do orçamento de caixa."
-          },
-          "correct": "A",
-          "explanation": "As vendas previstas determinam quanto produzir, quanto comprar, quais impostos e comissões incidirão — daí o orçamento de vendas ser a peça inicial que abastece as demais.",
-          "hint": "O que decide quanto será produzido, comprado e taxado?",
-          "source": "original"
-        },
-        {
-          "id": "orc-p4-q10",
-          "topic": "vendas_impostos_despesas",
-          "topicLabel": "Orçamento de Vendas, Impostos e Despesas",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. Os impostos sobre vendas dependem do volume e dos valores projetados no orçamento de vendas.\nPORQUE\nII. O cálculo dos impostos só pode ser feito depois que o orçamento de vendas estiver definido.\nA respeito dessas asserções, assinale a opção correta.",
-          "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
-          },
-          "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II decorre da I: como a base de cálculo do imposto é a receita, é preciso definir o orçamento de vendas antes.",
-          "hint": "A base de cálculo do imposto vem de qual orçamento?",
-          "source": "original"
-        }
-      ]
-    },
-    {
-      "name": "Prova 5 — Orçamento de Produção e Matérias-Primas",
-      "topic": "producao_materiais",
-      "questions": [
-        {
-          "id": "orc-p5-q01",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQuantas unidades devem ser produzidas no Mês 1 (Produção = Vendas + Estoque Final − Estoque Inicial)?",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima. O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQuantas unidades devem ser produzidas no Mês 1? (Produção = Vendas + Estoque Final desejado − Estoque Inicial)",
           "options": {
             "A": "900 un.",
             "B": "1.000 un.",
@@ -690,29 +598,13 @@
           "correct": "C",
           "explanation": "Produção = 1.000 + 300 − 200 = 1.100 unidades.",
           "hint": "Produção = Vendas + Estoque Final desejado − Estoque Inicial.",
-          "source": "original"
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p5-q02",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQual o consumo de matéria-prima no Mês 1 (considerando a produção de 1.100 unidades)?",
-          "options": {
-            "A": "4.000 kg.",
-            "B": "4.400 kg.",
-            "C": "4.800 kg.",
-            "D": "5.500 kg."
-          },
-          "correct": "B",
-          "explanation": "Consumo = 1.100 × 4 kg = 4.400 kg.",
-          "hint": "Consumo = unidades produzidas × kg por unidade.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p5-q03",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQuantos kg de matéria-prima devem ser comprados no Mês 1 (Compras = Consumo + Estoque Final − Estoque Inicial)?",
+          "id": "orc-p4-q07",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima. O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nConsiderando a produção de 1.100 unidades, quantos kg de matéria-prima devem ser comprados no Mês 1? (Compras = Consumo + Estoque Final − Estoque Inicial)",
           "options": {
             "A": "4.000 kg.",
             "B": "4.400 kg.",
@@ -720,133 +612,164 @@
             "D": "5.200 kg."
           },
           "correct": "C",
-          "explanation": "Compras = 4.400 + 1.400 − 1.000 = 4.800 kg.",
-          "hint": "Compras = Consumo + Estoque Final desejado − Estoque Inicial de matéria-prima.",
-          "source": "original"
+          "explanation": "Consumo = 1.100 × 4 = 4.400 kg. Compras = 4.400 + 1.400 − 1.000 = 4.800 kg.",
+          "hint": "Primeiro calcule o consumo (produção × 4 kg), depois ajuste pelos estoques de matéria-prima.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p5-q04",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQual o valor das compras de matéria-prima do Mês 1 (4.800 kg a R$ 5,00/kg)?",
+          "id": "orc-p4-q08",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "No orçamento dos custos de produção, “máquinas e equipamentos compartilhados”, “mão de obra compartilhada” e “insumos compartilhados” compõem o orçamento dos",
           "options": {
-            "A": "R$ 22.000,00.",
-            "B": "R$ 24.000,00.",
-            "C": "R$ 26.000,00.",
-            "D": "R$ 27.500,00."
-          },
-          "correct": "B",
-          "explanation": "4.800 × 5,00 = R$ 24.000,00.",
-          "hint": "Multiplique os kg a comprar pelo preço por kg.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p5-q05",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQuantas horas de mão de obra direta são necessárias no Mês 1 (produção de 1.100 unidades)?",
-          "options": {
-            "A": "2.000 h.",
-            "B": "2.200 h.",
-            "C": "2.400 h.",
-            "D": "4.400 h."
-          },
-          "correct": "B",
-          "explanation": "Horas = 1.100 × 2 = 2.200 horas.",
-          "hint": "Horas = unidades produzidas × horas por unidade.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p5-q06",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nQual o custo da mão de obra direta do Mês 1 (2.200 horas a R$ 15,00/hora)?",
-          "options": {
-            "A": "R$ 30.000,00.",
-            "B": "R$ 33.000,00.",
-            "C": "R$ 36.000,00.",
-            "D": "R$ 66.000,00."
-          },
-          "correct": "B",
-          "explanation": "2.200 × 15 = R$ 33.000,00.",
-          "hint": "Multiplique as horas pelo valor da hora.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p5-q07",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "No Mês 2, as vendas previstas são de 1.200 unidades, o estoque inicial de produtos acabados é o estoque final do Mês 1 (300 un) e o estoque final desejado é de 250 un. Qual a produção do Mês 2?",
-          "options": {
-            "A": "1.150 un.",
-            "B": "1.200 un.",
-            "C": "1.250 un.",
-            "D": "1.750 un."
+            "A": "custos gerais/indiretos de fabricação (CIF).",
+            "B": "custos com matérias-primas.",
+            "C": "custos de marketing.",
+            "D": "custos com despesas tributárias."
           },
           "correct": "A",
-          "explanation": "Produção = 1.200 + 250 − 300 = 1.150 unidades.",
-          "hint": "O estoque inicial do Mês 2 é o final do Mês 1.",
-          "source": "original"
+          "explanation": "O orçamento de produção divide-se em matérias-primas (insumos, embalagens, rótulos, suprimentos), mão de obra e custos gerais/indiretos de fabricação, que envolvem recursos compartilhados entre produtos.",
+          "hint": "Recursos compartilhados entre vários produtos são indiretos.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p5-q08",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "Qual sequência reflete a dependência lógica entre as peças orçamentárias de uma indústria?",
+          "id": "orc-p4-q09",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "“Perdas com devedores duvidosos” são classificadas, no orçamento de despesas operacionais, como despesas",
           "options": {
-            "A": "Vendas → Produção → Matérias-primas e mão de obra.",
-            "B": "Matérias-primas → Produção → Vendas.",
-            "C": "Mão de obra → Vendas → Produção.",
-            "D": "Produção → Vendas → Matérias-primas."
+            "A": "com vendas.",
+            "B": "administrativas.",
+            "C": "tributárias.",
+            "D": "financeiras."
           },
           "correct": "A",
-          "explanation": "O que se espera vender define quanto produzir, e a produção define quanto de matéria-prima e mão de obra será necessário.",
-          "hint": "Comece pelo que “puxa” todas as demais peças.",
-          "source": "original"
+          "explanation": "Despesas com vendas: salários e encargos dos vendedores, impostos sobre a venda, aluguel do ponto de venda, telefonemas, fretes, perdas com devedores duvidosos e cobrança. Administrativas: controladoria, contabilidade, seguros, aluguel administrativo, etc. Tributárias: IPI, ICMS, ISS, PIS, COFINS, IRPJ, CSLL etc. Financeiras: juros e correção monetária (recebidos somam; pagos e tarifas subtraem).",
+          "hint": "Pense em quem gera a perda: as vendas a prazo.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p5-q09",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. O orçamento de produção depende do orçamento de vendas e da política de estoques da empresa.\nPORQUE\nII. A produção necessária é igual às vendas mais o estoque final desejado, menos o estoque inicial.\nA respeito dessas asserções, assinale a opção correta.",
+          "id": "orc-p4-q10",
+          "topic": "aula3_elaboracao",
+          "topicLabel": "Aula 3 — Elaboração das Peças Orçamentárias",
+          "question": "O orçamento de investimentos, segundo a aula, contempla",
           "options": {
-            "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
-            "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
-            "C": "A asserção I é verdadeira e a II é falsa.",
-            "D": "A asserção I é falsa e a II é verdadeira.",
-            "E": "As asserções I e II são falsas."
+            "A": "acréscimos, melhoramentos, substituições de ativos e patentes, alinhados à estratégia global, pois determinam o crescimento futuro da empresa.",
+            "B": "apenas as despesas de marketing do período.",
+            "C": "apenas os salários dos vendedores.",
+            "D": "o controle diário do caixa."
           },
           "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II explica a I: a fórmula mostra exatamente como vendas e política de estoques determinam a produção.",
-          "hint": "A fórmula da II mostra como vendas e estoques entram no cálculo?",
-          "source": "original"
-        },
-        {
-          "id": "orc-p5-q10",
-          "topic": "producao_materiais",
-          "topicLabel": "Orçamento de Produção e Matérias-Primas",
-          "question": "A Móveis Serra Verde projeta, para o Mês 1: vendas de 1.000 unidades; estoque inicial de produtos acabados de 200 un e estoque final desejado de 300 un. Cada unidade consome 4 kg de matéria-prima (R$ 5,00/kg) e 2 horas de mão de obra direta (R$ 15,00/hora). O estoque inicial de matéria-prima é de 1.000 kg e o estoque final desejado é de 1.400 kg.\n\nSe a empresa decidir aumentar o estoque final desejado de produtos acabados de 300 para 400 unidades (mantendo os demais dados), a produção do Mês 1 passa a ser de",
-          "options": {
-            "A": "1.000 un.",
-            "B": "1.100 un.",
-            "C": "1.200 un.",
-            "D": "1.300 un."
-          },
-          "correct": "C",
-          "explanation": "Produção = 1.000 + 400 − 200 = 1.200 unidades. Aumentar o estoque final exige produzir mais.",
-          "hint": "Refaça a fórmula com o novo estoque final desejado.",
-          "source": "original"
+          "explanation": "O orçamento de investimentos trata de acréscimos, melhoramentos, substituição de ativos, patentes e fundos reservados a esses fins, com uso de métodos de avaliação e alinhamento à estratégia global.",
+          "hint": "Ativos de longo prazo e crescimento futuro.",
+          "source": "slides Aulas 1-5"
         }
       ]
     },
     {
-      "name": "Prova 6 — Orçamento de Caixa, CIF e Projetos",
-      "topic": "caixa_cif_projetos",
+      "name": "Prova 5 — Aulas 3 e 5: Vendas, Caixa e DRE Projetada",
+      "topic": "aula3_5_numerico",
       "questions": [
         {
-          "id": "orc-p6-q01",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
+          "id": "orc-p5-q01",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade: Mês 1 – 1.000 un; Mês 2 – 1.200 un; Mês 3 – 1.500 un. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%. O custo variável é de R$ 50,00 por unidade e as despesas administrativas somam R$ 60.000,00 no trimestre.\n\nQual a receita orçada total do trimestre (preço × quantidade)?",
+          "options": {
+            "A": "R$ 420.000,00.",
+            "B": "R$ 432.000,00.",
+            "C": "R$ 444.000,00.",
+            "D": "R$ 460.000,00."
+          },
+          "correct": "C",
+          "explanation": "Mês 1: 1.000 × 120 = 120.000; Mês 2: 1.200 × 120 = 144.000; Mês 3: 1.500 × 120 = 180.000. Total = R$ 444.000,00.",
+          "hint": "Receita = preço × quantidade de cada mês; depois some os três meses.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p5-q02",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade: Mês 1 – 1.000 un; Mês 2 – 1.200 un; Mês 3 – 1.500 un. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%. O custo variável é de R$ 50,00 por unidade e as despesas administrativas somam R$ 60.000,00 no trimestre.\n\nQual o total de impostos (5%) do trimestre?",
+          "options": {
+            "A": "R$ 21.000,00.",
+            "B": "R$ 22.200,00.",
+            "C": "R$ 23.400,00.",
+            "D": "R$ 24.000,00."
+          },
+          "correct": "B",
+          "explanation": "5% × 444.000 = R$ 22.200,00. Os impostos dependem do volume e dos valores projetados no orçamento de vendas.",
+          "hint": "Aplique 5% sobre a receita do trimestre.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p5-q03",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade: Mês 1 – 1.000 un; Mês 2 – 1.200 un; Mês 3 – 1.500 un. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%. O custo variável é de R$ 50,00 por unidade e as despesas administrativas somam R$ 60.000,00 no trimestre.\n\nQual o total de comissões de vendas (4%) do trimestre?",
+          "options": {
+            "A": "R$ 16.000,00.",
+            "B": "R$ 17.760,00.",
+            "C": "R$ 18.500,00.",
+            "D": "R$ 22.200,00."
+          },
+          "correct": "B",
+          "explanation": "4% × 444.000 = R$ 17.760,00.",
+          "hint": "Comissão = 4% × receita do trimestre.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p5-q04",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade: Mês 1 – 1.000 un; Mês 2 – 1.200 un; Mês 3 – 1.500 un. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%. O custo variável é de R$ 50,00 por unidade e as despesas administrativas somam R$ 60.000,00 no trimestre.\n\nNa Demonstração de Resultado Projetada, qual a receita líquida do trimestre (receita − impostos sobre vendas)?",
+          "options": {
+            "A": "R$ 399.600,00.",
+            "B": "R$ 421.800,00.",
+            "C": "R$ 426.240,00.",
+            "D": "R$ 444.000,00."
+          },
+          "correct": "B",
+          "explanation": "Receita líquida = 444.000 − 22.200 = R$ 421.800,00.",
+          "hint": "Receita líquida = receita bruta menos os impostos sobre vendas.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p5-q05",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade: Mês 1 – 1.000 un; Mês 2 – 1.200 un; Mês 3 – 1.500 un. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%. O custo variável é de R$ 50,00 por unidade e as despesas administrativas somam R$ 60.000,00 no trimestre.\n\nQual o lucro bruto projetado do trimestre (receita líquida − custo variável dos produtos vendidos)?",
+          "options": {
+            "A": "R$ 186.800,00.",
+            "B": "R$ 236.800,00.",
+            "C": "R$ 259.000,00.",
+            "D": "R$ 271.800,00."
+          },
+          "correct": "B",
+          "explanation": "Volume = 1.000 + 1.200 + 1.500 = 3.700 un. Custo = 3.700 × 50 = 185.000. Lucro bruto = 421.800 − 185.000 = R$ 236.800,00.",
+          "hint": "Some as unidades dos três meses e multiplique por R$ 50,00.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p5-q06",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Distribuidora Atlântica Med projeta vender kits hospitalares a R$ 120,00 por unidade: Mês 1 – 1.000 un; Mês 2 – 1.200 un; Mês 3 – 1.500 un. Sobre a receita incidem impostos de 5% e comissões de vendas de 4%. O custo variável é de R$ 50,00 por unidade e as despesas administrativas somam R$ 60.000,00 no trimestre.\n\nQual o resultado projetado do trimestre, após deduzir também as comissões (R$ 17.760,00) e as despesas administrativas?",
+          "options": {
+            "A": "R$ 119.040,00.",
+            "B": "R$ 159.040,00.",
+            "C": "R$ 176.800,00.",
+            "D": "R$ 219.040,00."
+          },
+          "correct": "B",
+          "explanation": "Resultado = 236.800 − 17.760 − 60.000 = R$ 159.040,00. A DRE projetada permite analisar a formação do resultado, confrontando a previsão de vendas com deduções, impostos, custos e despesas.",
+          "hint": "Do lucro bruto, subtraia as comissões e as despesas administrativas.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p5-q07",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
           "question": "A Comercial Bela Vista vende 60% à vista e 40% a prazo, recebendo a parcela a prazo no mês seguinte. Vendas: Mês 0: R$ 80.000,00; Mês 1: R$ 100.000,00; Mês 2: R$ 120.000,00. Pagamentos totais: Mês 1: R$ 85.000,00; Mês 2: R$ 130.000,00. Saldo inicial de caixa no Mês 1: R$ 5.000,00.\n\nQual o total de recebimentos do Mês 1?",
           "options": {
             "A": "R$ 60.000,00.",
@@ -855,14 +778,14 @@
             "D": "R$ 100.000,00."
           },
           "correct": "C",
-          "explanation": "À vista do Mês 1: 60% × 100.000 = 60.000. A prazo recebido do Mês 0: 40% × 80.000 = 32.000. Total = R$ 92.000,00.",
+          "explanation": "À vista do Mês 1: 60% × 100.000 = 60.000. A prazo, das vendas do Mês 0: 40% × 80.000 = 32.000. Total = R$ 92.000,00.",
           "hint": "Recebimentos = parte à vista do mês + parte a prazo das vendas do mês anterior.",
-          "source": "original"
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p6-q02",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
+          "id": "orc-p5-q08",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
           "question": "A Comercial Bela Vista vende 60% à vista e 40% a prazo, recebendo a parcela a prazo no mês seguinte. Vendas: Mês 0: R$ 80.000,00; Mês 1: R$ 100.000,00; Mês 2: R$ 120.000,00. Pagamentos totais: Mês 1: R$ 85.000,00; Mês 2: R$ 130.000,00. Saldo inicial de caixa no Mês 1: R$ 5.000,00.\n\nQual o saldo final de caixa do Mês 1?",
           "options": {
             "A": "R$ 7.000,00.",
@@ -873,60 +796,28 @@
           "correct": "B",
           "explanation": "Saldo final = 5.000 + 92.000 − 85.000 = R$ 12.000,00.",
           "hint": "Saldo final = saldo inicial + recebimentos − pagamentos.",
-          "source": "original"
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p6-q03",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "A Comercial Bela Vista vende 60% à vista e 40% a prazo, recebendo a parcela a prazo no mês seguinte. Vendas: Mês 0: R$ 80.000,00; Mês 1: R$ 100.000,00; Mês 2: R$ 120.000,00. Pagamentos totais: Mês 1: R$ 85.000,00; Mês 2: R$ 130.000,00. Saldo inicial de caixa no Mês 1: R$ 5.000,00.\n\nQual o total de recebimentos do Mês 2?",
+          "id": "orc-p5-q09",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
+          "question": "A Comercial Bela Vista vende 60% à vista e 40% a prazo, recebendo a parcela a prazo no mês seguinte. Vendas: Mês 0: R$ 80.000,00; Mês 1: R$ 100.000,00; Mês 2: R$ 120.000,00. Pagamentos totais: Mês 1: R$ 85.000,00; Mês 2: R$ 130.000,00. Saldo inicial de caixa no Mês 1: R$ 5.000,00.\n\nO Mês 2 tem recebimentos de R$ 112.000,00 (à vista 72.000 + a prazo 40.000). Qual o saldo final do Mês 2 e o que o fluxo de caixa projetado indica?",
           "options": {
-            "A": "R$ 72.000,00.",
-            "B": "R$ 104.000,00.",
-            "C": "R$ 112.000,00.",
-            "D": "R$ 120.000,00."
-          },
-          "correct": "C",
-          "explanation": "À vista do Mês 2: 60% × 120.000 = 72.000. A prazo do Mês 1: 40% × 100.000 = 40.000. Total = R$ 112.000,00.",
-          "hint": "Mesma lógica do Mês 1, usando as vendas do Mês 2 (à vista) e do Mês 1 (a prazo).",
-          "source": "original"
-        },
-        {
-          "id": "orc-p6-q04",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "A Comercial Bela Vista vende 60% à vista e 40% a prazo, recebendo a parcela a prazo no mês seguinte. Vendas: Mês 0: R$ 80.000,00; Mês 1: R$ 100.000,00; Mês 2: R$ 120.000,00. Pagamentos totais: Mês 1: R$ 85.000,00; Mês 2: R$ 130.000,00. Saldo inicial de caixa no Mês 1: R$ 5.000,00.\n\nQual o saldo final de caixa do Mês 2 e o que ele indica?",
-          "options": {
-            "A": "R$ 6.000,00 positivo — sobra de caixa.",
-            "B": "−R$ 6.000,00 — falta de caixa, indicando necessidade de captação ou renegociação de prazos.",
-            "C": "R$ 18.000,00 positivo — sobra de caixa.",
-            "D": "R$ 0,00 — caixa equilibrado."
-          },
-          "correct": "B",
-          "explanation": "Saldo final = 12.000 + 112.000 − 130.000 = −R$ 6.000,00. O orçamento de caixa antecipa a falta de recursos, permitindo captar dinheiro ou renegociar prazos antes que o problema ocorra.",
-          "hint": "Parta do saldo final do Mês 1, some os recebimentos do Mês 2 e subtraia os pagamentos.",
-          "source": "original"
-        },
-        {
-          "id": "orc-p6-q05",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "Para antecipar sobras e faltas de dinheiro em razão de vendas a prazo e pagamentos imediatos, a peça orçamentária mais adequada é o",
-          "options": {
-            "A": "orçamento de caixa.",
-            "B": "orçamento de vendas.",
-            "C": "orçamento de produção.",
-            "D": "orçamento de matérias-primas."
+            "A": "−R$ 6.000,00: insuficiência de disponibilidades, indicando necessidade de empréstimos ou renegociação de prazos.",
+            "B": "R$ 6.000,00: excesso de disponibilidades, sugerindo investimento temporário.",
+            "C": "R$ 18.000,00: excesso de disponibilidades.",
+            "D": "R$ 0,00: caixa perfeitamente equilibrado."
           },
           "correct": "A",
-          "explanation": "O orçamento de caixa projeta entradas e saídas reais de dinheiro, mostrando quando haverá sobra ou falta de recursos.",
-          "hint": "Qual orçamento trata do dinheiro que de fato entra e sai?",
-          "source": "original"
+          "explanation": "Saldo final = 12.000 + 112.000 − 130.000 = −R$ 6.000,00. O fluxo de caixa projetado indica excesso ou insuficiência de disponibilidades e a necessidade de empréstimos ou a disponibilidade de fundos para investimento temporário.",
+          "hint": "Parta do saldo final do Mês 1 (R$ 12.000,00).",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p6-q06",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
+          "id": "orc-p5-q10",
+          "topic": "aula3_5_numerico",
+          "topicLabel": "Aulas 3 e 5 — Vendas, Caixa e DRE Projetada",
           "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. Uma empresa pode ter lucro contábil e, ainda assim, enfrentar falta de liquidez.\nPORQUE\nII. As vendas a prazo geram receita reconhecida antes do efetivo recebimento do dinheiro.\nA respeito dessas asserções, assinale a opção correta.",
           "options": {
             "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
@@ -936,47 +827,53 @@
             "E": "As asserções I e II são falsas."
           },
           "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II explica a I: a receita entra no resultado na venda, mas o caixa só é recebido depois — o que pode gerar falta de dinheiro mesmo com lucro.",
+          "explanation": "Ambas são verdadeiras e a II explica a I: a receita entra no resultado na venda, mas o caixa só é recebido depois, o que pode gerar falta de dinheiro mesmo com lucro. Por isso existe o orçamento de caixa.",
           "hint": "Receita reconhecida = dinheiro no caixa?",
-          "source": "original"
-        },
+          "source": "slides Aulas 1-5"
+        }
+      ]
+    },
+    {
+      "name": "Prova 6 — Aula 4: Tipos de Orçamento",
+      "topic": "aula4_tipos",
+      "questions": [
         {
-          "id": "orc-p6-q07",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "Os Custos Indiretos de Fabricação (CIF) são caracterizados como",
+          "id": "orc-p6-q01",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "Sobre o orçamento estático, segundo a aula, é correto afirmar que",
           "options": {
-            "A": "gastos que beneficiam vários produtos ou setores e não podem ser atribuídos diretamente a uma única unidade, exigindo critérios de rateio.",
-            "B": "gastos que podem ser medidos diretamente em cada unidade produzida.",
-            "C": "despesas exclusivas do departamento comercial.",
-            "D": "receitas indiretas da produção."
+            "A": "é o próprio orçamento empresarial tradicional, elaborado a partir de determinados níveis de produção ou vendas, em que a gestão não tolera alterações nas peças orçamentárias.",
+            "B": "é refeito continuamente, a cada mês, com novos períodos.",
+            "C": "exige justificar todos os gastos a partir de zero.",
+            "D": "ajusta automaticamente todos os custos ao volume real."
           },
           "correct": "A",
-          "explanation": "CIF são custos comuns a vários produtos (energia da fábrica, aluguel, supervisão) que precisam ser distribuídos por algum critério de rateio.",
-          "hint": "Indireto = não dá para ligar diretamente a um único produto.",
-          "source": "original"
+          "explanation": "O orçamento estático é o orçamento tradicional, montado sobre níveis definidos de produção ou vendas, sem tolerância a alterações; se os volumes não puderem ser atingidos por fatores incontroláveis, ele perde a utilidade.",
+          "hint": "Estático = parado em um único nível de atividade.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p6-q08",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "Os CIF totais do mês somam R$ 60.000,00. O Produto A utilizou 3.000 horas-máquina e o Produto B, 1.000 horas-máquina. Rateando pelas horas-máquina, quanto de CIF é atribuído ao Produto A?",
+          "id": "orc-p6-q02",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "No orçamento contínuo, conforme o esquema da aula (20x1 e 20x2),",
           "options": {
-            "A": "R$ 30.000,00.",
-            "B": "R$ 40.000,00.",
-            "C": "R$ 45.000,00.",
-            "D": "R$ 50.000,00."
+            "A": "à medida que um mês sai (encerra), um novo mês entra no fim do horizonte, mantendo o planejamento sempre à frente.",
+            "B": "o orçamento é feito uma única vez para o ano e não muda mais.",
+            "C": "todo gasto é justificado do zero a cada ano.",
+            "D": "o período de planejamento é sempre o ano civil fixo."
           },
-          "correct": "C",
-          "explanation": "Total de horas = 4.000. A responde por 3.000 ÷ 4.000 = 75%. CIF de A = 75% × 60.000 = R$ 45.000,00 (B recebe R$ 15.000,00).",
-          "hint": "Calcule a proporção de horas do Produto A sobre o total e aplique ao CIF.",
-          "source": "original"
+          "correct": "A",
+          "explanation": "No orçamento contínuo, o mês 1 sai e o mês 1 de 20x2 entra, e assim sucessivamente: quebra-se o paradigma do período anual, com análises constantes e mensais.",
+          "hint": "Uma janela de 12 meses que vai “rolando”.",
+          "source": "slides Aulas 1-5"
         },
         {
-          "id": "orc-p6-q09",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. Os CIF não podem ser identificados diretamente em um único produto.\nPORQUE\nII. Por isso, exigem a utilização de critérios de rateio para serem distribuídos entre os produtos.\nA respeito dessas asserções, assinale a opção correta.",
+          "id": "orc-p6-q03",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "Analise as asserções a seguir e a relação proposta entre elas.\nI. No orçamento contínuo, é possível replanejar e refazer projeções continuamente.\nPORQUE\nII. O orçamento contínuo incorpora condições variáveis em momentos oportunos e mantém os envolvidos no processo orçamentário.\nA respeito dessas asserções, assinale a opção correta.",
           "options": {
             "A": "As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.",
             "B": "As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.",
@@ -985,25 +882,121 @@
             "E": "As asserções I e II são falsas."
           },
           "correct": "A",
-          "explanation": "Ambas são verdadeiras e a II decorre da I: como não há vínculo direto com um produto, é necessário um critério de rateio.",
-          "hint": "Como distribuir algo que não dá para atribuir diretamente?",
-          "source": "original"
+          "explanation": "Ambas são verdadeiras e a II explica a I: por incorporar condições variáveis em momentos oportunos e manter os envolvidos continuamente no processo, é possível replanejar diante de circunstâncias não esperadas.",
+          "hint": "A segunda frase descreve o mecanismo que permite a primeira.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p6-q04",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "Sobre o Orçamento Base Zero (OBZ), segundo a aula, é correto afirmar que",
+          "options": {
+            "A": "o histórico não é o ponto de partida: todas as atividades são analisadas e os recursos são submetidos à aprovação, em vez de apenas incrementar percentuais sobre o período passado.",
+            "B": "o ponto de partida é sempre o ano anterior, acrescido de um percentual.",
+            "C": "as despesas do passado são aprovadas automaticamente.",
+            "D": "é elaborado de cima para baixo, sem envolver as chefias."
+          },
+          "correct": "A",
+          "explanation": "No OBZ, o histórico NÃO é ponto de partida; todos os recursos e atividades são analisados e submetidos a aprovação; é elaborado de baixo para cima, exige envolvimento de todos os níveis de chefia e busca eliminar a perpetuação de ineficiências históricas.",
+          "hint": "“Base zero” quer dizer sem herdar o passado automaticamente.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p6-q05",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "No exemplo da aula, os insumos custam R$ 1,00 por unidade e a meta do mês é de R$ 10.000,00 (ou 10.000 unidades). A pergunta “se a empresa vender 12.000 unidades, não poderei fabricar neste mês?” ilustra qual aspecto negativo do OBZ?",
+          "options": {
+            "A": "A possível inflexibilidade diante de variações de volume, pois o gasto aprovado limita a produção acima do previsto.",
+            "B": "A perpetuação de ineficiências históricas.",
+            "C": "A aprovação automática de despesas do ano anterior.",
+            "D": "A ausência de qualquer análise de custo-benefício."
+          },
+          "correct": "A",
+          "explanation": "O exemplo mostra o risco de o OBZ engessar a gestão: com o orçamento aprovado para 10.000 unidades, uma venda maior (12.000) não teria o insumo correspondente aprovado. É o tipo de situação que o orçamento flexível procura resolver.",
+          "hint": "Meta rígida de 10.000 unidades x demanda de 12.000.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p6-q06",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "O orçamento flexível, segundo a aula,",
+          "options": {
+            "A": "é ajustado conforme as mudanças no nível de atividade real, comparando os custos incorridos com os necessários para aquele nível, e depura os insumos em custos fixos e variáveis.",
+            "B": "mantém um único nível de atividade durante todo o período.",
+            "C": "ignora a separação entre custos fixos e variáveis.",
+            "D": "parte sempre de zero para cada atividade."
+          },
+          "correct": "A",
+          "explanation": "O orçamento flexível mostra quanto serão os custos em vários níveis de atividade, exige conhecimento do comportamento dos custos e separa custos fixos e variáveis.",
+          "hint": "Flexível = recalcula para o volume que realmente aconteceu.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p6-q07",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "No exemplo de orçamento flexível da aula: Mês 1 com 10.000 unidades (gasto fixo R$ 100.000,00 e variável R$ 40.000,00) e Mês 2 com 12.000 unidades (gasto fixo R$ 100.000,00 e variável R$ 48.000,00). Qual o gasto total por unidade no Mês 2?",
+          "options": {
+            "A": "R$ 12,33.",
+            "B": "R$ 14,00.",
+            "C": "R$ 10,00.",
+            "D": "R$ 15,60."
+          },
+          "correct": "A",
+          "explanation": "Mês 2: 100.000 + 48.000 = 148.000; ÷ 12.000 = R$ 12,33 por unidade. No Mês 1 era 140.000 ÷ 10.000 = R$ 14,00. O custo por unidade cai porque o gasto fixo é diluído em mais unidades (o variável é R$ 4,00 por unidade nos dois meses).",
+          "hint": "Gasto total ÷ unidades do Mês 2.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p6-q08",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "Com preço de venda de R$ 20,00 por unidade e gasto total exato de R$ 148.000,00 no Mês 2 (12.000 unidades), qual o lucro do mês?",
+          "options": {
+            "A": "R$ 92.000,00.",
+            "B": "R$ 60.000,00.",
+            "C": "R$ 240.000,00.",
+            "D": "R$ 148.000,00."
+          },
+          "correct": "A",
+          "explanation": "Receita = 12.000 × 20 = 240.000. Lucro = 240.000 − 148.000 = R$ 92.000,00. (No slide aparece R$ 92.040,00 porque usa o gasto unitário arredondado de R$ 12,33 × 12.000 = 147.960; o valor exato é R$ 92.000,00. No Mês 1 o lucro é 200.000 − 140.000 = R$ 60.000,00.)",
+          "hint": "Receita (12.000 × R$ 20,00) menos o gasto total.",
+          "source": "slides Aulas 1-5"
+        },
+        {
+          "id": "orc-p6-q09",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "O orçamento por atividades, segundo a aula, permite",
+          "options": {
+            "A": "associar os custos à produção, identificar melhor os recursos necessários, eliminar atividades supérfluas e identificar folgas orçamentárias.",
+            "B": "elaborar orçamentos menos realistas, mas mais rápidos.",
+            "C": "ignorar a responsabilidade do quadro funcional.",
+            "D": "manter todas as atividades independentemente do benefício."
+          },
+          "correct": "A",
+          "explanation": "O orçamento por atividades baseia-se na precificação das atividades e seus benefícios: orçamentos mais realistas, melhor identificação dos recursos, associação dos custos à produção, vinculação dos custos às responsabilidades, identificação de folgas e eliminação de atividades supérfluas.",
+          "hint": "Cada atividade é precificada e avaliada pelo benefício.",
+          "source": "slides Aulas 1-5"
         },
         {
           "id": "orc-p6-q10",
-          "topic": "caixa_cif_projetos",
-          "topicLabel": "Orçamento de Caixa, CIF e Projetos",
-          "question": "A administração por projetos contribui para o desempenho financeiro da empresa principalmente ao",
+          "topic": "aula4_tipos",
+          "topicLabel": "Aula 4 — Tipos de Orçamento",
+          "question": "Sobre o Beyond Budgeting (“além do orçamento”), segundo a aula, é correto afirmar que",
           "options": {
-            "A": "alinhar os investimentos com a estratégia global e priorizar iniciativas que geram valor.",
-            "B": "eliminar a necessidade de orçamento.",
-            "C": "dispensar o controle de custos.",
-            "D": "concentrar todas as decisões no nível operacional."
+            "A": "é um conjunto de métodos adaptativos, com prazos de análise mais curtos, metas por indicadores-chave, desempenho comparado ao mercado e gestores com elevada autonomia para reagir a mudanças.",
+            "B": "reforça a centralização do poder e o orçamento anual rígido.",
+            "C": "avalia o desempenho apenas com base em resultados anteriores internos.",
+            "D": "surgiu em siderúrgicas e nunca migrou para outros setores."
           },
           "correct": "A",
-          "explanation": "Gerir por projetos permite priorizar e acompanhar investimentos de acordo com a estratégia, evitando dispersão de recursos e melhorando o retorno.",
-          "hint": "Pense na ligação entre projetos, estratégia e retorno financeiro.",
-          "source": "original"
+          "explanation": "Beyond Budgeting tem origem em empresas de software, com métodos ágeis migrando para outros setores, prazos trimestrais ou semestrais, metas por indicadores-chave, desempenho com base no mercado e gestores autônomos. Critica o orçamento tradicional por ser demorado, caro, pouco focado na estratégia e centralizador.",
+          "hint": "Pense em agilidade e autonomia, o oposto do orçamento rígido e centralizado.",
+          "source": "slides Aulas 1-5"
         }
       ]
     }

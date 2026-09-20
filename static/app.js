@@ -21,9 +21,9 @@
       url: "data/orc_questions.json",
       moduleName: "Módulo 5 — Análise Orçamentária",
       guideName: "Módulo 5 — Guia de Estudos (Análise Orçamentária)",
-      summary: "níveis de planejamento, controle orçamentário, tipos de orçamento, vendas/produção, caixa e CIF — incluindo questões de asserção I/II.",
-      guideDesc: "Os temas da sua prova de Análise Orçamentária, organizados do básico ao avançado.",
-      note: "Explicação de apoio para os estudos, baseada em conceitos de orçamento empresarial — não é o gabarito oficial da sua prova.",
+      summary: "baseadas nos slides das Aulas 1 a 5: planejamento, orçamento, implantação e controle, peças orçamentárias, caixa, DRE projetada e tipos de orçamento — incluindo questões de asserção I/II.",
+      guideDesc: "Resumo das Aulas 1 a 5 de Administração Orçamentária, organizado do básico ao avançado.",
+      note: "Explicação de apoio para os estudos, baseada nos slides das Aulas 1 a 5 — não é o gabarito oficial da sua prova.",
     },
   };
 

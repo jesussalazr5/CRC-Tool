@@ -1,0 +1,82 @@
+{
+  "sections": [
+    {
+      "level": "Básico",
+      "levelDesc": "Planejamento, níveis de decisão e a lógica do orçamento — comece por aqui.",
+      "topics": [
+        {
+          "title": "O que é planejamento",
+          "summary": "Planejamento é um processo contínuo e orientado ao futuro: define aonde se quer chegar e como. Não é um evento pontual — como o ambiente interno e externo muda, precisa ser revisto periodicamente. É também pré-requisito do controle: sem planejamento não existem padrões para comparar com o realizado."
+        },
+        {
+          "title": "Missão e Visão",
+          "summary": "Missão é a razão de existir da organização e o propósito que orienta suas ações no presente. Visão é a imagem de futuro desejada no longo prazo — onde a empresa quer chegar. A missão serve de caminho entre a situação atual e a visão. Não são sinônimos e nenhuma das duas trata das tarefas do dia a dia."
+        },
+        {
+          "title": "Níveis de planejamento: Estratégico, Tático e Operacional",
+          "summary": "Estratégico: longo prazo, alta direção, define rumo e posicionamento — e serve de base aos demais. Tático: médio prazo, gerentes/departamentos, desdobra a estratégia em metas e planos por área. Operacional: curto prazo, supervisores/equipes, rotinas e tarefas do dia a dia. Os três precisam estar integrados: metas táticas e ações operacionais devem derivar da estratégia, nunca contradizê-la."
+        },
+        {
+          "title": "O orçamento empresarial",
+          "summary": "O orçamento é a expressão quantitativa e financeira do planejamento: transforma metas em números (vendas, custos, despesas, caixa) e permite compará-los depois com o realizado. É um plano integrado — as peças se relacionam entre si — e não um conjunto de orçamentos isolados por área."
+        },
+        {
+          "title": "Condições para implantar o orçamento",
+          "summary": "Três pilares: (1) apoio da administração; (2) informações adequadas e confiáveis; (3) comunicação clara entre os envolvidos. O orçamento deve ser participativo: envolver vários níveis hierárquicos, especialmente os gestores que executam cada parte, pois são eles que conhecem os recursos que suas áreas necessitam. Elaborá-lo apenas pela cúpula ou de forma isolada por área são práticas inadequadas."
+        }
+      ]
+    },
+    {
+      "level": "Intermediário",
+      "levelDesc": "O controle orçamentário e o encadeamento das peças: vendas, produção, matérias-primas, impostos e despesas.",
+      "topics": [
+        {
+          "title": "Controle orçamentário e análise de desvios",
+          "summary": "Três fases, em sequência: (1) estabelecer padrões (o orçado); (2) observar o desempenho e compará-lo com os padrões; (3) tomar ações corretivas — que é a ÚLTIMA fase, nunca uma etapa intermediária. Desvio = Realizado − Orçado; desvio % = desvio ÷ Orçado. Para receitas, abaixo do orçado é desfavorável; para despesas e custos, acima do orçado é desfavorável. O objetivo é entender as causas e corrigir, não punir."
+        },
+        {
+          "title": "Sequência das peças orçamentárias",
+          "summary": "O Orçamento de Vendas é a peça inicial e o “motor” do sistema: alimenta produção, matérias-primas, mão de obra, impostos, comissões e despesas com vendas. Numa indústria a cadeia lógica é: Vendas → Produção → Matérias-primas e mão de obra (e CIF) → Despesas → Caixa. O gerente de vendas deve participar da elaboração do orçamento de suas próprias despesas."
+        },
+        {
+          "title": "Orçamento de Vendas",
+          "summary": "Receita orçada = preço unitário × quantidade projetada. A quantidade de dias úteis do mês influencia diretamente o valor (ex.: R$ 5.000 por dia útil × 22 dias = R$ 110.000; × 20 dias = R$ 100.000). Cuidado: preço × quantidade resulta na receita, não nas despesas de marketing."
+        },
+        {
+          "title": "Impostos e despesas sobre vendas",
+          "summary": "Impostos e comissões dependem do volume e dos valores projetados no orçamento de vendas, portanto só podem ser calculados depois que ele estiver definido. Imposto = alíquota × receita do período (ex.: 5% × R$ 120.000 = R$ 6.000). O mesmo raciocínio vale para comissões de vendas expressas em percentual da receita."
+        },
+        {
+          "title": "Orçamento de Produção e Matérias-Primas",
+          "summary": "Produção = Vendas + Estoque Final desejado − Estoque Inicial. Consumo de matéria-prima = unidades produzidas × consumo por unidade. Compras de matéria-prima = Consumo + Estoque Final desejado − Estoque Inicial. Custo das compras = kg a comprar × preço/kg. Mão de obra direta = unidades produzidas × horas por unidade × valor da hora. O estoque inicial de um mês é o estoque final do mês anterior."
+        }
+      ]
+    },
+    {
+      "level": "Avançado",
+      "levelDesc": "Tipos de orçamento, liquidez, custos indiretos e gestão por projetos.",
+      "topics": [
+        {
+          "title": "Orçamento Estático x Flexível",
+          "summary": "Estático: elaborado para um único nível de atividade; não se ajusta se o volume real for diferente. Flexível: recalcula o orçado para o volume realmente atingido — os custos variáveis acompanham o volume e os fixos (na faixa relevante) permanecem. Exemplo: custo variável R$ 30/un, fixo R$ 50.000. Orçado estático (10.000 un) = R$ 350.000; flexível para 12.000 un = R$ 410.000. Se o real foi R$ 420.000, o desvio justo é R$ 10.000 (contra o flexível), não R$ 70.000 (contra o estático) — a maior parte da diferença é só volume."
+        },
+        {
+          "title": "Orçamento Contínuo e Base Zero",
+          "summary": "Contínuo (rolling): à medida que um período termina, acrescenta-se um novo no fim do horizonte, mantendo sempre um planejamento à frente. Base Zero (OBZ): cada despesa precisa ser justificada do início a cada ciclo, sem presumir aprovação automática baseada no que foi gasto no passado — o objetivo é eliminar ineficiências históricas. O OBZ não é solução automática: exige análise e justificativa."
+        },
+        {
+          "title": "Orçamento de Caixa e Liquidez",
+          "summary": "Lucro contábil não é o mesmo que liquidez: vendas a prazo geram receita reconhecida antes do recebimento. O orçamento de caixa projeta entradas e saídas reais de dinheiro e antecipa sobras e faltas. Saldo final = Saldo inicial + Recebimentos − Pagamentos. Recebimentos do mês = parte à vista das vendas do mês + parte a prazo das vendas dos meses anteriores (conforme o prazo). Um saldo negativo sinaliza a necessidade de captar recursos ou renegociar prazos."
+        },
+        {
+          "title": "Custos Indiretos de Fabricação (CIF) e rateio",
+          "summary": "CIF são gastos que beneficiam vários produtos/setores e não podem ser atribuídos diretamente a uma única unidade — por isso exigem critério de rateio (horas-máquina, horas de mão de obra, área ocupada etc.). Exemplo: CIF de R$ 60.000; A usa 3.000 h-máq e B usa 1.000 h-máq → A recebe 75% = R$ 45.000 e B, 25% = R$ 15.000."
+        },
+        {
+          "title": "Administração por Projetos",
+          "summary": "Gerir por projetos ajuda a alinhar os investimentos com a estratégia global da empresa, priorizando iniciativas que geram valor e acompanhando-as com orçamento e prazo. Contribui para o desempenho financeiro ao evitar dispersão de recursos e melhorar o retorno dos investimentos."
+        }
+      ]
+    }
+  ]
+}
